@@ -181,4 +181,19 @@ function showCurrentDate() {
 	echo $currentDate;
 }
 
+function createNewLeagues($seasonID,$leagueNumber) {
+	for ($j = 0 ; $j < $leagueNumber ; ++$j)
+	{
+	$query = "INSERT INTO division number,seasonID VALUES  (\"$j\",\"$seasonID\")";
+	$result = mysql_query($query);
+	}
+}
+	
+function sanitizeString($var)
+{
+        $var = stripslashes($var);
+        $var = htmlentities($var);
+        $var = strip_tags($var);
+        return $var;
+} 
 ?>

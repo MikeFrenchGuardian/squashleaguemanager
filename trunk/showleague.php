@@ -1,7 +1,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css" />
-<title>New Result</title>
+<title>TomJohn :: League Tables</title>
 </head>
 <body>
 
