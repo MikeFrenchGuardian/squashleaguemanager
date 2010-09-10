@@ -138,4 +138,47 @@ function sortDescending ($a, $b)
     return ($a['points'] > $b['points']) ? -1 : 1;
 }
 
+function currentSeason() {
+	$query3 = "SELECT id,startDate,endDate FROM season";
+	$result = mysql_query($query3);
+	$rows = mysql_num_rows($result);
+	date_default_timezone_set('UTC');
+	$currentDate = date('Ymd');
+
+	for ($j = 0 ; $j < $rows ; ++$j) {
+		$sDate = mysql_result($result,$j,'startDate');
+		$eDate = mysql_result($result,$j,'endDate');
+		$id = mysql_result($result,$j,'id');	
+	
+		if ( $currentDate >= $sDate && $currentDate <= $eDate) {
+			return $id;
+		}
+	}
+}
+
+
+function daysLeft() {
+	$seasonID = currentSeason();
+	date_default_timezone_set('UTC');
+	$currentDate = date('Ymd');
+	$query = "SELECT id,startDate,endDate FROM season where id = " . $seasonID;
+	$result = mysql_query($query);
+	$rows = mysql_num_rows($result);
+	$seasonID = $rows - 1;
+	$eDate = mysql_result($result,$seasonID,'endDate');
+	$daysLeft = (strtotime($eDate) - (strtotime($currentDate))) / (60 * 60 * 24);
+
+	if ($daysLeft > 28) {
+		echo $daysLeft . " days left of the current season \n";
+	} else if ($daysLeft < 10) {
+		echo $daysLeft . " days to go people, get those games in \n";
+	} else echo $daysLeft . " days to go.";
+}
+
+function showCurrentDate() {
+	date_default_timezone_set('UTC');
+	$currentDate = date('Ymd');
+	echo $currentDate;
+}
+
 ?>

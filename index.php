@@ -1,5 +1,6 @@
 <?php
-require_once 'season.php';
+require_once 'login.php';
+require_once 'dbCheck.php';
 require_once 'functions.php';
 ?>
 
@@ -9,6 +10,8 @@ require_once 'functions.php';
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
+
+
 Welcome to the TomJohn league, for those guys in it, you have <?php echo daysLeft(); ?>
 <br><br>
 Recent results:
@@ -22,7 +25,7 @@ Add a new player <a href="adduser.php">here</a>
 <br><br>
 See player info <a href="playerinfo.php">here</a>
 <br><br>
-eee the leagues <a href="addseason1.php">here</a>
+See the leagues <a href="showleague.php">here</a>
 <br><br>
 
 
@@ -32,8 +35,6 @@ LeagueMasters go <a href="/admin/">here</a> for administration
 
 
 <?php
-require_once 'login.php';
-require_once 'dbCheck.php';
 
 // grab most recent 5 results from the db
 $query = "SELECT player1, player2, player1_score, player2_score FROM results LIMIT 0,5";
@@ -47,11 +48,11 @@ $rows = mysql_num_rows($result);
 //echo $last5;
       
 ?>
-
+<br><br><span class="text-normal">Recent Results</span><br><br>
 <table class="stats">
 <tr>
-   <td class="hed">Player 1</td>
-   <td class="hed">Player 2</td>
+   <td class="hed">Winner</td>
+   <td class="hed">Runner-Up</td>
 
 </tr>
 <?php

@@ -64,8 +64,7 @@ if ($p1g5 > $p2g5) {
 } else if ($p1g5 < $p2g5) {
         $p2_score++ ; 
 } 
-//echo $p1_score . '<br>';
-//echo $p2_score . '<br>';
+
 
 
 $seasonID = currentSeason();
