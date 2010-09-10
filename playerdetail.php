@@ -8,6 +8,7 @@
 <?php
 require_once 'login.php';
 require_once 'dbCheck.php';
+require_once 'functions.php';
 
 $query = "SELECT * FROM player";
 $result = mysql_query($query);
