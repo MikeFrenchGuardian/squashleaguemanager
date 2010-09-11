@@ -5,9 +5,9 @@
 </head>
 <body class="text-normal" bgcolor="#C0C0C0" padding="0">
 <?php
-require_once 'login.php';
-require_once 'dbCheck.php';
-require_once 'functions.php';
+require_once '/login.php';
+require_once '/dbCheck.php';
+require_once '/functions.php';
 ?>
 <div class="content">
 
