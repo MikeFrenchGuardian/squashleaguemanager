@@ -1,4 +1,4 @@
-<?php require_once '/includes/head.php'; ?>
+<?php require_once '../includes/head.php'; ?>
 
 
 
@@ -22,5 +22,5 @@ Add a new player <a href="adduser.php">here</a>
 <br><br>
 
 
-<?php require_once '/includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>
 
