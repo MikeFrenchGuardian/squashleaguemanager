@@ -72,9 +72,9 @@ function numberOfLeagues($season, $numOfLeagues) {
 
 
 <?php require_once '../includes/adminfooter.php'; ?>
-//Things to achieve:
+<!--//Things to achieve:
 
 //Season startdate enddate
 //Number of leagues
 //Number of players in each league
-//Players in each league
+//Players in each league -->
