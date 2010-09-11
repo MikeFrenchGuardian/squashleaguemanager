@@ -52,8 +52,12 @@ if ($p1g5 > $p2g5) {
 
 $seasonID = currentSeason();
 
+$duplicate = checkDuplicates($player1,$player2);
 
+if ($duplicate = "yes") {
+	echo "These two have already played this season, try again";
+} else {
 addResult($seasonID,$player1,$player2,$p1g1,$p1g2,$p1g3,$p1g4,$p1g5,$p2g1,$p2g2,$p2g3,$p2g4,$p2g5,$p1_score,$p2_score);
-
+}
 
 require_once '../includes/adminfooter.php'; ?>
