@@ -146,7 +146,7 @@ echo "The following has been added to the database </br>" . $query;
 
 function checkDuplicates($player1,$player2) {
 	//Checks to see if the result has already been added, in which case go to match edit screen.
-	$currSeason = getCurrentSeason();
+	$currSeason = currentSeason();
 	$query = "SELECT player1,player2 FROM results where seasonID = 3 and (player1 = $player1 and player2 = $player2) or (player1 = $player2 and player2 = $player1);";
 	$result = mysql_query($query);
 	$rows = mysql_num_rows($result);
