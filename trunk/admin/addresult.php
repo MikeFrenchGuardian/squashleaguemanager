@@ -1,7 +1,9 @@
 <?php require_once '../includes/adminhead.php';
 
 //$query = "SELECT id,name from player";
-$query = "select player.id, player.name, division.number from player,division,playerdiv where player.id=playerdiv.playerID and playerdiv.divisionid = division.id";
+
+$currSeason = currentSeason();
+$query = "select player.id, player.name, division.number from player,division,playerdiv where player.id=playerdiv.playerID and playerdiv.divisionid = division.id and division.seasonid = $currSeason";
 $result = mysql_query($query);
 
 $rows = mysql_num_rows($result);
