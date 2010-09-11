@@ -1,5 +1,6 @@
 <?php require_once '../includes/adminhead.php'; ?>
 
+<span class="text-header">Add Players to the divisions</span><br>
 <?php 
 if (isset($_POST['season'])) $seasonID = sanitizeString($_POST['season']);
 if (isset($_POST['leagueNum'])) $leagueNum = sanitizeString($_POST['leagueNum']);
@@ -12,7 +13,7 @@ if (isset($_POST['leagueNum'])) $leagueNum = sanitizeString($_POST['leagueNum'])
 //}	else {
 //	$seasonID = currentSeason();
 //}
-//echo $seasonID;
+
 
 // Insert leagues into DB.
 
@@ -21,39 +22,70 @@ if (isset($_POST['leagueNum'])) $leagueNum = sanitizeString($_POST['leagueNum'])
 //for ($h = 1; $h <= $leagueNum; ++$h) {
 //	createNewLeagues($seasonID,$h);
 //}
+if (isset($seasonID)) {
 $startDate = getSeasonStart($seasonID);
-echo "$leagueNum was added to season beginning $startDate";
 
 
-//echo "<SELECT NAME=\"playerdiv1\" MULTIPLE SIZE=$rowsdiv1>";
+echo $leagueNum . " leagues were added to season beginning " . $startDate;
+echo "<br>";
+}
+
+
+$seasonID = $_GET["season"];
+
+if (isset($seasonID)) {
+	$seasonID = $seasonID;
+}	else {
+	$seasonID = currentSeason();
+}
+
+
+
+
+for ($i = 1; $i <= 4; ++$i) {
+
+	echo "Division $i<br><br>";
+	echo "<table class=\"stats\">";
+	echo "<tr>";
+	echo "   <td class=\"hed\">Name</td>";
+	echo "   <td class=\"hed\">Current League</td>";
+	echo "</tr>";
 	
-//	$divSize = getDivSize($h,2);
-//	echo $h;
-	// Select players currently in the league
-//	for ($i = 1; $i <= $divSize; ++$i) {
-//	$querydiv1 = "select playerID from playerdiv where divisionID=$h";
-//	$resultdiv1 = mysql_query($querydiv1);
-//	$rowsdiv1 = mysql_num_rows($resultdiv1);
-//	$id = mysql_result($resultdiv1,$i,'playerID');
-//	$name = getPlayerName($playerID);
+	$leagueArray = "leagueArray" .$i;
+	$divSize = getDivSize($i,$seasonID);
+	$leagueArray = array();
 
-//	echo "<OPTION VALUE=\"$id\">$name"; 
-//	}
+		for ($j = 0 ; $j < $divSize ; ++$j) {
+			$playerID = getDivPlayers($i,$seasonID,$j);
+			$playerName = getPlayerName($playerID);
+			$playerLeague = getPlayerLeague($playerID,$seasonID);
+			$arrayNo = "player" .$j;
 
-	// Select players not currently in the league
-//	for ($j = 0; $j < $leagueNum; ++$j) {
-//	$query = "select player.id, player.name from player,playerdiv where player.id = playerdiv.playerID and playerdiv.divisionid != 2";
-//	$result = mysql_query($query);
-//	$rows = mysql_num_rows($result);
-//	$id2 = mysql_result($resultdiv1,$j,'id');
-//	$name2 = mysql_result($resultdiv1,$j,'name');
-//	echo "<OPTION VALUE=\"$id2\">$name2"; 
 	
-//	}
-//echo "</SELECT>";
-//}
+				$arrayNo = array
+				(
+						"playerID" => $playerID,
+						"player" => $playerName,
+						"league" => $playerLeague,
+				);	   
+
+			$leagueArray[] = $arrayNo;
+
+	}
+usort($leagueArray, "sortDescending");
+ 
+foreach ($leagueArray as $position) {
+	echo	'<tr>';
+	echo	'<td><a href="playerdetail.php?id=' . $position['playerID'] . '" class="text-normal">' . $position['player'] . '</td>';
+	echo	'<td class="text-normal"><select selected="' . $position['league'] . '">';
+    echo "<option>1</option><option>2</option><option>3</option><option>4</option></select></td>";
+	echo	'</tr>';
+  }
+	echo "</table>  <br><br>";
+
+
+}
 ?>
-//<input type="submit" />
 <?php require_once '../includes/adminfooter.php'; ?>
 
 

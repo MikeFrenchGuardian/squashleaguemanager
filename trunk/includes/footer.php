@@ -7,7 +7,7 @@
 	<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="playerinfo.php" class="text-normal">Player Info</a><br>
 	<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="rules.php" class="text-normal">Rules</a><br><br>
 
-<script type="text/javascript" src="http://cdn.widgetserver.com/syndication/subscriber/InsertWidget.js"></script><script type="text/javascript">if (WIDGETBOX) WIDGETBOX.renderWidget('2f41a594-c3d2-4984-9c01-363c10c8f62b');</script><noscript>Get the <a href="http://www.widgetbox.com/widget/squash-site-all-about-squash">Squash Site - all about Squash</a> widget and many other <a href="http://www.widgetbox.com/">great free widgets</a> at <a href="http://www.widgetbox.com">Widgetbox</a>! Not seeing a widget? (<a href="http://docs.widgetbox.com/using-widgets/installing-widgets/why-cant-i-see-my-widget/">More info</a>)</noscript>
+<!--<script type="text/javascript" src="http://cdn.widgetserver.com/syndication/subscriber/InsertWidget.js"></script><script type="text/javascript">if (WIDGETBOX) WIDGETBOX.renderWidget('2f41a594-c3d2-4984-9c01-363c10c8f62b');</script><noscript>Get the <a href="http://www.widgetbox.com/widget/squash-site-all-about-squash">Squash Site - all about Squash</a> widget and many other <a href="http://www.widgetbox.com/">great free widgets</a> at <a href="http://www.widgetbox.com">Widgetbox</a>! Not seeing a widget? (<a href="http://docs.widgetbox.com/using-widgets/installing-widgets/why-cant-i-see-my-widget/">More info</a>)</noscript>-->
 
 </span></div>
 <div class="divider"></div>
