@@ -4,7 +4,7 @@
 
 
 
-<br><br><span class="text-header">League Rules</span><br><br>
+<br><span class="text-header">League Rules</span><br><br>
 
 Any result received later than noon of the final day will not be counted.<br>Two players will be promoted / demoted in each league.  This can change with players joining / leaving the leagues.<br>If any players gives away 2 walkovers or more in one session, all other results will be wiped out.<br><br>
 

@@ -1,14 +1,4 @@
-<html>
-   <head>
-      <title>Player Info</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
-   <head>
-   <body>
-
-<?php
-require_once 'login.php';
-require_once 'functions.php';
-require_once 'dbCheck.php';
+<?php require_once 'includes/head.php'; 
 
 $query = "SELECT * FROM player";
 $result = mysql_query($query);
@@ -43,3 +33,4 @@ echo	'</tr>';
 ?>
 </table>
 
+<?php require_once 'includes/footer.php'; 
