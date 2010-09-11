@@ -2,22 +2,132 @@ body {
     margin-top: 0px;
 }
 
+.content { 
+    width: 881px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    padding-top: 0px;
+    height: 1400px; }
+
+.cruising {
+	background-image:  url(images/header.png);
+	float: left;
+ 	top: 0px;
+ 	width: 881px; 
+ 	height: 236px;
+ 	text-align: bottom; }
+
+	
+.logo-white {
+	
+	float: left;
+	font-family: Lucida Grande, Verdana, Arial;
+	font-size: 20pt;
+	font-weight: lighter; 
+	color: #ffffff;
+ 	margin-top: 190px; 
+ 	margin-left: 10px; }
+
+.logo-red {
+	float: left; 
+	font-family: Lucida Grande, Verdana, Arial;
+	font-size: 20pt;
+	font-weight: bold;
+	color: #A00000; 
+	z-index: 2;
+	margin-top: 190px; }
+	
+.text-area {
+	float: left;
+	width: 610px;
+	height: 1400px;
+	margin: 0px;
+	background-color: #ffffff; 
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-right: 30px; }
+
+.login {
+	float: left;
+	width: 211px;
+	height: 30px;
+	margin: 0px;
+ 	background-color: #888888 ;
+	z-index: 1000; 
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-right: 10px; }
+
+
+
+.menubar {
+	float: left;
+	width: 211px;
+	height: 1365px;
+	margin: 0px;
+	background-color: #E0E0E0;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-right: 10px; }
+
+
+.divider {
+	float: left;
+	width: 100%;
+	height: 1px;
+	margin: 0px;
+	background-color: #C0C0C0; }
+
+.bottom {
+	float: left;
+	width: 861px;
+	height: 50px;
+	margin: 0px;
+	background-color: #ffffff; 
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-right: 10px; }
+	
+.text-header {
+	font-family: Lucida Grande, Verdana, Arial; 
+	font-size: 14pt;
+	line-height: 140%;
+	font-weight: bold;
+	color: #909090; }
+	
+.text-medium-header {
+        font-family: Lucida Grande, Verdana, Arial;
+        font-size: 12pt;
+        line-height: 140%;
+        font-weight: bold;
+        color: #909090; }
+
+.text-semibold {
+	font-family: Lucida Grande, Verdana, Arial; 
+	font-size: 9pt;
+	line-height: 140%;
+	font-weight: bold;
+	color: #2a2828; }
+	
 .text-normal {
-        font-family: Lucida Grande, Arial; 
-        font-size: 9pt;
-        line-height: 170%;
-        color: black; }
-        
+	font-family: Lucida Grande, Arial; 
+	font-size: 9pt;
+	line-height: 170%;
+	color: black; }
+	
 .text-normal a:link { 
-        font-family: Lucida Grande, Arial; 
-        font-size: 9pt;
-        line-height: 170%;
-        text-decoration: none; }
+	font-family: Lucida Grande, Arial; 
+	font-size: 9pt;
+	line-height: 170%;
+	text-decoration: none; }
 .text-normal a:visited { 
-        text-decoration: none; } 
+	text-decoration: none; } 
 .text-normal a:hover { 
-        text-decoration: underline; }
-.text-normal a:active { }   
+	text-decoration: underline; }
+.text-normal a:active { }	
 
 
 

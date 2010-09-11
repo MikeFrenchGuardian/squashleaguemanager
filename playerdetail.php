@@ -1,21 +1,7 @@
-<html>
-   <head>
-      <title>Player Info</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
-   <head>
-   <body>
 
-<?php
-
-//if (isset($_GET['id'])) $id = sanitizeString($_GET['id']);
+<?php require_once 'includes/head.php';
 
 $id = $_GET["id"];
-
-
-require_once 'login.php';
-require_once 'dbCheck.php';
-require_once 'functions.php';
-
 $query = "select * from results where player1 = $id or player2 = $id";
 
 
@@ -23,7 +9,7 @@ $result = mysql_query($query);
 $rows = mysql_num_rows($result);
 
 ?>
-
+Result History:<br>
 <table class="stats">
 <tr>
    <td class="hed">Winner</td>
@@ -39,7 +25,7 @@ $rows = mysql_num_rows($result);
 <?php
 for ($j = 0 ; $j < $rows ; ++$j)
 {
-	$id = mysql_result($result,$j,'id');
+	
 	$winner = mysql_result($result,$j,'player1');
 	$loser = mysql_result($result,$j,'player2');
 	$winnerName = getPlayerName($winner);
@@ -69,7 +55,21 @@ echo 	'<td class="text-normal">' . $p1g5 . " " . $p2g5 . '</td>';
 
 echo	'</tr>';
 }
-?>
-</table>
+echo "</table>";
 
+
+$wins = getWins($id);
+$losses = getLosses($id);
+$average = $wins/$losses*100;
+$averagePointsPerSeason;
+
+
+echo "Total Wins:" . $wins;
+echo "<br>";
+echo "Total Defeats:" . $losses . "<br>";
+echo "Average Win %: " . $average;
+
+?>
+
+<?php require_once 'includes/footer.php'; ?>
 <!--SHould totally have loads of cool stuff like, w/l tiebreaks, league promotion / demotion graphs -->

@@ -1,17 +1,6 @@
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css" />
-<title>TomJohn :: League Tables</title>
-</head>
-<body>
+<?php require_once 'includes/head.php'; ?>
 
 <?php
-require_once 'login.php';
-require_once 'functions.php';
-require_once 'season.php';
-require_once 'dbCheck.php';
-
-
 $seasonID = currentSeason();
 $division = 1;
 
@@ -43,6 +32,7 @@ for ($i = 1; $i <= 4; ++$i) {
 	
 				$arrayNo = array
 				(
+						"playerID" => $playerID,
 						"player" => $playerName,
 						"gamesPlayed" => $gamesPlayed,
 						"wins" => $wins,
@@ -57,7 +47,7 @@ usort($leagueArray, "sortDescending");
  
 foreach ($leagueArray as $position) {
 	echo	'<tr>';
-	echo	'<td class="text-normal">' . $position['player'] . '</td>';
+	echo	'<td><a href="playerdetail.php?id=' . $position['playerID'] . '" class="text-normal">' . $position['player'] . '</td>';
 	echo	'<td class="text-normal">' . $position['gamesPlayed'] . '</td>';
 	echo	'<td class="text-normal">' . $position['wins'] . '</td>';
 	echo	'<td class="text-normal">' . $position['loses'] . '</td>';
@@ -71,6 +61,4 @@ foreach ($leagueArray as $position) {
 
 
 ?>
-
-</body>
-</html>
+<?php require_once 'includes/footer.php'; ?>
