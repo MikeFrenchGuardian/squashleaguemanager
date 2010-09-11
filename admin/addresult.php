@@ -1,6 +1,5 @@
 <?php
-require_once 'login.php';
-require_once 'dbCheck.php';
+require_once '../includes/adminhead.php';
 
 $query = "SELECT id,name from player";
 $result = mysql_query($query);
@@ -8,17 +7,12 @@ $result = mysql_query($query);
 $rows = mysql_num_rows($result);
 
 ?>
-
-<html>
-	<head>
-	<title>Add Score</title>
-	<body>
+<span class="text-header">Add a result</span><br><br>
 <form method="post" action="resultadded.php">
 <select name="player1" size="1">
-<option value=Nick Wales>Choose Player 1</option>
+<option value=Nick Wales>Winner</option>
 <?php 
 for ($j = 0; $j < $rows ; ++$j) {
-
 	echo '<option value="' . mysql_result($result,$j,'id') . '">' . mysql_result($result,$j,'name') . '</option>';
 }
 ?>
@@ -63,7 +57,9 @@ for ($j = 0; $j < $rows ; ++$j) {
 </select>
 <br>
 <select name="player2" size="1">
-<option value=Nick Wales>Choose Player 2</option>
+<option value=Nick Wales>Runner Up</option>
+
+
 <?php
 for ($j = 0; $j < $rows ; ++$j) {
 
@@ -109,6 +105,5 @@ for ($j = 0; $j < $rows ; ++$j) {
 </select>
 <input type="submit" />
 
-	</body>
-</html>
-
+<?php
+require_once '../includes/adminfooter.php'; ?>
