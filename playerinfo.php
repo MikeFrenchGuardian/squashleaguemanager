@@ -7,7 +7,7 @@
 
 <?php
 require_once 'login.php';
-
+require_once 'functions.php';
 require_once 'dbCheck.php';
 
 $query = "SELECT * FROM player";
@@ -34,7 +34,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 	$email = mysql_result($result,$j,'email');
 	
 echo 	'<tr>';
-echo 	'<td><a class="text-normal" href="/editplayer.php?id=' . $id . '">' . $name . '</td>';
+echo 	'<td><a class="text-normal" href="playerdetail.php?id=' . $id . '">' . $name . '</td>';
 echo 	'<td class="text-normal">' . $mobilephone . '</td>';
 echo 	'<td class="text-normal">' . $phone . '</td>';
 echo 	'<td><a class="text-normal" href="mailto:' . $email . '">' . $email . '</td>';
