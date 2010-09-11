@@ -29,6 +29,14 @@ function getLeagueWins($playerID,$seasonID) {
 	return $name;
 }
 
+// get all league victories
+function getWins($playerID) {
+	$query = "select player1 from results where player1 = $playerID";
+	$result = mysql_query($query);
+	$rows = mysql_num_rows($result);
+	return $rows;
+}
+
 // get specified league defeats
 function getLeagueLoses($playerID,$seasonID) {
 	$query = "select count(player2) from results where seasonID = $seasonID and player2 = $playerID";
@@ -37,6 +45,16 @@ function getLeagueLoses($playerID,$seasonID) {
 	$name = $row->{'count(player2)'};
 	return $name;
 }
+
+// get all league defeats
+function getLosses($playerID) {
+	$query = "select player2 from results where player2 = $playerID";
+	$result = mysql_query($query);
+	$rows = mysql_num_rows($result);
+	return $rows;
+}
+
+
 
 // get specified league games played #
 function getLeagueGamesPlayed($playerID,$seasonID) {

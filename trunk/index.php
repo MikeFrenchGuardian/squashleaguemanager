@@ -1,36 +1,10 @@
-<?php
-require_once 'login.php';
-require_once 'dbCheck.php';
-require_once 'functions.php';
-?>
+<?php require_once 'includes/head.php'; ?>
 
-<html>
-<head>
-<title>TomJohn League :: Home</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-<body class="text-normal">
 
-Welcome to the TomJohn league, for those guys in it, you have <?php echo daysLeft(); ?>
-<br><br>
-Recent results:
+<span class="text-header">Current League has <?php echo daysLeft(); ?></span><br><br>
 
-<span class="text-normal">
-Add a result <a href="addresult.php">here</a>
-<br><br>
-Create a new season <a href="addseason1.php">here</a>
-<br><br>
-Add a new player <a href="adduser.php">here</a>
-<br><br>
-See player info <a href="playerinfo.php">here</a>
-<br><br>
-See the leagues <a href="showleague.php">here</a>
 <br><br>
 
-
-
-
-LeagueMasters go <a href="/admin/">here</a> for administration
 
 
 <?php
@@ -73,8 +47,5 @@ echo "</table> <br><br>";
 
 
 ?>
-<script type="text/javascript" src="http://cdn.widgetserver.com/syndication/subscriber/InsertWidget.js"></script><script type="text/javascript">if (WIDGETBOX) WIDGETBOX.renderWidget('2f41a594-c3d2-4984-9c01-363c10c8f62b');</script><noscript>Get the <a href="http://www.widgetbox.com/widget/squash-site-all-about-squash">Squash Site - all about Squash</a> widget and many other <a href="http://www.widgetbox.com/">great free widgets</a> at <a href="http://www.widgetbox.com">Widgetbox</a>! Not seeing a widget? (<a href="http://docs.widgetbox.com/using-widgets/installing-widgets/why-cant-i-see-my-widget/">More info</a>)</noscript>
-      
 
-</body>
-</html>
+<?php require_once 'includes/footer.php'; ?>
