@@ -41,16 +41,16 @@ for ($i = 1; $i <= 4; ++$i) {
 			$points = getLeaguePoints($playerID,$seasonID);
 			$arrayNo = "player" .$j;
 	
-			    $arrayNo = array
-			    (
+				$arrayNo = array
+				(
 						"player" => $playerName,
 						"gamesPlayed" => $gamesPlayed,
 						"wins" => $wins,
 						"loses" => $loses,
 						"points" => $points,
-       			);	   
+				);	   
 
-		$leagueArray[] = $arrayNo;
+			$leagueArray[] = $arrayNo;
 
 	}
 usort($leagueArray, "sortDescending");
