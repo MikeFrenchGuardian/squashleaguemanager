@@ -1,19 +1,9 @@
-<html>
-   <head>
-      <title>Create Leagues Divisions</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
-   <head>
-   <body>
-
-<?php
-require_once 'login.php';
-require_once 'dbCheck.php';
-require_once 'functions.php';
+<?php require_once '../includes/adminhead.php'; ?>
 
 // Get season startdates
 // We'll want to reverse this before it gets too long
 
-
+<?php 
 $query = "select id,startdate from season";
 $result = mysql_query($query);
 $rows = mysql_num_rows($result);
@@ -43,3 +33,4 @@ for ($j = 0; $j < $rows ; ++$j) {
 </form>
 
 
+<?php require_once '../includes/adminfooter.php'; ?>
