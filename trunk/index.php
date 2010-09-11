@@ -3,25 +3,25 @@
 
 <span class="text-header">Current League has <?php echo daysLeft(); ?></span><br><br>
 
-<br><br>
+
 
 
 
 <?php
 
 // grab most recent 5 results from the db
-$query = "SELECT player1, player2, player1_score, player2_score FROM results LIMIT 0,5";
+$query = "SELECT player1, player2, player1_score, player2_score FROM results"; // LIMIT 0,5";
 $result = mysql_query($query);
 $rows = mysql_num_rows($result);
 
 
 
-//$last5 = $rows - 5; not required anymore... db going the other way?!?
+$last5 = $rows-5; //not required anymore... db going the other way?!?
 
-//echo $last5;
+
       
 ?>
-<br><br><span class="text-normal">Recent Results</span><br><br>
+<span class="text-normal">Recent Results</span><br><br>
 <table class="stats">
 <tr>
    <td class="hed">Winner</td>
@@ -29,7 +29,7 @@ $rows = mysql_num_rows($result);
 
 </tr>
 <?php
-for ($j = 0 ; $j < 5 ; ++$j)
+for ($j = $last5 ; $j < $rows ; ++$j)
 {
         $player1 = mysql_result($result,$j,'player1');
         $player2 = mysql_result($result,$j,'player2');
