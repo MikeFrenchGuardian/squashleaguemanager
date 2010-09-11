@@ -1,19 +1,22 @@
 <?php
 
 function getDivSize($division,$seasonID) {
-		$query = "select count(playerdiv.playerID) from playerdiv,division where  playerdiv.divisionID=division.number and division.seasonid=$seasonID and playerdiv.divisionid=$division";
+	//	$query = "select playerdiv.playerID from playerdiv,division where  playerdiv.divisionID=division.number and division.seasonid=$seasonID and playerdiv.divisionid=$division";
+		$query = "select playerdiv.playerid from playerdiv,division where playerdiv.divisionid = division.id and division.number = $division and division.seasonid=$seasonID";
 		$result = mysql_query($query);
-		$row = mysql_fetch_object($result);
-		$name = $row->{'count(playerdiv.playerID)'};
-		return $name;
+		$rows = mysql_num_rows($result);
+//		$row = mysql_fetch_object($result);
+//		$name = $row->{'count(playerdiv.playerID)'};
+		return $rows;
 }
 		
 function getDivPlayers($division,$seasonID,$divPosition) {
 // Gets player list from selected division and season.
-		$query = "select playerdiv.playerID from playerdiv,division where  playerdiv.divisionID=division.number and division.seasonid=$seasonID and playerdiv.divisionid=$division LIMIT $divPosition,1";
+//		$query = "select playerdiv.playerID from playerdiv,division where  playerdiv.divisionID=division.number and division.seasonid=$seasonID and playerdiv.divisionid=$division LIMIT $divPosition,1";
+		$query = "select playerdiv.playerid from playerdiv,division where playerdiv.divisionid = division.id and division.number = $division and division.seasonid=$seasonID LIMIT $divPosition,1";
 		$result = mysql_query($query);
 		$row = mysql_fetch_object($result);
-		$name = $row->playerID;
+		$name = $row->playerid;
 		return $name;
 }
 

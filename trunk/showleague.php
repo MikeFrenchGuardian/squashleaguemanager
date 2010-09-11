@@ -12,67 +12,50 @@ require_once 'season.php';
 require_once 'dbCheck.php';
 
 
-$seasonID = CurrentSeason();
+$seasonID = currentSeason();
 $division = 1;
 
 
+for ($i = 1; $i <= 4; ++$i) {
 
-$divSize = getDivSize($division,$seasonID);
-
-// Get players in the div... feed them into the associative array
-
-for ($i = 0; $i < $divSize; ++$i) {
-	echo getDivPlayers($division,$seasonID);
+	echo "Division $i<br><br>";
+	echo "<table class=\"stats\">";
+	echo "<tr>";
+	echo "   <td class=\"hed\">Name</td>";
+	echo "   <td class=\"hed\">Games Played</td>";
+	echo "   <td class=\"hed\">Wins</td>";
+	echo "   <td class=\"hed\">Losses</td>";
+	echo "   <td class=\"hed\">Points</td>";
+	echo "</tr>";
 	
-}
+	$leagueArray = "leagueArray" .$i;
+	$divSize = getDivSize($i,$seasonID);
+	$leagueArray = array();
 
-
-
-$divisionID=2;
-$divSize = getDivSize(1,2);
-
-//Create the arrays for each Div
-$league = array();
-echo "Division 1<br><br>";
-
-?>
-<table class="stats">
-<tr>
-   <td class="hed">Name</td>
-   <td class="hed">Games Played</td>
-   <td class="hed">Wins</td>
-   <td class="hed">Losses</td>
-   <td class="hed">Points</td>
-</tr>
-
-<?php
-for ($j = 0 ; $j < $divSize ; ++$j) {
-	$playerID = getDivPlayers(1,2,$j);
-	$playerName = getPlayerName($playerID);
-	$gamesPlayed = getLeagueGamesPlayed($playerID,$divisionID);
-	$wins = getLeagueWins($playerID,$divisionID);
-	$loses = getLeagueLoses($playerID,$divisionID);
-	$points = getLeaguePoints($playerID,$divisionID);
-	$arrayNo = "player" .$j;
+		for ($j = 0 ; $j < $divSize ; ++$j) {
+			$playerID = getDivPlayers($i,$seasonID,$j);
+			$playerName = getPlayerName($playerID);
+			$gamesPlayed = getLeagueGamesPlayed($playerID,$seasonID);
+			$wins = getLeagueWins($playerID,$seasonID);
+			$loses = getLeagueLoses($playerID,$seasonID);
+			$points = getLeaguePoints($playerID,$seasonID);
+			$arrayNo = "player" .$j;
 	
-	    $arrayNo = array
-	    (
-	            "player" => $playerName,
-    	        "gamesPlayed" => $gamesPlayed,
-			    "wins" => $wins,
-       	     	"loses" => $loses,
-       	     	"points" => $points,
-       	);	   
+			    $arrayNo = array
+			    (
+			            "player" => $playerName,
+		   	 	        "gamesPlayed" => $gamesPlayed,
+					    "wins" => $wins,
+       		   		  	"loses" => $loses,
+       			   	  	"points" => $points,
+       			);	   
 
-$league[] = $arrayNo;
+		$leagueArray[] = $arrayNo;
 
-}
-
-
-
-usort($league, "sortDescending");
+	}
+usort($leagueArray, "sortDescending");
  
-foreach ($league as $position) {
+foreach ($leagueArray as $position) {
 	echo	'<tr>';
 	echo	'<td class="text-normal">' . $position['player'] . '</td>';
 	echo	'<td class="text-normal">' . $position['gamesPlayed'] . '</td>';
@@ -81,7 +64,12 @@ foreach ($league as $position) {
 	echo	'<td class="text-normal">' . $position['points'] . '</td>';
 	echo	'</tr>';
   }
-	echo "</table>";
+	echo "</table>  <br><br>";
+
+
+}
+
+
 ?>
 
 </body>

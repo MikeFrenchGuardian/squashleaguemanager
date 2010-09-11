@@ -16,25 +16,26 @@ if (isset($_POST['leagueNum'])) $leagueNum = sanitizeString($_POST['leagueNum'])
 
 
 // Loop for each league
-for ($h = 1; $h =< $leagueNum; ++$h) {
+for ($h = 1; $h <= $leagueNum; ++$h) {
 
-<SELECT NAME="playerdiv1" MULTIPLE SIZE=<?php echo $rowsdiv1 ?>>
+echo "<SELECT NAME=\"playerdiv1\" MULTIPLE SIZE=$rowsdiv1>";
 	
-	
+	$divSize = getDivSize($h,2);
+	echo $h;
 	// Select players currently in the league
-	for ($i = 0; $i < $leagueNum; ++$i) {
+	for ($i = 1; $i <= $divSize; ++$i) {
 	$querydiv1 = "select playerID from playerdiv where divisionID=$h";
 	$resultdiv1 = mysql_query($querydiv1);
 	$rowsdiv1 = mysql_num_rows($resultdiv1);
-	$id = mysql_result($resultdiv1,$i,'id');
-	$name = mysql_result($resultdiv1,$i,'name');
+	$id = mysql_result($resultdiv1,$i,'playerID');
+	$name = getPlayerName($playerID);
 
 	echo "<OPTION VALUE=\"$id\">$name"; 
 	}
 
 	// Select players not currently in the league
 	for ($j = 0; $j < $leagueNum; ++$j) {
-	$query = "select player.id, player.name from player,playerdiv where player.id = playerdiv.playerID and playerdiv.divisionid !=";
+	$query = "select player.id, player.name from player,playerdiv where player.id = playerdiv.playerID and playerdiv.divisionid != 2";
 	$result = mysql_query($query);
 	$rows = mysql_num_rows($result);
 	$id2 = mysql_result($resultdiv1,$j,'id');
@@ -42,23 +43,17 @@ for ($h = 1; $h =< $leagueNum; ++$h) {
 	echo "<OPTION VALUE=\"$id2\">$name2"; 
 	
 	}
-?>
-
-
-<SELECT NAME="playerdiv1" MULTIPLE SIZE=<?php echo $rowsdiv1 ?>>
-<?php
-for ($k = 0 ; $k < $rowsdiv1 ; ++$k) {
-	$id = mysql_result($resultdiv1,$j,'id');
-	$name = mysql_result($resultdiv1,$j,'name');
-
-	echo "<OPTION VALUE=\"$id\">$name"; 
-}
-
-
-
 echo "</SELECT>";
-
+}
 ?>
+
+
+
+
+
+
+
+
 
 
 
