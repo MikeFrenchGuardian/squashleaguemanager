@@ -152,9 +152,9 @@ function checkDuplicates($player1,$player2) {
 	$rows = mysql_num_rows($result);
 
 		if ($rows > 0) {
-			$dup = yes;
+			$dup = "yes";
 		} else {
-			$dup = no;
+			$dup = "no";
 		}
 		return $dup;
 	
