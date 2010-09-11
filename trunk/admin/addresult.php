@@ -1,6 +1,7 @@
 <?php require_once '../includes/adminhead.php';
 
-$query = "SELECT id,name from player";
+//$query = "SELECT id,name from player";
+$query = "select player.id, player.name, division.number from player,division,playerdiv where player.id=playerdiv.playerID and playerdiv.divisionid = division.id";
 $result = mysql_query($query);
 
 $rows = mysql_num_rows($result);
@@ -12,7 +13,7 @@ $rows = mysql_num_rows($result);
 <option value=Nick Wales>Winner</option>
 <?php 
 for ($j = 0; $j < $rows ; ++$j) {
-	echo '<option value="' . mysql_result($result,$j,'id') . '">' . mysql_result($result,$j,'name') . '</option>';
+	echo '<option value="' . mysql_result($result,$j,'id') . '">Div:' .  mysql_result($result,$j,'number') . " " .  mysql_result($result,$j,'name') . '</option>';
 }
 ?>
 
@@ -61,8 +62,8 @@ for ($j = 0; $j < $rows ; ++$j) {
 
 <?php
 for ($j = 0; $j < $rows ; ++$j) {
-
-        echo '<option value="' . mysql_result($result,$j,'id') . '">' . mysql_result($result,$j,'name') . '</option>';
+		echo '<option value="' . mysql_result($result,$j,'id') . '">Div:' .  mysql_result($result,$j,'number') . " " .  mysql_result($result,$j,'name') . '</option>';
+//        echo '<option value="' . mysql_result($result,$j,'id') . '">' . mysql_result($result,$j,'name') . '</option>';
 }
 ?>
 
