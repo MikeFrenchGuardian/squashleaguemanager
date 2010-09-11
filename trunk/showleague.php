@@ -43,11 +43,11 @@ for ($i = 1; $i <= 4; ++$i) {
 	
 			    $arrayNo = array
 			    (
-			            "player" => $playerName,
-		   	 	        "gamesPlayed" => $gamesPlayed,
-					    "wins" => $wins,
-       		   		  	"loses" => $loses,
-       			   	  	"points" => $points,
+						"player" => $playerName,
+						"gamesPlayed" => $gamesPlayed,
+						"wins" => $wins,
+						"loses" => $loses,
+						"points" => $points,
        			);	   
 
 		$leagueArray[] = $arrayNo;
