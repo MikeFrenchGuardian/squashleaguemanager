@@ -54,13 +54,11 @@ $seasonID = currentSeason();
 
 $duplicate = checkDuplicates($player1,$player2);
 
-echo $duplicate;
-
-//if ($duplicate = "yes") {
-//	echo "These two have already played this season, try again";
-//} else {
-//	echo $dup;	
-//addResult($seasonID,$player1,$player2,$p1g1,$p1g2,$p1g3,$p1g4,$p1g5,$p2g1,$p2g2,$p2g3,$p2g4,$p2g5,$p1_score,$p2_score);
-//}
+if ($duplicate == "yes") {
+	echo "These two have already played this season, try again";
+} else {
+	echo "Your result has been added";	
+	addResult($seasonID,$player1,$player2,$p1g1,$p1g2,$p1g3,$p1g4,$p1g5,$p2g1,$p2g2,$p2g3,$p2g4,$p2g5,$p1_score,$p2_score);
+}
 
 require_once '../includes/adminfooter.php'; ?>
