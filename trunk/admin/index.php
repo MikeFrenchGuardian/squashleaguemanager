@@ -1,22 +1,7 @@
-<html>
-<head>
-<title>TomJohn League</title>
-<link rel="stylesheet" type="text/css" href="../style.css" />
-</head>
-<body class="text-normal" bgcolor="#C0C0C0" padding="0">
-<?php
-require_once '../login.php';
-require_once '../dbCheck.php';
-require_once '../functions.php';
-?>
-<div class="content">
+<?php require_once '/includes/head.php'; ?>
 
-<div class="cruising">
-<span class="logo-white">TomJohn </span><span class="logo-red"> League</span>
 
-	
-</div>
-<div class="text-area">
+
 <div class="content">
 
 <span class="text-header">Administration Area</span><br><br>
@@ -35,3 +20,7 @@ Create a new season <a href="addseason1.php">here</a>
 <br><br>
 Add a new player <a href="adduser.php">here</a>
 <br><br>
+
+
+<?php require_once '/includes/footer.php'; ?>
+
