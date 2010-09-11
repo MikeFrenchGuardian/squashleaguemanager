@@ -1,5 +1,4 @@
-<?php
-require_once '../includes/adminhead.php';
+<?php require_once '../includes/adminhead.php';
 
 $query = "SELECT id,name from player";
 $result = mysql_query($query);
