@@ -1,8 +1,16 @@
 <?php require_once 'includes/head.php'; ?>
 
 <?php
-$seasonID = currentSeason();
-$division = 1;
+
+$seasonID = $_GET["season"];
+
+if (isset($seasonID)) {
+	$seasonID = $seasonID;
+}	else {
+	$seasonID = currentSeason();
+}
+
+
 
 
 for ($i = 1; $i <= 4; ++$i) {

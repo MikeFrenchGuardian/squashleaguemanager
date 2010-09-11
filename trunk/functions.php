@@ -197,9 +197,9 @@ function daysLeft() {
 	$daysLeft = (strtotime($eDate) - (strtotime($currentDate))) / (60 * 60 * 24);
 
 	if ($daysLeft > 28) {
-		echo $daysLeft . " days left of the current season \n";
+		echo $daysLeft . " days to go \n";
 	} else if ($daysLeft < 10) {
-		echo $daysLeft . " days to go people, get those games in \n";
+		echo $daysLeft . " days to go people, get those games in! \n";
 	} else echo $daysLeft . " days to go.";
 }
 
