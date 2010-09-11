@@ -7,14 +7,14 @@ Season Start Date
 <?php
 date_default_timezone_set('UTC');
 //get class into the page
-require_once('calendar/classes/tc_calendar.php');
+require_once('../calendar/classes/tc_calendar.php');
 
 //instantiate class and set properties
 
 	  $myCalendar = new tc_calendar("date1");
-	  $myCalendar->setIcon("calendar/images/iconCalendar.gif");
+	  $myCalendar->setIcon("../calendar/images/iconCalendar.gif");
 	  $myCalendar->setDate(date('d'), date('m'), date('Y'));
-	  $myCalendar->setPath("calendar/");
+	  $myCalendar->setPath("../calendar/");
 	  $myCalendar->setYearInterval(1970, 2020);
 	  $myCalendar->dateAllow('2008-05-13', '2015-03-01', false);
 	  $myCalendar->startMonday(true);
@@ -30,9 +30,9 @@ require_once('calendar/classes/tc_calendar.php');
 Season End Date
 <?php
 $myCalendar = new tc_calendar("date2");
-	  $myCalendar->setIcon("calendar/images/iconCalendar.gif");
+	  $myCalendar->setIcon("../calendar/images/iconCalendar.gif");
 	  $myCalendar->setDate(date('d'), date('m'), date('Y'));
-	  $myCalendar->setPath("calendar/");
+	  $myCalendar->setPath("../calendar/");
 	  $myCalendar->setYearInterval(1970, 2020);
 	  $myCalendar->dateAllow('2008-05-13', '2015-03-01', false);
 	  $myCalendar->startMonday(true);
