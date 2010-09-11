@@ -9,7 +9,7 @@ $result = mysql_query($query);
 $rows = mysql_num_rows($result);
 
 ?>
-Result History:<br>
+<span class="text-header">Result History:</span><br>
 <table class="stats">
 <tr>
    <td class="hed">Winner</td>
@@ -62,12 +62,17 @@ $wins = getWins($id);
 $losses = getLosses($id);
 $average = $wins/$losses*100;
 $averagePointsPerSeason;
-
-
-echo "Total Wins:" . $wins;
-echo "<br>";
+?>
+<span class="text-header">Player Stats:</span><br>
+<?php
+echo "Total Wins:" . $wins . "<br>";
 echo "Total Defeats:" . $losses . "<br>";
-echo "Average Win %: " . $average;
+?>
+<span class="text-header">League Movement</span><br>
+Coming soon:
+
+<?php
+
 
 ?>
 
