@@ -54,6 +54,16 @@ function getLosses($playerID) {
 	return $rows;
 }
 
+// get player league
+function getPlayerLeague($playerID,$seasonID) {
+	$query = "select division.number from division,playerdiv where division.id = playerdiv.divisionid AND playerdiv.playerid= $playerID AND division.seasonid = $seasonID";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->number;
+	return $name;
+	//return $query;
+}
+
 
 
 // get specified league games played #
@@ -210,11 +220,9 @@ function showCurrentDate() {
 }
 
 function createNewLeagues($seasonID,$leagueNumber) {
-	for ($j = 0 ; $j < $leagueNumber ; ++$j)
-	{
-	$query = "INSERT INTO division number,seasonID VALUES  (\"$j\",\"$seasonID\")";
+	$query = "INSERT INTO division (number,seasonID) VALUES  ($leagueNumber,$seasonID)";
 	$result = mysql_query($query);
-	}
+	echo $query;
 }
 	
 function sanitizeString($var)
@@ -224,4 +232,16 @@ function sanitizeString($var)
         $var = strip_tags($var);
         return $var;
 } 
+
+function getSeasonStart($seasonID) {
+		$query = "SELECT startDate FROM season where id = $seasonID";
+		$result = mysql_query($query);
+		$row = mysql_fetch_object($result);
+		$name = $row->startDate;
+		return $name;
+
+}
+
+
+
 ?>
