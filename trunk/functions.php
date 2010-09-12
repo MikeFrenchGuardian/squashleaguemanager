@@ -9,7 +9,15 @@ function getDivSize($division,$seasonID) {
 //		$name = $row->{'count(playerdiv.playerID)'};
 		return $rows;
 }
-		
+
+function numLeagues($seasonID) {
+	$query = "select number from division where seasonID = $seasonID";
+	$result = mysql_query($query);
+	$rows = mysql_num_rows($result);
+	return $rows;
+}
+
+	
 function getDivPlayers($division,$seasonID,$divPosition) {
 // Gets player list from selected division and season.
 //		$query = "select playerdiv.playerID from playerdiv,division where  playerdiv.divisionID=division.number and division.seasonid=$seasonID and playerdiv.divisionid=$division LIMIT $divPosition,1";
