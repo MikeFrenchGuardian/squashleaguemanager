@@ -250,6 +250,13 @@ function getSeasonStart($seasonID) {
 
 }
 
+function getTotalPlayers() {
+		$query = "SELECT id from player";
+		$result = mysql_query($query);
+		$rows = mysql_num_rows($result);
+		return $rows;
+}
+
 
 
 ?>
