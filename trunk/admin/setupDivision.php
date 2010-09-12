@@ -48,6 +48,7 @@ for ($i = 1; $i <= 4; ++$i) {
 	echo "<table class=\"stats\">";
 	echo "<tr>";
 	echo "   <td class=\"hed\">Name</td>";
+	echo "   <td class=\"hed\">Points</td>";
 	echo "   <td class=\"hed\">Current League</td>";
 	echo "</tr>";
 	
@@ -75,20 +76,20 @@ for ($i = 1; $i <= 4; ++$i) {
 
 	}
 usort($leagueArray, "sortDescending");
- 
+
+// setup the leagues
 foreach ($leagueArray as $position) {
 	echo	'<tr>';
 	echo	'<td><a href="playerdetail.php?id=' . $position['playerID'] . '" class="text-normal">' . $position['player'] . '</td>';
+	echo	'<td class="text-normal">' . $position['points'] . '</td>';
 	echo	'<td class="text-normal"><select selected="' . $position['league'] . '">';
+	// create the dynamic dropdowns 
 	for ($j = 1; $j <= $leagueCount ; ++$j ) {
 		if ($j==$i) {
 			echo "<option value=" . $j . " selected>" . $j . " </option>";
 		} else {
 			echo "<option value=" . $j . ">" . $j . " </option>";
 		}	
- //   echo "<option>2</option>";
- //   echo "<option>3</option>";
- //   echo "<option>4</option>";
 	}
     echo "</select></td>";
 	echo	'</tr>';
