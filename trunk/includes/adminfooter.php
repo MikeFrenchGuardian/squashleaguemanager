@@ -2,7 +2,7 @@
 <div class="login">
 	<img src="../images/blue_arrow.png" height="8px" width="8px"><a href="admin" class="text-normal">&nbsp; Admin area</a></div>
 <div class="menubar">
-	<img src="../images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="/admin/index.php" class="text-normal">Homepage</a><br>
+	<img src="../images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="../admin/index.php" class="text-normal">Homepage</a><br>
 	<img src="../images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="../showleague.php" class="text-normal">Leagues</a><br>
 	<img src="../images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="../playerinfo.php" class="text-normal">Player Info</a><br>
 	<img src="../images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="../rules.php" class="text-normal">Rules</a><br><br>
