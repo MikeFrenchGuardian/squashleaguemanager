@@ -1,8 +1,9 @@
 <?php require_once '../includes/adminhead.php'; ?>
 
-<span class="text-header">New Result added</span><br><br>
+<span class="text-header">Players Added</span><br><br>
 
 <?php
+$seasonID="4";
 
 $totalPlayers = getTotalPlayers();
 
@@ -10,16 +11,14 @@ for ($i = 1; $i <= $totalPlayers; ++$i) {
 	$playerID = $i;
 	if ((isset($_GET[$i]))) {
 		$div = $_GET[$i];
-		echo $playerID . " and " . $div  .  "<br>";
+		$name = getPlayerName($playerID);
+		$divisionID = getDivisionID($seasonID,$div);
+
+		echo "<br>" . $name . " was added to division " . $div ."<br>";
+		addPlayerToDiv($playerID,$divisionID);
 	} else {
 		echo "This player isn't in a league <br>";
 	}
-
-//	if (isset($_GET['$i'])) $div = sanitizeString($_GET['$i']);
-		// put data into array
-		// player and league
-//		echo $playerID . " and " . $div  .  "<br>";
-//		echo $div;
 
 }
 
