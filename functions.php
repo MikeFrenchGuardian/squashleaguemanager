@@ -257,6 +257,18 @@ function getTotalPlayers() {
 		return $rows;
 }
 
+function addPlayerToDiv($playerID,$divisionID) {
+		$query = "INSERT INTO playerdiv (divisionID,playerID) values ($divisionID,$playerID)";
+		$result = mysql_query($query);
+		echo $query;
+}
 
+function getDivisionID($seasonID,$div) {
+		$query = "select id from division where number=$div and seasonid=$seasonID";
+		$result = mysql_query($query);
+		$row = mysql_fetch_object($result);
+		$name = $row->id;
+		return $name;
+}
 
 ?>
