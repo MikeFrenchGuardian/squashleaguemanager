@@ -17,7 +17,7 @@ for ($i = 1; $i <= $totalPlayers; ++$i) {
 		echo "<br>" . $name . " was added to division " . $div ."<br>";
 		addPlayerToDiv($playerID,$divisionID);
 	} else {
-		echo "This player isn't in a league <br>";
+		echo "<br>This " . $name . " isn't in a league <br>";
 	}
 
 }

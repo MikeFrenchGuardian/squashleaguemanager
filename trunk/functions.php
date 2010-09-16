@@ -260,7 +260,7 @@ function getTotalPlayers() {
 function addPlayerToDiv($playerID,$divisionID) {
 		$query = "INSERT INTO playerdiv (divisionID,playerID) values ($divisionID,$playerID)";
 		$result = mysql_query($query);
-		echo $query;
+//		echo $query;
 }
 
 function getDivisionID($seasonID,$div) {
