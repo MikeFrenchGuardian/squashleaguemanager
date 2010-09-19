@@ -1,9 +1,9 @@
 <?php require_once '../includes/adminhead.php'; ?>
 
-// Get season startdates
-// We'll want to reverse this before it gets too long
 
+<span class="text-normal">Create Leagues in a season</span><br><br>
 <?php 
+
 $query = "select id,startdate from season";
 $result = mysql_query($query);
 $rows = mysql_num_rows($result);
