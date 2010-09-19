@@ -15,6 +15,10 @@ if (isset($seasonID)) {
 		createNewLeagues($seasonID,$h);
 	}
 } else {
+	$query = "select id,startdate from season";
+	$result = mysql_query($query);
+	$rows = mysql_num_rows($result);
+	$currSeason = currentSeason();
 	$seasonID = currentSeason();
 }
 
