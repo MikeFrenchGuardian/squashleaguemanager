@@ -23,6 +23,20 @@ if (isset($seasonID)) {
 }
 
 
+// Setup the season drop down, will want to reverse the order eventually
+$query = "select id,startdate from season";
+$result = mysql_query($query);
+$rows = mysql_num_rows($result);
+$currSeason = currentSeason();
+
+
+$seasonQuery = "select startdate from season where id=$currSeason";
+$seasonResult = mysql_query($seasonQuery);
+		$row = mysql_fetch_object($seasonResult);
+		$name = $row->{'startdate'};
+
+
+
 // Insert leagues into DB.
 
 
