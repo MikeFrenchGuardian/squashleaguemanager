@@ -44,7 +44,7 @@ $seasonResult = mysql_query($seasonQuery);
 //for ($h = 1; $h <= $leagueNum; ++$h) {
 //	createNewLeagues($seasonID,$h);
 //}
-if (isset($seasonID)) {
+if (isset($_POST['season'])) {
 $startDate = getSeasonStart($seasonID);
 
 
