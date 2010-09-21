@@ -1,9 +1,9 @@
 <?php require_once '../includes/adminhead.php'; ?>
 
 
-<span class="text-normal">Create Leagues in a season</span><br><br>
+<span class="text-header">Create Season: Step 2</span><br><br>
 <?php 
-
+	// Setup the season drop down, will want to reverse the order eventually
 $query = "select id,startdate from season";
 $result = mysql_query($query);
 $rows = mysql_num_rows($result);
@@ -17,6 +17,8 @@ $seasonResult = mysql_query($seasonQuery);
 
 ?>
 <form method="post" action="setupDivision.php">
+
+	// Season Drop Down
 <select name="season" size="1">
 <option value=<?php echo $currSeason ?>><?php echo $name ?></option>
 <?php 
@@ -27,6 +29,7 @@ for ($j = 0; $j < $rows ; ++$j) {
 ?> 
 </select>
 <br><br>
+	<!-- League entry box -->
 <span class="text-normal">Number of leagues: </span><input type="text" name="leagueNum" />
 <br>
 <input type="submit">
