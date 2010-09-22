@@ -5,11 +5,6 @@
 
 
 
-
-
-
-
-
 <span class="text-normal">
 Add a result <a href="addresult.php">here</a>
 <br><br>

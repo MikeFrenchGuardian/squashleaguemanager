@@ -64,8 +64,10 @@ Choose season to setup:
 <option value=<?php echo $currSeason ?>><?php echo $name ?></option>
 <?php 
 for ($j = 0; $j < $rows ; ++$j) {
-
-	echo '<option value="' . mysql_result($result,$j,'id') . '">' . mysql_result($result,$j,'startdate') . '</option>';
+	$startDate = mysql_result($result,$j,'startdate');
+	$convertedDate = prettyDate($startDate);
+	
+	echo '<option value="' . mysql_result($result,$j,'id') . '">' . $convertedDate . '</option>';
 }
 ?> 
 </select>
