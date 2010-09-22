@@ -233,8 +233,7 @@ function createNewLeagues($seasonID,$leagueNumber) {
 	echo $query;
 }
 	
-function sanitizeString($var)
-{
+function sanitizeString($var) {
         $var = stripslashes($var);
         $var = htmlentities($var);
         $var = strip_tags($var);
@@ -247,7 +246,6 @@ function getSeasonStart($seasonID) {
 		$row = mysql_fetch_object($result);
 		$name = $row->startDate;
 		return $name;
-
 }
 
 function getTotalPlayers() {
@@ -269,6 +267,40 @@ function getDivisionID($seasonID,$div) {
 		$row = mysql_fetch_object($result);
 		$name = $row->id;
 		return $name;
+}
+
+function prettyDate($date) {
+		$year = substr($date, 0,4);
+		$monthNo = substr($date, 4,-2);
+		$day = substr($date, 6);
+		if ($monthNo == "1") {
+			$month = "Jan";
+		} else if ($monthNo == "2") {
+			$month = "Feb";
+		} else if ($monthNo == "3") {
+			$month = "Mar";
+		} else if ($monthNo == "4") {
+			$month = "Apr";
+		} else if ($monthNo == "5") {
+			$month = "May";
+		} else if ($monthNo == "6") {
+			$month = "Jun";
+		} else if ($monthNo == "7") {
+			$month = "Jul";
+		} else if ($monthNo == "8") {
+			$month = "Aug";
+		} else if ($monthNo == "9") {
+			$month = "Sep";
+		} else if ($monthNo == "10") {
+			$month = "Oct";
+		} else if ($monthNo == "11") {
+			$month = "Nov";
+		} else if ($monthNo == "12") {
+			$month = "Dec";
+		}
+			
+		$fullDate = $day . " " . $month . " " . $year;
+		return $fullDate;
 }
 
 ?>
