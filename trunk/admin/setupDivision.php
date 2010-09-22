@@ -1,6 +1,6 @@
 <?php require_once '../includes/adminhead.php'; ?>
 
-<span class="text-header">Add Players to the divisions</span><br>
+<span class="text-header">Add Players to the divisions</span><br><br>
 <?php 
 if (isset($_POST['season'])) $seasonID = sanitizeString($_POST['season']);
 if (isset($_POST['leagueNum'])) $leagueNum = sanitizeString($_POST['leagueNum']);
@@ -24,17 +24,9 @@ if (isset($seasonID)) {
 
 
 // Setup the season drop down, will want to reverse the order eventually
-$query = "select id,startdate from season";
-$result = mysql_query($query);
-$rows = mysql_num_rows($result);
-$currSeason = currentSeason();
-
-
-$seasonQuery = "select startdate from season where id=$currSeason";
+$seasonQuery = "select id,startdate from season";
 $seasonResult = mysql_query($seasonQuery);
-		$row = mysql_fetch_object($seasonResult);
-		$name = $row->{'startdate'};
-
+$seasonRows = mysql_num_rows($seasonResult);
 
 
 // Insert leagues into DB.
@@ -63,7 +55,25 @@ if (isset($seasonID)) {
 
 $leagueCount = numLeagues($seasonID);
 
+?>
+<form method="get" action="divsetup3.php">
 
+Choose season to setup: 
+<!-- choose season in the dropdown -->
+<select name="season" size="1">
+<option value=<?php echo $currSeason ?>><?php echo $name ?></option>
+<?php 
+for ($j = 0; $j < $rows ; ++$j) {
+
+	echo '<option value="' . mysql_result($result,$j,'id') . '">' . mysql_result($result,$j,'startdate') . '</option>';
+}
+?> 
+</select>
+<br><br>
+
+
+
+<?php
 for ($i = 1; $i <= 4; ++$i) {
 
 	echo "Division $i<br><br>";
@@ -101,9 +111,8 @@ for ($i = 1; $i <= 4; ++$i) {
 usort($leagueArray, "sortDescending");
 
 ?>
-<form method="get" action="divsetup2.php">
 
-<?php
+<?php 
 // setup the leagues
 foreach ($leagueArray as $position) {
 	echo	'<tr>';

@@ -21,4 +21,5 @@ Setup New Leagues <a href="newLeagues.php">here</a>
 <br><br>
 Setup Players into Divisions <a href="setupDivision.php">here</a>
 <br><br>
+Edit Player <a href="editplayer.php">here</a>
 <?php require_once '../includes/adminfooter.php'; ?>

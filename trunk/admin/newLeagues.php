@@ -10,15 +10,16 @@ $rows = mysql_num_rows($result);
 $currSeason = currentSeason();
 
 
-$seasonQuery = "select startdate from season where id=$currSeason";
-$seasonResult = mysql_query($seasonQuery);
-		$row = mysql_fetch_object($seasonResult);
-		$name = $row->{'startdate'};
+//$seasonQuery = "select startdate from season where id=$currSeason";
+//$seasonResult = mysql_query($seasonQuery);
+//		$row = mysql_fetch_object($seasonResult);
+//		$name = $row->{'startdate'};
 
 ?>
 <form method="post" action="setupDivision.php">
 
-	// Season Drop Down
+	<!-- Season Drop Down -->
+Choose Season: 
 <select name="season" size="1">
 <option value=<?php echo $currSeason ?>><?php echo $name ?></option>
 <?php 
@@ -30,10 +31,9 @@ for ($j = 0; $j < $rows ; ++$j) {
 </select>
 <br><br>
 	<!-- League entry box -->
-<span class="text-normal">Number of leagues: </span><input type="text" name="leagueNum" />
+<span class="text-normal">Enter number of leagues: </span><input type="text" name="leagueNum" />
 <br>
 <input type="submit">
 </form>
-
 
 <?php require_once '../includes/adminfooter.php'; ?>
