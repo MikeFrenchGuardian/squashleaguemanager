@@ -3,7 +3,12 @@
 <span class="text-header">Players Added</span><br><br>
 
 <?php
-$seasonID="4";
+if (isset($_POST['season'])) {
+	$seasonID = sanitizeString($_POST['season']);
+} else {
+	echo "No season selected, please try again";
+}
+
 
 $totalPlayers = getTotalPlayers();
 
