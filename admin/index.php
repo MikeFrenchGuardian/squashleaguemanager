@@ -3,10 +3,10 @@
 
 <span class="text-header">Administration Area</span><br><br>
 
-
+      
 
 <span class="text-normal">
-Update the homepage<a href="homepage.php">here</a>
+Update the homepage <a href="homepage.php">here</a>
 <br><br>
 Add a result <a href="addresult.php">here</a>
 <br><br>
