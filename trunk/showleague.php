@@ -12,7 +12,7 @@ if (isset($seasonID)) {
 
 if ($seasonID = currentSeason()) {
   $newID = $seasonID - 1;
-  echo "<a href="showleague.php?season=' . $newID . '">Previous Season</a>";
+  echo '<a href="showleague.php?season=' . $newID . '">Previous Season</a>';
   }
 
 
