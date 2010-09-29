@@ -1,5 +1,5 @@
 <?php require_once 'includes/head.php'; ?>
-
+<span class="text-header">Leagues</span>
 <?php
 
 $seasonID = $_GET["season"];
@@ -11,10 +11,11 @@ if (isset($seasonID)) {
 }
 
 if ($seasonID = currentSeason()) {
-  $newID = $seasonID - 1;
-  echo '<a href="showleague.php?season=' . $newID . '">Previous Season</a>';
+  $previousSeason = $seasonID - 1;
+  echo '<a href="showleague.php?season=' . $previousSeason . '">Previous Season</a>';
   }
 
+ echo $seasonID;
 
 for ($i = 1; $i <= 4; ++$i) {
 
