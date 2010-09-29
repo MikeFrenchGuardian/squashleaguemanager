@@ -1,20 +1,34 @@
-<?php require_once 'includes/head.php'; ?>
-<span class="text-header">Leagues</span>
-<?php
+<?php require_once 'includes/head.php'; 
 
-$seasonID = $_GET["season"];
 
-if (isset($seasonID)) {
-	$seasonID = $seasonID;
-}	else {
+$seasonID = ($_GET["season"]);
+
+$startDate = getSeasonStart($seasonID);
+$niceDate = prettyDate($startDate);
+
+echo '<span class="text-header">League Beginning ' . $niceDate . "</span><br><br>";
+
+if (!isset($seasonID)) {
 	$seasonID = currentSeason();
 }
 
-if ($seasonID = currentSeason()) {
-  $previousSeason = $seasonID - 1;
-  echo '<a href="showleague.php?season=' . $previousSeason . '">Previous Season</a>';
-  }
+$currSeason =  currentSeason();
 
+
+$previousSeason = $seasonID - 1;
+if ($seasonID > 1) {
+    echo '<a class="text-normal" href="showleague.php?season=' . $previousSeason . '">Previous Season</a> ';
+}
+
+if (($seasonID > 1) && ($seasonID < $currSeason)) {
+  echo ' - ';
+  }
+if ($seasonID < $currSeason) {
+  $nextSeason = $seasonID + 1;
+  echo '<a class="text-normal" href="showleague.php?season=' . $nextSeason . '">Next Season</a>';
+}
+
+echo '<br><br>';
  echo $seasonID;
 
 for ($i = 1; $i <= 4; ++$i) {
