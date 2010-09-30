@@ -1,25 +1,30 @@
 <?php require_once 'includes/head.php'; 
 
-
+ // Grab the season ID from the URL if available
 $seasonID = ($_GET["season"]);
 
-$startDate = getSeasonStart($seasonID);
-$niceDate = prettyDate($startDate);
-
-echo '<span class="text-header">League Beginning ' . $niceDate . "</span><br><br>";
-
+// If its not set use the current season
 if (!isset($seasonID)) {
 	$seasonID = currentSeason();
 }
 
+// Create a new var to play with later on
 $currSeason =  currentSeason();
 
+// This gives the page heading the right date
+$startDate = getSeasonStart($seasonID);
+$niceDate = prettyDate($startDate);
 
+// The page heading
+echo '<span class="text-header">League Beginning ' . $niceDate . "</span><br><br>";
+
+
+
+// Previous and Next buttons on the league page.
 $previousSeason = $seasonID - 1;
 if ($seasonID > 1) {
     echo '<a class="text-normal" href="showleague.php?season=' . $previousSeason . '">Previous Season</a> ';
 }
-
 if (($seasonID > 1) && ($seasonID < $currSeason)) {
   echo ' - ';
   }
@@ -27,13 +32,12 @@ if ($seasonID < $currSeason) {
   $nextSeason = $seasonID + 1;
   echo '<a class="text-normal" href="showleague.php?season=' . $nextSeason . '">Next Season</a>';
 }
-
 echo '<br><br>';
- echo $seasonID;
 
+// Render the leagues in a nested loop
 for ($i = 1; $i <= 4; ++$i) {
 
-	echo "Division $i<br><br>";
+	echo '<span class="text-semibold">&nbsp; Division ' . $i . '</span><br>';
 	echo "<table class=\"stats\">";
 	echo "<tr>";
 	echo "   <td class=\"hed\">Name</td>";
