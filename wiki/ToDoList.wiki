@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Whats remaining before we're feature complete
 
 = To Do List =
 
@@ -36,6 +36,4 @@
 * Player results will need 'previous' button or scrollability.
 
 * Shrink size of header picture, massive at the moment.
-
-
 
