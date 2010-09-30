@@ -1,0 +1,41 @@
+#summary One-sentence summary of this page.
+
+= To Do List =
+
+* admin email to all players or all players in the league page
+
+* Remaining games in current league for each player on player detail page
+
+* Check season hasn't already been setup function
+
+* Check season dates don't clash
+
+* Homepage blog engine
+
+* Rankings engine
+
+* Check player doesn't exist function for new player page. By email adress I guess
+
+* Player login, use email address.
+
+* Finish new season dates page.
+
+* Player photos?
+
+* Backup regime, mysql dump to where? Email google account?
+
+* Clear results for beginning of first new league.
+
+* Check appropriate numbers in each league.
+
+* Non league players list in the setup division page for people joining
+/ rejoining
+
+* Exportable league tables for printing
+
+* Player results will need 'previous' button or scrollability.
+
+* Shrink size of header picture, massive at the moment.
+
+
+
