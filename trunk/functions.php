@@ -1,5 +1,22 @@
 <?php
 
+function checkPlayer($email) {
+  $query = "select email from player where email = $email";
+  $result = mysql_query($query);
+  $rows = mysql_num_rows($result);
+  return $rows;
+}
+
+function checkSeasonClash($seasonID) {
+  $previousSeason = $seasonID - 1;
+  $start = getSeasonStart($seasonID);
+  $end = getSeasonEnd($previousSeason);
+  if ($start > $end) {
+    echo "New season needs to start after previous";
+    }
+}
+
+
 function getDivSize($division,$seasonID) {
 	//	$query = "select playerdiv.playerID from playerdiv,division where  playerdiv.divisionID=division.number and division.seasonid=$seasonID and playerdiv.divisionid=$division";
 		$query = "select playerdiv.playerid from playerdiv,division where playerdiv.divisionid = division.id and division.number = $division and division.seasonid=$seasonID";
@@ -248,6 +265,14 @@ function getSeasonStart($seasonID) {
 		return $name;
 }
 
+function getSeasonEnd($seasonID) {
+		$query = "SELECT endDate FROM season where id = $seasonID";
+		$result = mysql_query($query);
+		$row = mysql_fetch_object($result);
+		$name = $row->endDate;
+		return $name;
+}
+
 function getTotalPlayers() {
 		$query = "SELECT id from player";
 		$result = mysql_query($query);
@@ -301,6 +326,28 @@ function prettyDate($date) {
 			
 		$fullDate = $day . " " . $month . " " . $year;
 		return $fullDate;
+}
+
+
+
+function checkExistingPlayer ($name) {
+	$query =  "SELECT name from player";
+	$result = mysql_query($query);
+	$rows = mysql_num_rows($result);
+	for ($j = 0 ; $j < $rows ; ++$j) {
+		$existingNames = mysql_result($result,$j);
+		if ($name == $existingNames) {
+			return 1;
+		} 
+	}
+}
+
+function createPlayer ($name, $phone, $mobilePhone, $email) {
+	$query =  "INSERT INTO player (name,phone,mobilephone,email) VALUES (\"$name\", \"$phone\",\"$mobilePhone\", \"$email\");";
+	$result = mysql_query($query);
+	echo '<span class="text-normal">';
+	echo $name;
+	echo " added to database successfully</span>";
 }
 
 ?>

@@ -1,52 +1,111 @@
-<?php require_once '../includes/adminhead.php'; ?>
-
-
+<?php require_once '../includes/adminhead.php';  ?>
 <span class="text-header">Add new season</span><br><br>
-<form action="newSeason.php" method="post">
-Season Start Date
+
 <?php
-date_default_timezone_set('UTC');
-//get class into the page
-require_once('../calendar/classes/tc_calendar.php');
+if (isset($_POST['startDay']))  {
 
-//instantiate class and set properties
+$startDay = ($_POST['startDay']);
+$startMonth = ($_POST['startMonth']);
+$startYear = ($_POST['startYear']);
 
-	  $myCalendar = new tc_calendar("date1");
-	  $myCalendar->setIcon("../calendar/images/iconCalendar.gif");
-	  $myCalendar->setDate(date('d'), date('m'), date('Y'));
-	  $myCalendar->setPath("../calendar/");
-	  $myCalendar->setYearInterval(1970, 2020);
-	  $myCalendar->dateAllow('2008-05-13', '2015-03-01', false);
-	  $myCalendar->startMonday(true);
-	  $myCalendar->disabledDay("Sat");
-	  $myCalendar->disabledDay("sun");
-      $myCalendar->setDateFormat('dmy');
-	  $myCalendar->writeScript();
-	  
+$startDate = $startYear . $startMonth . $startDay;
+echo $startDate;
 
 
+  //$start = $_POST(startDate);
+  //$end = $_POST(endDate);
+      //     if (isset($_POST['player1']))
+  //if ($start > $end) {
+  //}
+  
+  
+} else {
 ?>
+<form action="addseason.php" method="post">
+Start Date
+
+<select name="startDay" size="1">
+  <option value="Day">Day</option>
+<?php 
+  for ($j = 01; $j <= 31; ++$j) {
+//    return str_pad((int) $number,$n,"0",STR_PAD_LEFT 
+?>
+  <option value="<?php echo $j ?>"><?php echo $j ?>   </option>
+<?php
+}
+?>
+
+<select name="startMonth" size="1">
+  <option value="Month">Month</option>
+  <option value="01">Jan</option>
+  <option value="02">Feb</option>
+  <option value="03">Mar</option>
+  <option value="04">Apr</option>
+  <option value="05">May</option>
+  <option value="06">Jun</option>
+  <option value="07">Jul</option>
+  <option value="08">Aug</option>
+  <option value="09">Sep</option>
+  <option value="10">Oct</option>
+  <option value="11">Nov</option>
+  <option value="12">Dec</option>
+</select>
+
+
+<select name="startYear" size="1">
+  <option value="Year">Year</option>
+  <option value="2010">2010</option>
+  <option value="2011">2011</option>
+  <option value="2012">2012</option>
+</select>
+
 <br><br>
-Season End Date
-<?php
-$myCalendar = new tc_calendar("date2");
-	  $myCalendar->setIcon("../calendar/images/iconCalendar.gif");
-	  $myCalendar->setDate(date('d'), date('m'), date('Y'));
-	  $myCalendar->setPath("../calendar/");
-	  $myCalendar->setYearInterval(1970, 2020);
-	  $myCalendar->dateAllow('2008-05-13', '2015-03-01', false);
-	  $myCalendar->startMonday(true);
-	  $myCalendar->disabledDay("Sat");
-	  $myCalendar->disabledDay("sun");
-      $myCalendar->setDateFormat('dmy');
-	  $myCalendar->writeScript(); 
-	
+
+End Date
+<select name="endDay" size="1">
+  <option value="Day">Day</option>
+<?php 
+  for ($j = 1; $j <= 31; ++$j) { 
 ?>
-<input type="submit" value="GOGOGOGOGO">
+  <option value="<?php echo $j ?>"><?php echo $j ?>   </option>
+  <?php
+}
+?>
+
+<select name="endMonth" size="1">
+  <option value="Month">Month</option>
+  <option value="01">Jan</option>
+  <option value="02">Feb</option>
+  <option value="03">Mar</option>
+  <option value="04">Apr</option>
+  <option value="05">May</option>
+  <option value="06">Jun</option>
+  <option value="07">Jul</option>
+  <option value="08">Aug</option>
+  <option value="09">Sep</option>
+  <option value="10">Oct</option>
+  <option value="11">Nov</option>
+  <option value="12">Dec</option>
+</select>
+
+
+<select name="endYear" size="1">
+  <option value="Year">Year</option>
+  <option value="2010">2010</option>
+  <option value="2011">2011</option>
+  <option value="2012">2012</option>
+</select>
+
+<br><br>
+
+
+<input type="submit" value="Submit">
 </form>
 
 
 <?php
+}  
+  echo "booooyaaa";
 
 function getNewSeasonStart() {
 	$query = "SELECT MAX(endDate) from season ";
