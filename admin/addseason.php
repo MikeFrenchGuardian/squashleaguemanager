@@ -1,14 +1,21 @@
 <?php require_once '../includes/adminhead.php';  ?>
-<span class="text-header">Add new season</span><br><br>
+
 
 <?php
 if (isset($_POST['startDay']))  {
+?>
+<span class="text-header">New Season Added </span><br><br>
+<?php 
 
 $startDay = ($_POST['startDay']);
 $startMonth = ($_POST['startMonth']);
 $startYear = ($_POST['startYear']);
+$endDay = ($_POST['endDay']);
+$endMonth = ($_POST['endMonth']);
+$endYear = ($_POST['endYear']);
 
 $startDate = $startYear . $startMonth . $startDay;
+$endDate = $endYear . $endMonth . $endDay;
 echo $startDate;
 
 
@@ -17,10 +24,18 @@ echo $startDate;
       //     if (isset($_POST['player1']))
   //if ($start > $end) {
   //}
-  
-  
+
+$clash = checkSeasonClash($startDate);
+
+if ($clash = 0) {
+    echo "Your leagues overlap, please check your start date";
+  } else { 
+    createSeason($startDate, $endDate);
+  }
 } else {
 ?>
+
+<span class="text-header">Add new season</span><br><br>
 <form action="addseason.php" method="post">
 Start Date
 
@@ -105,7 +120,7 @@ End Date
 
 <?php
 }  
-  echo "booooyaaa";
+
 
 function getNewSeasonStart() {
 	$query = "SELECT MAX(endDate) from season ";
@@ -114,10 +129,6 @@ function getNewSeasonStart() {
 	
 }
 
-function createSeason($startDate, $endDate) {
-	$query = "INSERT INTO season (startDate,endDate) VALUES (\"$startDate\", \"$endDate\");";
-	$result = mysql_query($query);	
-}
 
 function numberOfLeagues($season, $numOfLeagues) {
 	$query =  "INSERT INTO player (name,phone,mobilephone,email) VALUES (\"$name\", \"$phone\",\"$mobilePhone\", \"$email\");";
@@ -131,9 +142,5 @@ function numberOfLeagues($season, $numOfLeagues) {
 
 
 <?php require_once '../includes/adminfooter.php'; ?>
-<!--//Things to achieve:
 
-//Season startdate enddate
-//Number of leagues
-//Number of players in each league
-//Players in each league -->
+
