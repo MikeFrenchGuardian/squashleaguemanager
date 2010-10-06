@@ -10,9 +10,9 @@ Update the homepage <a href="homepage.php">here</a>
 <br><br>
 Add a result <a href="addresult.php">here</a>
 <br><br>
-Create a new season <a href="addseason1.php">here</a>
+Create a new season <a href="addseason.php">here</a>
 <br><br>
-Add a new player <a href="adduser.php">here</a>
+Add a new player <a href="newplayer.php">here</a>
 <br><br>
 Setup New Leagues <a href="newLeagues.php">here</a>
 <br><br>
