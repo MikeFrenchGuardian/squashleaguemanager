@@ -7,14 +7,14 @@ function checkPlayer($email) {
   return $rows;
 }
 
-function checkSeasonClash($seasonID) {
-  $previousSeason = $seasonID - 1;
-  $start = getSeasonStart($seasonID);
-  $end = getSeasonEnd($previousSeason);
-  if ($start > $end) {
-    echo "New season needs to start after previous";
-    }
-}
+//function checkSeasonClash($seasonID) {
+//  $previousSeason = $seasonID - 1;
+//  $start = getSeasonStart($seasonID);
+//  $end = getSeasonEnd($previousSeason);
+//  if ($start > $end) {
+//    echo "New season needs to start after previous";
+//    }
+//}
 
 
 function getDivSize($division,$seasonID) {
@@ -348,6 +348,23 @@ function createPlayer ($name, $phone, $mobilePhone, $email) {
 	echo '<span class="text-normal">';
 	echo $name;
 	echo " added to database successfully</span>";
+}
+
+function checkSeasonClash($startDate) {
+  $query = "select enddate from season ORDER BY enddate DESC LIMIT 1";
+  $result = mysql_query($query);
+  $row = mysql_fetch_object($result);
+		$endDate = $row->id;
+  if ($endDate > $startDate) {
+    return 0;
+  } else {
+    return 1;
+  }  
+}
+
+function createSeason($startDate, $endDate) {
+	$query = "INSERT INTO season (startDate,endDate) VALUES (\"$startDate\", \"$endDate\");";
+	$result = mysql_query($query);	
 }
 
 ?>
