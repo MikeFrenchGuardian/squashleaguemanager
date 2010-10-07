@@ -86,6 +86,7 @@ End Date
   <?php
 }
 ?>
+</select>
 
 <select name="endMonth" size="1">
   <option value="Month">Month</option>
