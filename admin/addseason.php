@@ -43,9 +43,9 @@ Start Date
   <option value="Day">Day</option>
 <?php 
   for ($j = 01; $j <= 31; ++$j) {
-//    return str_pad((int) $number,$n,"0",STR_PAD_LEFT 
+  	$day = str_pad($j, 2, "0", STR_PAD_LEFT);
 ?>
-  <option value="<?php echo $j ?>"><?php echo $j ?>   </option>
+  <option value="<?php echo $day ?>"><?php echo $day ?>   </option>
 <?php
 }
 ?>
