@@ -9,7 +9,6 @@
 	$rows = mysql_num_rows($result);
 	$currSeason = currentSeason();
 	$seasonID = currentSeason();
-}
 
 
 // Setup the season drop down, will want to reverse the order eventually
@@ -134,5 +133,5 @@ foreach ($leagueArray as $position) {
 echo "<input type=\"submit\">";
 echo "</form>";
 
-
+}
  require_once '../includes/adminfooter.php'; ?>
