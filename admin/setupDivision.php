@@ -24,7 +24,7 @@ if (isset($seasonID)) {
 
 
 // Setup the season drop down, will want to reverse the order eventually
-$seasonQuery = "select id,startdate from season";
+$seasonQuery = "select id,startdate from season ORDER BY id DESC";
 $seasonResult = mysql_query($seasonQuery);
 $seasonRows = mysql_num_rows($seasonResult);
 
