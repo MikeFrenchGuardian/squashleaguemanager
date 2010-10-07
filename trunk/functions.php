@@ -354,8 +354,8 @@ function checkSeasonClash($startDate) {
   $query = "select enddate from season ORDER BY enddate DESC LIMIT 1";
   $result = mysql_query($query);
   $row = mysql_fetch_object($result);
-		$endDate = $row->id;
-  if ($endDate > $startDate) {
+		$endingDate = $row->id;
+  if ($endingDate > $startDate) {
     return 0;
   } else {
     return 1;
