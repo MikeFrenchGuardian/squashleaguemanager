@@ -26,12 +26,12 @@ echo $startDate;
   //}
 
 $clash = checkSeasonClash($startDate);
-
-if ($clash = 0) {
-    echo "Your leagues overlap, please check your start date";
-  } else { 
-    createSeason($startDate, $endDate);
-  }
+echo $clash;
+//if ($clash = 0) {
+ //   echo "Your leagues overlap, please check your start date";
+  //} else { 
+   // createSeason($startDate, $endDate);
+ // }
 } else {
 ?>
 
