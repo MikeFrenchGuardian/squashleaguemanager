@@ -81,8 +81,9 @@ End Date
   <option value="Day">Day</option>
 <?php 
   for ($j = 1; $j <= 31; ++$j) { 
+  	$day = str_pad($j, 2, "0", STR_PAD_LEFT);
 ?>
-  <option value="<?php echo $j ?>"><?php echo $j ?>   </option>
+  <option value="<?php echo $day ?>"><?php echo $day ?>   </option>
   <?php
 }
 ?>
