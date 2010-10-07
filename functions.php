@@ -375,4 +375,12 @@ function createSeason($startDate, $endDate) {
 	$result = mysql_query($query);	
 }
 
+function checkSeasonUpdateability($seasonID) {
+	$query = "select COUNT(playerdiv.playerid) from playerdiv,division,season where season.id = division.seasonid and playerdiv.divisionid = division.id and season.id=$seasonID"
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->{'COUNT(playerdiv.playerid)'};
+	return $name;
+}
+	
 ?>

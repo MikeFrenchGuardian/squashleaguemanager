@@ -1,6 +1,6 @@
 <?php require_once '../includes/adminhead.php'; ?>
 
-<span class="text-header">Add Players to the divisions</span><br><br>
+<span class="text-header">Edit Divisions</span><br><br>
 <?php 
 if (isset($_POST['season'])) $seasonID = sanitizeString($_POST['season']);
 if (isset($_POST['leagueNum'])) $leagueNum = sanitizeString($_POST['leagueNum']);
@@ -11,8 +11,16 @@ if (isset($seasonID)) {
 	//	$seasonID = $seasonID;
 	// Insert leagues into DB.
 	// Loop for each league to add them to the DB
-	for ($h = 1; $h <= $leagueNum; ++$h) {
-		createNewLeagues($seasonID,$h);
+	
+	$update = checkDivCreation($seasonID);
+	
+	if ( $update > 0 ) {
+		echo "Divisions for this season have already been setup, edit using the edit division tool, which doesn't exist just yet.";
+	} else {
+		//for ($h = 1; $h <= $leagueNum; ++$h) {
+		//	createNewLeagues($seasonID,$h);
+		//}
+	echo "All done";
 	}
 } else {
 	$query = "select id,startdate from season";
