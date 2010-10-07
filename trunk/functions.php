@@ -353,7 +353,6 @@ function createPlayer ($name, $phone, $mobilePhone, $email) {
 function checkSeasonClash($startDate) {
   $query = "select endDate from season ORDER BY endDate DESC LIMIT 1";
   $result = mysql_query($query);
-
   $row = mysql_fetch_object($result);
 		$endingDate = $row->endDate;
   if ($endingDate > $startDate) {
@@ -361,8 +360,14 @@ function checkSeasonClash($startDate) {
   } else {
     return 1;
   }  
-//	echo $endingDate
+}
 
+function checkSeasonLength($startDate,$endDate) {
+	if ($endDate > $startDate) {
+		return 1;
+	} else {
+		return 0;
+	}
 }
 
 function createSeason($startDate, $endDate) {

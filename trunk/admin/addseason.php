@@ -4,18 +4,17 @@
 <?php
 if (isset($_POST['startDay']))  {
 ?>
-<span class="text-header">New Season Added </span><br><br>
+	<span class="text-header">New Season Added </span><br><br>
 <?php 
 
-$startDay = ($_POST['startDay']);
-$startMonth = ($_POST['startMonth']);
-$startYear = ($_POST['startYear']);
-$endDay = ($_POST['endDay']);
-$endMonth = ($_POST['endMonth']);
-$endYear = ($_POST['endYear']);
-
-$startDate = $startYear . $startMonth . $startDay;
-$endDate = $endYear . $endMonth . $endDay;
+	$startDay = ($_POST['startDay']);
+	$startMonth = ($_POST['startMonth']);
+	$startYear = ($_POST['startYear']);
+	$endDay = ($_POST['endDay']);
+	$endMonth = ($_POST['endMonth']);
+	$endYear = ($_POST['endYear']);
+	$startDate = $startYear . $startMonth . $startDay;
+	$endDate = $endYear . $endMonth . $endDay;
 
 
 
@@ -25,13 +24,18 @@ $endDate = $endYear . $endMonth . $endDay;
   //if ($start > $end) {
   //}
 
-$clash = checkSeasonClash($startDate);
-echo $clash;
-//if ($clash = 0) {
- //   echo "Your leagues overlap, please check your start date";
-  //} else { 
-   // createSeason($startDate, $endDate);
- // }
+	$clash = checkSeasonClash($startDate);
+	$length = checkSeasonLength($startDate,$endDate);
+
+	if ($clash = 0) {
+    	echo "Your leagues overlap, please check your start date";
+	} else if ($length = 0) {
+  		echo "Your end date is before your start date";
+	} else { 
+    	createSeason($startDate, $endDate);
+	}
+  
+  
 } else {
 ?>
 
