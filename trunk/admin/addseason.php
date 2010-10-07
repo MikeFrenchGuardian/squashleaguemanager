@@ -28,11 +28,12 @@ if (isset($_POST['startDay']))  {
 	$length = checkSeasonLength($startDate,$endDate);
 
 	if ($clash == 0) {
-    	echo "Your leagues overlap, please check your start date";
+    	echo "This league overlaps with the previous season, you might want to check your start date";
 	} else if ($length == 0) {
-  		echo "Your end date is before your start date";
+  		echo "Somethings not right here, your season ends before it begins.";
 	} else { 
     	createSeason($startDate, $endDate);
+    	echo 'The new season has been created, if you\'re ready to put players into divisions click <a href="/admin/setupDivision.php">here</a>';
 	}
   
   
