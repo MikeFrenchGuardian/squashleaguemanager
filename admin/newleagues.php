@@ -41,7 +41,7 @@ $currSeason = currentSeason();
 //		$name = $row->{'startdate'};
 
 ?>
-<form method="post" action="setupDivision.php">
+<form method="post" action="newleagues.php">
 
 	<!-- Season Drop Down -->
 Choose Season: 
