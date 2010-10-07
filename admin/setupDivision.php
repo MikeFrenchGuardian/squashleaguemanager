@@ -164,9 +164,9 @@ if (isset($_POST['season'])) {
 
 
 
-
+	}
 	echo "<input type=\"submit\">";
 	echo "</form>";
-	}
+
 }
  require_once '../includes/adminfooter.php'; ?>
