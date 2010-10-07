@@ -49,7 +49,7 @@ Start Date
 <?php
 }
 ?>
-
+</select>
 <select name="startMonth" size="1">
   <option value="Month">Month</option>
   <option value="01">Jan</option>
