@@ -27,9 +27,9 @@ if (isset($_POST['startDay']))  {
 	$clash = checkSeasonClash($startDate);
 	$length = checkSeasonLength($startDate,$endDate);
 
-	if ($clash = 0) {
+	if ($clash == 0) {
     	echo "Your leagues overlap, please check your start date";
-	} else if ($length = 0) {
+	} else if ($length == 0) {
   		echo "Your end date is before your start date";
 	} else { 
     	createSeason($startDate, $endDate);
