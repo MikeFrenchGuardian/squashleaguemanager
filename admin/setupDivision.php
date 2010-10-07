@@ -69,7 +69,7 @@ if (isset($_POST['season'])) {
 
 
 	$seasonID = $_GET["season"];
-	$seasonID = ;
+
 	if (isset($seasonID)) {
 		$seasonID = $seasonID;
 	}	else {
