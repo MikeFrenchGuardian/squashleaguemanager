@@ -16,7 +16,7 @@ $endYear = ($_POST['endYear']);
 
 $startDate = $startYear . $startMonth . $startDay;
 $endDate = $endYear . $endMonth . $endDay;
-echo $startDate;
+
 
 
   //$start = $_POST(startDate);
