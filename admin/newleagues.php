@@ -61,4 +61,7 @@ for ($j = 0; $j < $rows ; ++$j) {
 <input type="submit">
 </form>
 
-<?php require_once '../includes/adminfooter.php'; ?>
+<?php 
+}
+
+require_once '../includes/adminfooter.php'; ?>
