@@ -14,7 +14,7 @@ Create a new season <a href="addseason.php">here</a>
 <br><br>
 Add a new player <a href="newplayer.php">here</a>
 <br><br>
-Setup New Leagues <a href="newLeagues.php">here</a>
+Setup New Leagues <a href="newleagues.php">here</a>
 <br><br>
 Setup Players into Divisions <a href="setupDivision.php">here</a>
 <br><br>
