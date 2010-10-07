@@ -2,28 +2,8 @@
 
 <span class="text-header">Edit Divisions</span><br><br>
 <?php 
-if (isset($_POST['season'])) $seasonID = sanitizeString($_POST['season']);
-if (isset($_POST['leagueNum'])) $leagueNum = sanitizeString($_POST['leagueNum']);
+	
 
-// If the page receives a create leagues request then we create them, otherwise we just add players to the league.
-
-if (isset($seasonID)) {
-	//	$seasonID = $seasonID;
-	// Insert leagues into DB.
-	// Loop for each league to add them to the DB
-	
-	$update = checkDivCreation($seasonID);
-	
-	if ( $update > 0 ) {
-		echo "Divisions for this season have already been setup, edit using the edit division tool, which doesn't exist just yet.";
-	} else {
-		for ($h = 1; $h <= $leagueNum; ++$h) {
-			createNewLeagues($seasonID,$h);
-	}
-	echo "All done ";
-	}
-	
-} else {
 	$query = "select id,startdate from season";
 	$result = mysql_query($query);
 	$rows = mysql_num_rows($result);
@@ -146,7 +126,7 @@ foreach ($leagueArray as $position) {
 	echo	'</tr>';
   }
 	echo "</table>  <br><br>";
-}
+
 
 
 
