@@ -247,7 +247,7 @@ function showCurrentDate() {
 function createNewLeagues($seasonID,$leagueNumber) {
 	$query = "INSERT INTO division (number,seasonID) VALUES  ($leagueNumber,$seasonID)";
 	$result = mysql_query($query);
-	echo $query;
+//	echo $query;
 }
 	
 function sanitizeString($var) {
@@ -375,7 +375,15 @@ function createSeason($startDate, $endDate) {
 	$result = mysql_query($query);	
 }
 
-function checkSeasonUpdateability($seasonID) {
+function checkDivCreation($seasonID) {
+	$query = "select COUNT(division.seasonID) from division,season where season.id = division.seasonID and season.id = $seasonID"
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->{'COUNT(playerdiv.playerid)'};
+	return $name;
+}
+
+function checkPlayerDiv($seasonID) {
 	$query = "select COUNT(playerdiv.playerid) from playerdiv,division,season where season.id = division.seasonid and playerdiv.divisionid = division.id and season.id=$seasonID"
 	$result = mysql_query($query);
 	$row = mysql_fetch_object($result);

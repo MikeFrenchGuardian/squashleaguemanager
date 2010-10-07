@@ -22,6 +22,7 @@ if (isset($seasonID)) {
 		//}
 	echo "All done";
 	}
+	
 } else {
 	$query = "select id,startdate from season";
 	$result = mysql_query($query);
