@@ -376,7 +376,7 @@ function createSeason($startDate, $endDate) {
 }
 
 function checkDivCreation($seasonID) {
-	$query = "select COUNT(division.seasonID) from division,season where season.id = division.seasonID and season.id = $seasonID"
+	$query = "select COUNT(division.seasonID) from division,season where season.id = division.seasonID and season.id = $seasonID";
 	$result = mysql_query($query);
 	$row = mysql_fetch_object($result);
 	$name = $row->{'COUNT(playerdiv.playerid)'};
@@ -384,7 +384,7 @@ function checkDivCreation($seasonID) {
 }
 
 function checkPlayerDiv($seasonID) {
-	$query = "select COUNT(playerdiv.playerid) from playerdiv,division,season where season.id = division.seasonid and playerdiv.divisionid = division.id and season.id=$seasonID"
+	$query = "select COUNT(playerdiv.playerid) from playerdiv,division,season where season.id = division.seasonid and playerdiv.divisionid = division.id and season.id=$seasonID";
 	$result = mysql_query($query);
 	$row = mysql_fetch_object($result);
 	$name = $row->{'COUNT(playerdiv.playerid)'};
