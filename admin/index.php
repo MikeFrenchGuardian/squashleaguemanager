@@ -6,7 +6,7 @@
       
 
 <span class="text-normal">
-Update the homepage <a href="homepage.php">here</a>
+Create a homepage post <a href="blog.php">here</a>
 <br><br>
 Add a result <a href="addresult.php">here</a>
 <br><br>
