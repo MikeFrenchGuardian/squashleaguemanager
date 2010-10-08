@@ -33,7 +33,10 @@ if (isset($_POST['startDay']))  {
   		echo "Somethings not right here, your season ends before it begins.";
 	} else { 
     	createSeason($startDate, $endDate);
-    	echo 'The new season has been created, if you\'re ready to put players into divisions click <a href="/admin/setupDivision.php">here</a>';
+    	$seasonID = getSeasonID($startDate);
+    	//Lets get the newly created season id here, so we can put it in the url
+    	
+    	echo 'The new season has been created, if you\'re ready to put players into divisions click <a href="/admin/setupDivision.php?season=' . $seasonID . '&stage1=yes">here</a>';
 	}
   
   

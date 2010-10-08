@@ -6,9 +6,38 @@
 	$currSeason = currentSeason();
 	$seasonID = currentSeason();
 	
-// Completed Form - Database Updated
-	
-if (isset($_POST['stage2'])) { ?>
+// Editing Instead
+if (isset($_POST['stage3'])) { ?>
+
+	<span class="text-header">Edit Divisions 3</span><br><br> 
+<?php	
+	if (isset($_POST['season'])) {
+		$seasonID = sanitizeString($_POST['season']);
+	} else {
+		echo "No season selected, please try again";
+	}
+
+
+	$totalPlayers = getTotalPlayers();
+
+	for ($i = 1; $i <= $totalPlayers; ++$i) {
+		$playerID = $i;
+		if ((isset($_GET[$i]))) {
+			$div = $_GET[$i];
+			$name = getPlayerName($playerID);
+			$divisionID = getDivisionID($seasonID,$div);
+
+			echo "<br>" . $name . " was added to division " . $div ."<br>";
+			editPlayerDiv($playerID,$divisionID,$newDivisionID);
+		} else {
+			echo "<br>This " . $name . " isn't in a league <br>";
+		}
+	}
+
+
+<?php
+// Completed Form - Database Updated	
+} else if (isset($_POST['stage2'])) { ?>
 	
 	<span class="text-header">Edit Divisions 3</span><br><br> 
 	
@@ -59,8 +88,11 @@ if (isset($_POST['stage2'])) { ?>
 	}	else {
 		$seasonID = currentSeason();
 	}
+	
+		$prevSeason = $seasonID - 1;
 
-	$leagueCount = numLeagues($seasonID);
+	$leagueCount = numLeagues($seasonID);		
+	$prevleagueCount = numLeagues($prevSeason);
 
 	?>
 	<form method="get" action="setupDivision.php">
@@ -70,7 +102,7 @@ if (isset($_POST['stage2'])) { ?>
 
 
 	<?php
-	for ($i = 1; $i <= $leagueCount; ++$i) {	
+	for ($i = 1; $i <= $prevleagueCount; ++$i) {	
 
 		echo "Division $i<br><br>";
 		echo "<table class=\"stats\">";
@@ -82,13 +114,12 @@ if (isset($_POST['stage2'])) { ?>
 	
 		$leagueArray = "leagueArray" .$i;
 		$leagueArray = array();
-		$prevSeason = $seasonID - 1;
 		$divSize = getDivSize($i,$prevSeason);
 		
 			for ($j = 0 ; $j < $divSize ; ++$j) {
 				$playerID = getDivPlayers($i,$prevSeason,$j);
 				$playerName = getPlayerName($playerID);
-				$playerLeague = getPlayerLeague($playerID,$prevSeason);
+				$playerLeague = getPlayerLeague($playerID,$seasonID);
 				$points = getLeaguePoints($playerID,$prevSeason);
 				$arrayNo = "player" .$j;
 
