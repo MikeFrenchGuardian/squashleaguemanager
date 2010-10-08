@@ -241,7 +241,7 @@ function daysLeft() {
 function showCurrentDate() {
 	date_default_timezone_set('UTC');
 	$currentDate = date('Ymd');
-	echo $currentDate;
+	return $currentDate;
 }
 
 function createNewLeagues($seasonID,$leagueNumber) {
@@ -273,6 +273,14 @@ function getSeasonEnd($seasonID) {
 		return $name;
 }
 
+function getSeasonID($startDate) {
+		$query = "SELECT id FROM season where startdate = $startDate";
+		$result = mysql_query($query);
+		$row = mysql_fetch_object($result);
+		$name = $row->id;
+		return $name;
+}
+
 function getTotalPlayers() {
 		$query = "SELECT id from player";
 		$result = mysql_query($query);
@@ -283,7 +291,11 @@ function getTotalPlayers() {
 function addPlayerToDiv($playerID,$divisionID) {
 		$query = "INSERT INTO playerdiv (divisionID,playerID) values ($divisionID,$playerID)";
 		$result = mysql_query($query);
-//		echo $query;
+}
+
+function editPlayerDiv($playerID,$divisionID,$newDivisionID) {
+		$query = "UPDATE playerdiv set divisionID = $newDivisionID where playerID = $playerID and divisionID = $divisionID";
+		$result = mysql_query($query);
 }
 
 function getDivisionID($seasonID,$div) {
@@ -390,5 +402,16 @@ function checkPlayerDiv($seasonID) {
 	$name = $row->{'COUNT(playerdiv.playerid)'};
 	return $name;
 }
-	
+
+function addBlogPost($currDate,$subject,$contents) {
+	$query = "insert into blog (date,subject,contents) values (\"$currDate\", \"$subject\", \"$contents\");";
+	$result = mysql_query($query);
+	echo $query;
+}
+
+function getBlogPost($id) {
+	$query = "select date,subject,contents from blog where id = $id;";
+	$result = mysql_query($query);
+	echo $query;
+}
 ?>
