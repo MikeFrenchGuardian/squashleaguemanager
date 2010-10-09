@@ -19,6 +19,20 @@ body {
  	width: 881px; 
  	height: 236px;
  	text-align: bottom; }
+ 	
+ .blog {
+	float: left;
+ 	width: 380px;
+ 	height: 500px;
+ 	}
+ 
+ .recentResults {
+ 	float: right;
+ 	width: 260px;
+ 	height: 100px;
+ 	padding-right: -50px;
+ 	margin-right: -33;
+ 	}
 
 	
 .logo-white {
@@ -110,13 +124,19 @@ body {
 	font-size: 9pt;
 	line-height: 140%;
 	font-weight: bold;
-	color: #2a2828; }
+	color: #909090; }
 	
 .text-normal {
 	font-family: Lucida Grande, Arial; 
 	font-size: 9pt;
 	line-height: 170%;
 	color: black; }
+	
+.text-blue {
+	font-family: Lucida Grande, Arial; 
+	font-size: 9pt;
+	line-height: 170%;
+	color: red; }
 	
 .text-normal a:link { 
 	font-family: Lucida Grande, Arial; 
@@ -157,7 +177,7 @@ border-collapse: collapse;
 border-spacing: 0px;}
 
 table.stats td
-{background-color: #CCC;
+{background-color: #E0E0E0;
 color: #000;
 padding: 4px;
 text-align: left;

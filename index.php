@@ -12,11 +12,11 @@
 <?php endif; ?>
 
 
-
+<div class="blog">
 <?php
 
 // grab 5 most recent blog posts from the db
-$blogquery = "SELECT date,subject,contents FROM blog"; 
+$blogquery = "SELECT id, date,subject,contents FROM blog order by id desc "; 
 $blogresult = mysql_query($blogquery);
 $blogrows = mysql_num_rows($blogresult);
 
@@ -26,10 +26,12 @@ for ($i = 0 ; $i < $blogrows ; ++$i) {
 	$subject = mysql_result($blogresult,$i,'subject');
 	$contents = mysql_result($blogresult,$i,'contents');
 
-	echo $niceDate . " " . $subject . "<br>";
+	echo '<span class="text-blue"> ' .$niceDate . '</span><span class="text-semibold"> ' . $subject . "</span><br>";
 	echo $contents . "<br><br>";
 
-}
+} ?>
+</div>
+<?php 
 
 
 // grab most recent 5 results from the db
@@ -44,7 +46,8 @@ $last5 = $rows-5; //not required anymore... db going the other way?!?
 
       
 ?>
-<span class="text-normal">Recent Results</span><br><br>
+<div class="recentResults">
+<span class="text-medium-header">Recent Results</span><br><br>
 <table class="stats">
 <tr>
    <td class="hed">Winner</td>
@@ -66,9 +69,6 @@ echo    '<td class="text-normal">' . $p2_score . ' ' . getPlayerName($player2) .
 echo    '</tr>';
 }
 echo "</table> <br><br>";
-
-
-
 ?>
-
+</div>
 <?php require_once 'includes/footer.php'; ?>
