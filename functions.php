@@ -202,41 +202,44 @@ function sortDescending ($a, $b)
 }
 
 function currentSeason() {
-	$query3 = "SELECT id,startDate,endDate FROM season";
-	$result = mysql_query($query3);
-	$rows = mysql_num_rows($result);
-	date_default_timezone_set('UTC');
-	$currentDate = date('Ymd');
+        $query3 = "SELECT id,startDate,endDate FROM season";
+        $result = mysql_query($query3);
+        $rows = mysql_num_rows($result);
+        date_default_timezone_set('UTC');
+        $currentDate = date('Ymd');
 
-	for ($j = 0 ; $j < $rows ; ++$j) {
-		$sDate = mysql_result($result,$j,'startDate');
-		$eDate = mysql_result($result,$j,'endDate');
-		$id = mysql_result($result,$j,'id');	
-	
-		if ( $currentDate >= $sDate && $currentDate <= $eDate) {
-			return $id;
-		}
-	}
+        for ($j = 0 ; $j < $rows ; ++$j) {
+                $sDate = mysql_result($result,$j,'startDate');
+                $eDate = mysql_result($result,$j,'endDate');
+                $id = mysql_result($result,$j,'id');    
+        
+                if ( $currentDate >= $sDate && $currentDate <= $eDate) {
+                        return $id;
+                        break;
+                } 
+        }
 }
+
 
 
 function daysLeft() {
-	$seasonID = currentSeason();
-	date_default_timezone_set('UTC');
-	$currentDate = date('Ymd');
-	$query = "SELECT id,startDate,endDate FROM season where id = " . $seasonID;
-	$result = mysql_query($query);
-	$rows = mysql_num_rows($result);
-	$seasonID = $rows - 1;
-	$eDate = mysql_result($result,$seasonID,'endDate');
-	$daysLeft = (strtotime($eDate) - (strtotime($currentDate))) / (60 * 60 * 24);
+        $seasonID = currentSeason();
+        date_default_timezone_set('UTC');
+        $currentDate = date('Ymd');
+        $query = "SELECT id,startDate,endDate FROM season where id = " . $seasonID;
+        $result = mysql_query($query);
+        $rows = mysql_num_rows($result);
+        $seasonID = $rows - 1;
+        $eDate = mysql_result($result,$seasonID,'endDate');
+        $daysLeft = (strtotime($eDate) - (strtotime($currentDate))) / (60 * 60 * 24);
 
-	if ($daysLeft > 28) {
-		echo $daysLeft . " days to go \n";
-	} else if ($daysLeft < 10) {
-		echo $daysLeft . " days to go people, get those games in! \n";
-	} else echo $daysLeft . " days to go.";
+        if ($daysLeft > 28) {
+                echo $daysLeft . " days to go \n";
+        } else if ($daysLeft < 10) {
+                echo $daysLeft . " days to go people, get those games in! \n";
+        } else echo $daysLeft . " days to go.";
 }
+
 
 function showCurrentDate() {
 	date_default_timezone_set('UTC');
@@ -409,9 +412,24 @@ function addBlogPost($currDate,$subject,$contents) {
 	echo $query;
 }
 
-function getBlogPost($id) {
-	$query = "select date,subject,contents from blog where id = $id;";
-	$result = mysql_query($query);
-	echo $query;
+function editBlogPost($blogID,$subject,$contents) {
+	$query = ("update blog set subject='$subject', contents='$contents' where id='$blogID'");
+	$result = mysql_query($query) or die(mysql_error());
+
 }
+
+function getBlogPost($id) {
+	$query = "select date,subject,contents from blog where id = $id";
+	$result = mysql_query($query);
+
+}
+
+function getBlogCount() {
+	$query = "select count(id) from blog";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->{'count(id)'};
+	return $name;
+}
+
 ?>
