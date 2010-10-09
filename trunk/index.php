@@ -15,6 +15,23 @@
 
 <?php
 
+// grab 5 most recent blog posts from the db
+$blogquery = "SELECT date,subject,contents FROM blog"; 
+$blogresult = mysql_query($blogquery);
+$blogrows = mysql_num_rows($blogresult);
+
+for ($i = 0 ; $i < 3 ; ++$i) {
+	$date = mysql_result($blogresult,$i,'date');
+	$niceDate = prettyDate($date);
+	$subject = mysql_result($blogresult,$i,'subject');
+	$contents = mysql_result($blogresult,$i,'contents');
+
+	echo $niceDate . " " . $subject . "<br>";
+	echo $contents . "<br><br>";
+
+}
+
+
 // grab most recent 5 results from the db
 $query = "SELECT player1, player2, player1_score, player2_score FROM results"; // LIMIT 0,5";
 $result = mysql_query($query);

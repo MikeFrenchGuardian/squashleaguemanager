@@ -10,6 +10,7 @@
 if (isset($_POST['stage3'])) { ?>
 
 	<span class="text-header">Edit Divisions 3</span><br><br> 
+
 <?php	
 	if (isset($_POST['season'])) {
 		$seasonID = sanitizeString($_POST['season']);
@@ -35,7 +36,7 @@ if (isset($_POST['stage3'])) { ?>
 	}
 
 
-<?php
+
 // Completed Form - Database Updated	
 } else if (isset($_POST['stage2'])) { ?>
 	
@@ -177,6 +178,7 @@ if (isset($_POST['stage3'])) { ?>
 
 } else { ?>
 	<span class="text-header">Edit Divisions</span><br><br>
+	
 <?php
 	// Setup the season drop down, will want to reverse the order eventually
 	$seasonQuery = "select id,startdate from season ORDER BY id DESC";
