@@ -1,6 +1,6 @@
 <?php require_once 'includes/head.php'; ?>
 
-<span class="text-header">Current League has <?php echo daysLeft(); ?></span><br><br>
+<span class="text-header">Current League has <?php echo daysLeft(); ?></span><br><br> 
 
 <?php if (is_array($feed)): ?>
 <ul>
@@ -20,7 +20,7 @@ $blogquery = "SELECT date,subject,contents FROM blog";
 $blogresult = mysql_query($blogquery);
 $blogrows = mysql_num_rows($blogresult);
 
-for ($i = 0 ; $i < 3 ; ++$i) {
+for ($i = 0 ; $i < $blogrows ; ++$i) {
 	$date = mysql_result($blogresult,$i,'date');
 	$niceDate = prettyDate($date);
 	$subject = mysql_result($blogresult,$i,'subject');
