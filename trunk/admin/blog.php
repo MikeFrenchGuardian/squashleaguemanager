@@ -24,16 +24,17 @@ if (isset($_POST["posted"])) {
 
 <?php
 	$blogNo = getBlogCount();
-	$query = "select date,subject from blog";
+	$query = "select id,date,subject from blog";
 	$result = mysql_query($query);
 	echo "Choose Post to Edit<br><br>";
 	
 	for ( $j = 0 ; $j < $blogNo ; ++$j ) {
+		  $id = mysql_result($result,$j,'id');
 		  $date = mysql_result($result,$j,'date');
 		  $subject = mysql_result($result,$j,'subject');
 		  $niceDate = prettyDate($date);
 		  
-		  echo '<a class="text-normal" href="blog.php?editpost=yes&postNo=' . $j .'">' . $niceDate . ': </a> <a class="text-normal" href="/admin/blog.php?editpost=yes&postNo=' . $j .'">'  . $subject .'</a><br><br>'; 	
+		  echo '<a class="text-normal" href="blog.php?editpost=yes&postNo=' . $id .'">' . $niceDate . ': </a> <a class="text-normal" href="/admin/blog.php?editpost=yes&postNo=' . $id .'">'  . $subject .'</a><br><br>'; 	
 	}
 
 } else if (isset($_GET["editpost"])) { 

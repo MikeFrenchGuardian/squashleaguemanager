@@ -26,7 +26,7 @@ for ($i = 0 ; $i < $blogrows ; ++$i) {
 	$subject = mysql_result($blogresult,$i,'subject');
 	$contents = mysql_result($blogresult,$i,'contents');
 
-	echo '<span class="text-semibold"> ' .$subject . '</span><span class="text-date"> Posted: ' . $niceDate . "</span><br>";
+	echo '<span class="text-blog-header">' .$subject . '</span><br><span class="text-blog-posted"> Posted on </span><span class="text-blog-date">' . $niceDate . "</span><br>";
 	echo '<span class="text-blog"> ' .$contents . '</span><br><br>';
 
 } ?>
