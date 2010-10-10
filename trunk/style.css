@@ -169,7 +169,7 @@ body {
         padding-top: 5px;
         padding-right: 10px; }
 
-########### Player Table ############
+########### Recent Results Table ############
 
 table.stats
 {text-align: center;
@@ -183,13 +183,44 @@ border-collapse: collapse;
 border-spacing: 0px;}
 
 table.stats td {
-	background-color:#CC0033;filter:alpha(opacity=60);opacity:.6;
+background-color:#CC0000;filter:alpha(opacity=60);opacity:.5;
 color: #fff;
 padding: 4px;
 text-align: left;
-border: 0px #fff solid;}
+border: 0px #fff solid; }
 
-table.stats td.hed
+table.stats td.hed {
+background-color: #666;
+color: #fff;
+padding: 4px;
+text-align: left;
+border-bottom: 2px #fff solid;
+font-size: 12px;
+font-weight: bold; } 
+
+
+########### League Table ############
+
+table.league
+{text-align: center;
+font-family: Lucida Grande, Arial, Helvetica, sans-serif ;
+font-weight: normal;
+font-size: 11px;
+color: #fff;
+width: 280px;
+background-color: #666;
+border: 0px;
+border-collapse: collapse;
+border-spacing: 0px;}
+
+table.league td
+{background-color: #CCC;
+color: #000;
+padding: 4px;
+text-align: left;
+border: 1px #fff solid;}
+
+table.league td.hed
 {background-color: #666;
 color: #fff;
 padding: 4px;
