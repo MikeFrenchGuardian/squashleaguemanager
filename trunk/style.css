@@ -183,7 +183,7 @@ border-collapse: collapse;
 border-spacing: 0px;}
 
 table.stats td {
-background-image:  url(images/resultBG.png);
+	background-color:#CC0033;filter:alpha(opacity=60);opacity:.6;
 color: #fff;
 padding: 4px;
 text-align: left;
