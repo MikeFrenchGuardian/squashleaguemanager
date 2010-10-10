@@ -38,7 +38,7 @@ echo '<br><br>';
 for ($i = 1; $i <= 4; ++$i) {
 
 	echo '<span class="text-semibold">&nbsp; Division ' . $i . '</span><br>';
-	echo "<table class=\"stats\">";
+	echo "<table class=\"league\">";
 	echo "<tr>";
 	echo "   <td class=\"hed\">Name</td>";
 	echo "   <td class=\"hed\">Games Played</td>";
