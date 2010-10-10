@@ -26,49 +26,10 @@ for ($i = 0 ; $i < $blogrows ; ++$i) {
 	$subject = mysql_result($blogresult,$i,'subject');
 	$contents = mysql_result($blogresult,$i,'contents');
 
-	echo '<span class="text-blue"> ' .$niceDate . '</span><span class="text-semibold"> ' . $subject . "</span><br>";
-	echo $contents . "<br><br>";
+	echo '<span class="text-semibold"> ' .$subject . '</span><span class="text-date"> Posted: ' . $niceDate . "</span><br>";
+	echo '<span class="text-blog"> ' .$contents . '</span><br><br>';
 
 } ?>
 </div>
-<?php 
 
-
-// grab most recent 5 results from the db
-$query = "SELECT player1, player2, player1_score, player2_score FROM results"; // LIMIT 0,5";
-$result = mysql_query($query);
-$rows = mysql_num_rows($result);
-
-
-
-$last5 = $rows-5; //not required anymore... db going the other way?!?
-
-
-      
-?>
-<div class="recentResults">
-<span class="text-medium-header">Recent Results</span><br><br>
-<table class="stats">
-<tr>
-   <td class="hed">Winner</td>
-   <td class="hed">Runner-Up</td>
-
-</tr>
-<?php
-for ($j = $last5 ; $j < $rows ; ++$j)
-{
-        $player1 = mysql_result($result,$j,'player1');
-        $player2 = mysql_result($result,$j,'player2');
-        $p1_score = mysql_result($result,$j,'player1_score');
-        $p2_score = mysql_result($result,$j,'player2_score');
-
-
-echo    '<tr>';
-echo    '<td class="text-normal">' . getPlayerName($player1) . ' ' . $p1_score . '</td>';
-echo    '<td class="text-normal">' . $p2_score . ' ' . getPlayerName($player2) . '</td>';
-echo    '</tr>';
-}
-echo "</table> <br><br>";
-?>
-</div>
 <?php require_once 'includes/footer.php'; ?>

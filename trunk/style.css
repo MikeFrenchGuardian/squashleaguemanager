@@ -28,10 +28,10 @@ body {
  
  .recentResults {
  	float: right;
- 	width: 260px;
+ 	width: 300px;
  	height: 100px;
- 	padding-right: -50px;
- 	margin-right: -33;
+ 	padding-right: 0px;
+ 	margin-right: -23px;
  	}
 
 	
@@ -132,11 +132,18 @@ body {
 	line-height: 170%;
 	color: black; }
 	
-.text-blue {
+.text-date {
+	font-family: Lucida Grande, Arial; 
+	font-size: 7pt;
+	line-height: 170%;
+	color: 778899; }
+	
+.text-blog {
 	font-family: Lucida Grande, Arial; 
 	font-size: 9pt;
 	line-height: 170%;
-	color: red; }
+	font-weight: bold;
+	color: #909090; }
 	
 .text-normal a:link { 
 	font-family: Lucida Grande, Arial; 
@@ -170,18 +177,17 @@ font-family: Lucida Grande, Arial, Helvetica, sans-serif ;
 font-weight: normal;
 font-size: 11px;
 color: #fff;
-width: 280px;
-background-color: #666;
+width: 300px;
 border: 0px;
 border-collapse: collapse;
 border-spacing: 0px;}
 
-table.stats td
-{background-color: #E0E0E0;
-color: #000;
+table.stats td {
+background-image:  url(images/resultBG.png);
+color: #fff;
 padding: 4px;
 text-align: left;
-border: 1px #fff solid;}
+border: 0px #fff solid;}
 
 table.stats td.hed
 {background-color: #666;
