@@ -22,7 +22,7 @@ body {
  	
  .blog {
 	float: left;
- 	width: 380px;
+ 	width: 450px;
  	height: 500px;
  	}
  
@@ -118,6 +118,33 @@ body {
         line-height: 140%;
         font-weight: bold;
         color: #909090; }
+        
+	
+.text-blog {
+	font-family: Lucida Grande, Arial; 
+	font-size: 12pt;
+	line-height: 170%;
+	color: #000000; }
+
+.text-blog-header {
+        font-family: Lucida Grande, Verdana, Arial;
+        font-size: 20pt;
+        line-height: 140%;
+        font-weight: light;
+        color: #000000; } 
+
+.text-blog-posted {
+        font-family: Lucida Grande, Verdana, Arial;
+        font-size: 8pt;
+        line-height: 140%;
+
+        color: #000000; }      
+
+.text-blog-date {
+        font-family: Lucida Grande, Verdana, Arial;
+        font-size: 8pt;
+        line-height: 140%;
+        color: red; } 
 
 .text-semibold {
 	font-family: Lucida Grande, Verdana, Arial; 
@@ -137,13 +164,7 @@ body {
 	font-size: 7pt;
 	line-height: 170%;
 	color: 778899; }
-	
-.text-blog {
-	font-family: Lucida Grande, Arial; 
-	font-size: 9pt;
-	line-height: 170%;
-	font-weight: bold;
-	color: #909090; }
+
 	
 .text-normal a:link { 
 	font-family: Lucida Grande, Arial; 

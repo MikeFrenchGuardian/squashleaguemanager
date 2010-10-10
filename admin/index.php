@@ -8,6 +8,8 @@
 <span class="text-normal">
 Create a homepage post <a href="blog.php">here</a>
 <br><br>
+Edit a homepage post <a href="blog.php?editlist=yes">here</a>
+<br><br>
 Add a result <a href="addresult.php">here</a>
 <br><br>
 Create a new season <a href="addseason.php">here</a>
