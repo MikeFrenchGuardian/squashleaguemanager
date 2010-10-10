@@ -10,7 +10,7 @@ $rows = mysql_num_rows($result);
 
 ?>
 <span class="text-header">Result History:</span><br>
-<table class="stats">
+<table class="league">
 <tr>
    <td class="hed">Winner</td>
    <td class="hed">Loser</td>
@@ -55,26 +55,30 @@ echo 	'<td class="text-normal">' . $p1g5 . " " . $p2g5 . '</td>';
 
 echo	'</tr>';
 }
-echo "</table>";
+echo "</table><br>";
 
 
 $wins = getWins($id);
 $losses = getLosses($id);
-$average = $wins/$losses*100;
+
+if ($losses != 0) {
+	$average = $wins/$losses*100;
+} else {
+	$average = "Insufficient results at the moment";
+}
+
 $averagePointsPerSeason;
 ?>
 <span class="text-header">Player Stats:</span><br>
 <?php
-echo "Total Wins:" . $wins . "<br>";
-echo "Total Defeats:" . $losses . "<br>";
+echo "Total Wins: " . $wins . "<br>";
+echo "Total Defeats: " . $losses . "<br>";
+echo "Win Ratio: " . $average . "<br><br>";
 ?>
 <span class="text-header">League Movement</span><br>
 Coming soon:
 
-<?php
 
-
-?>
 
 <?php require_once 'includes/footer.php'; ?>
 <!--SHould totally have loads of cool stuff like, w/l tiebreaks, league promotion / demotion graphs -->
