@@ -8,17 +8,17 @@
 
 * Check season hasn't already been setup function
 
-* -Check season dates don't clash-
+* ~~Check season dates don't clash~~
 
-* -Homepage blog engine-
+* ~~Homepage blog engine~~
 
 * Rankings engine
 
-* -Check player doesn't exist function for new player page. By email adress I guess-
+* ~~Check player doesn't exist function for new player page. By email adress I guess~~
 
 * Player login, use email address.
 
-* -Finish new season dates page-
+* ~~Finish new season dates page~~
 
 * Player photos?
 
@@ -26,7 +26,7 @@
 
 * Clear results for beginning of first new league
 
-* -Check appropriate numbers in each league-
+* ~~Check appropriate numbers in each league~~
 
 * Non league players list in the setup division page for people joining
 / rejoining
@@ -35,4 +35,4 @@
 
 * Player results will need 'previous' button or scrollability.
 
-* -Shrink size of header picture, massive at the moment- Incorporated the recent scores in so this can be ignored.
+* ~~Shrink size of header picture, massive at the moment~~ Incorporated the recent scores in so this can be ignored.
