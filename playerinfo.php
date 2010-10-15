@@ -7,7 +7,7 @@ $rows = mysql_num_rows($result);
 
 ?>
 
-<table class="stats">
+<table class="league">
 <tr>
    <td class="hed">Name</td>
    <td class="hed">Mobile</td>

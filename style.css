@@ -144,7 +144,7 @@ body {
         font-family: Lucida Grande, Verdana, Arial;
         font-size: 8pt;
         line-height: 140%;
-        color: red; } 
+        color: CC0000; } 
 
 .text-semibold {
 	font-family: Lucida Grande, Verdana, Arial; 
@@ -204,7 +204,7 @@ border-collapse: collapse;
 border-spacing: 0px;}
 
 table.stats td {
-background-color:#CC0000;filter:alpha(opacity=60);opacity:.5;
+background-color:black;filter:alpha(opacity=60);opacity:.5;
 color: #fff;
 padding: 4px;
 text-align: left;

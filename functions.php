@@ -233,10 +233,12 @@ function daysLeft() {
         $eDate = mysql_result($result,$seasonID,'endDate');
         $daysLeft = (strtotime($eDate) - (strtotime($currentDate))) / (60 * 60 * 24);
 
-        if ($daysLeft > 28) {
-                echo $daysLeft . " days to go \n";
+        if ($daysLeft < 1) {
+        		echo "This league is finished. New one soon!	 \n";
         } else if ($daysLeft < 10) {
-                echo $daysLeft . " days to go people, get those games in! \n";
+                echo "The current league has " . $daysLeft . " days to go people, get those games in! \n";
+        } else if ($daysLeft > 28) {
+                echo "The current league has " . $daysLeft . " days to go \n";
         } else echo $daysLeft . " days to go.";
 }
 
