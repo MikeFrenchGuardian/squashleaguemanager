@@ -434,4 +434,12 @@ function getBlogCount() {
 	return $name;
 }
 
+function getCurrentPlayerDivID($playerID) {
+	$season = currentSeason();	
+	$query = "select playerdiv.divisionID from playerdiv,division where division.id = playerdiv.divisionid and division.seasonid = $season and  playerid=$playerID";	
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->divisionID;
+	return $name;
+}	
 ?>

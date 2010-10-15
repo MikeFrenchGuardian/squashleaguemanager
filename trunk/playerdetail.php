@@ -2,13 +2,41 @@
 <?php require_once 'includes/head.php';
 
 $id = $_GET["id"];
-$query = "select * from results where player1 = $id or player2 = $id";
+
+$currSeasonID = getCurrentPlayerDivID($id);
+
+$toPlayQuery = "select player.id, player.name, player.email from player,playerdiv where player.id = playerdiv.playerid and playerdiv.divisionID=$currSeasonID and player.id != $id";
 
 
-$result = mysql_query($query);
-$rows = mysql_num_rows($result);
+$toPlayResult = mysql_query($toPlayQuery);
+$toPlayRows = mysql_num_rows($toPlayResult);
+?>
+<br>
+<span class="text-header">Your matches this league:</span><br>
+<table class="league">
+<tr>
+   <td class="hed">Name</td>
+   <td class="hed">Email</td>
+</tr>
+<?php
+for ($i = 0 ; $i < $toPlayRows ; ++$i)
+{
+	
+	$toPlayName = mysql_result($toPlayResult,$i,'name');
+	$toPlayEmail = mysql_result($toPlayResult,$i,'email');
+
+	echo 	'<tr>';
+	echo 	'<td>' . $toPlayName . '</td>';
+	echo 	'<td><a class="text-normal" href="mailto:" . $toPlayName . ">' . $toPlayEmail . '</td>';	
+	echo	'</tr>';
+}
+	echo "</table><br>";
+
+
+
 
 ?>
+
 <span class="text-header">Result History:</span><br>
 <table class="league">
 <tr>
@@ -23,6 +51,10 @@ $rows = mysql_num_rows($result);
 
 </tr>
 <?php
+$query = "select * from results where player1 = $id or player2 = $id";
+$result = mysql_query($query);
+$rows = mysql_num_rows($result);
+
 for ($j = 0 ; $j < $rows ; ++$j)
 {
 	
