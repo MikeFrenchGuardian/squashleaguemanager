@@ -12,8 +12,6 @@
 
 * Player photos?
 
-* Backup regime, mysql dump to where? Email google account?
-
 * Clear results for beginning of first new league
 
 * Non league players list in the setup division page for people joining
@@ -24,6 +22,7 @@
 * Player results will need 'previous' button or scrollability.
 
 
+* ~~Backup regime, mysql dump to where? Email google account?~~
 
 * ~~Check season hasn't already been setup function~~
 
