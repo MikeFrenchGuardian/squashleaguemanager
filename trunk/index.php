@@ -1,6 +1,6 @@
 <?php require_once 'includes/head.php'; ?>
 
-<span class="text-header">Current League has <?php echo daysLeft(); ?></span><br><br> 
+<span class="text-header"><?php echo daysLeft(); ?></span><br><br> 
 
 <?php if (is_array($feed)): ?>
 <ul>
