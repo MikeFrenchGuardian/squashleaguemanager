@@ -46,8 +46,8 @@ for ($j = $last5 ; $j < $rows ; ++$j)
 
 
 echo    '<tr>';
-echo    '<td class="text-normal">' . getPlayerName($player1) . ' ' . $p1_score . '</td>';
-echo    '<td class="text-normal">' . $p2_score . ' ' . getPlayerName($player2) . '</td>';
+echo    '<td>' . getPlayerName($player1) . ' ' . $p1_score . '</td>';
+echo    '<td>' . $p2_score . ' ' . getPlayerName($player2) . '</td>';
 echo    '</tr>';
 }
 echo "</table> <br><br>";

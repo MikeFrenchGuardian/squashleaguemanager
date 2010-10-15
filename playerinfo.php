@@ -25,8 +25,8 @@ for ($j = 0 ; $j < $rows ; ++$j)
 	
 echo 	'<tr>';
 echo 	'<td><a class="text-normal" href="playerdetail.php?id=' . $id . '">' . $name . '</td>';
-echo 	'<td class="text-normal">' . $mobilephone . '</td>';
-echo 	'<td class="text-normal">' . $phone . '</td>';
+echo 	'<td>' . $mobilephone . '</td>';
+echo 	'<td>' . $phone . '</td>';
 echo 	'<td><a class="text-normal" href="mailto:' . $email . '">' . $email . '</td>';
 echo	'</tr>';
 }

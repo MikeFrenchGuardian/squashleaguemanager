@@ -15,7 +15,7 @@
 </ul>	
 <br>
 Scoring	<br>	<table class="league" left-padding="30">
-<tr><td>Result</td><td>Points</td></tr>
+<tr><td class="hed">Result</td><td class="hed">Points</td></tr>
 <tr><td>3-0</td><td>7-1</td></tr>
 <tr><td>3-1</td><td>6-2</td></tr>
 <tr><td>3-2</td><td>6-3</td></tr>
