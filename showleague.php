@@ -44,6 +44,7 @@ for ($i = 1; $i <= 4; ++$i) {
 	echo "   <td class=\"hed\">Games Played</td>";
 	echo "   <td class=\"hed\">Wins</td>";
 	echo "   <td class=\"hed\">Losses</td>";
+	echo "   <td class=\"hed\">Draws</td>";
 	echo "   <td class=\"hed\">Points</td>";
 	echo "</tr>";
 	
@@ -57,6 +58,7 @@ for ($i = 1; $i <= 4; ++$i) {
 			$gamesPlayed = getLeagueGamesPlayed($playerID,$seasonID);
 			$wins = getLeagueWins($playerID,$seasonID);
 			$loses = getLeagueLoses($playerID,$seasonID);
+			$draws = getLeagueDraws($playerID,$seasonID);
 			$points = getLeaguePoints($playerID,$seasonID);
 			$arrayNo = "player" .$j;
 	
@@ -67,6 +69,7 @@ for ($i = 1; $i <= 4; ++$i) {
 						"gamesPlayed" => $gamesPlayed,
 						"wins" => $wins,
 						"loses" => $loses,
+						"draws" => $draws,
 						"points" => $points,
 				);	   
 
@@ -81,6 +84,7 @@ foreach ($leagueArray as $position) {
 	echo	'<td class="text-normal">' . $position['gamesPlayed'] . '</td>';
 	echo	'<td class="text-normal">' . $position['wins'] . '</td>';
 	echo	'<td class="text-normal">' . $position['loses'] . '</td>';
+	echo	'<td class="text-normal">' . $position['draws'] . '</td>';
 	echo	'<td class="text-normal">' . $position['points'] . '</td>';
 	echo	'</tr>';
   }
