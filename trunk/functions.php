@@ -120,16 +120,16 @@ function getLeaguePoints($playerID,$seasonID) {
 			$winPoints = 4;
 		}	else if ($player1_score == 2 && $player2_score == 1) {
 			$winPoints = 5;
-		}	else if ($player1_score = 1 && $player2_score = 1) {
+		}	else if ($player1_score == 1 && $player2_score == 1) {
 			$winPoints = 3;
-		}	else if ($player1_score = 1 && $player2_score = 0) {
+		}	else if ($player1_score == 1 && $player2_score == 0) {
 			$winPoints = 4;
-		}	else if ($player1_score = 3 && $player2_score = "W/O") {
+		}	else if ($player1_score == 3 && $player2_score == -1) {
 			$winPoints = 7; 
-		} else {
+		} 
 		$totalWinPoints = $totalWinPoints + $winPoints;
 		}	
-	}
+	
 	// get losing scores
 	$query2 = "select player1_score,player2_score from results where seasonid=$seasonID and player2=$playerID";
 	$result2 = mysql_query($query2);
@@ -150,19 +150,19 @@ function getLeaguePoints($playerID,$seasonID) {
 			$lossPoints = 4;
 		}	else if ($player1_score == 2 && $player2_score == 1) {
 			$lossPoints = 2;
-		}	else if ($player1_score = 1 && $player2_score = 1) {
+		}	else if ($player1_score == 1 && $player2_score == 1) {
 			$lossPoints = 3;
-		}	else if ($player1_score = 1 && $player2_score = 0) {
+		}	else if ($player1_score == 1 && $player2_score == 0) {
 			$lossPoints = 1;
-		}	else if ($player1_score = 3 && $player2_score = "W/O") {
+		}	else if ($player1_score == 3 && $player2_score == -1) {
 			$lossPoints = 0;
-		}	else {
+		}	
 		$totalLossPoints = $totalLossPoints + $lossPoints;
 		}
 	// add totals together
 	return ($totalWinPoints + $totalLossPoints);
-	}
-}
+}	
+
 
 // Get players Name from their player ID
 function getPlayerName($playerID) {
