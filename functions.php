@@ -47,7 +47,7 @@ function getDivPlayers($division,$seasonID,$divPosition) {
 
 // get specified league victories
 function getLeagueWins($playerID,$seasonID) {
-	$query = "select count(player1) from results where seasonID = $seasonID and player1 = $playerID";
+	$query = "select count(player1) from results where seasonID = $seasonID and player1 = $playerID and player1_score > player2_score";
 	$result = mysql_query($query);
 	$row = mysql_fetch_object($result);
 	$name = $row->{'count(player1)'};
@@ -79,6 +79,23 @@ function getLosses($playerID) {
 	return $rows;
 }
 
+// get specified league draws
+function getLeagueDraws($playerID,$seasonID) {
+	$query = "select count(player1) from results where seasonID = $seasonID and player1 = $playerID and player1_score == player2_score";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->{'count(player1)'};
+	
+	$query2 = "select count(player2) from results where seasonID = $seasonID and player1 = $playerID and player1_score == player2_score";
+	$result2 = mysql_query($query2);
+	$row2 = mysql_fetch_object($result2);
+	$name2 = $row2->{'count(player2)'};
+	
+	$draws = $name + $name2;
+	return $draws;
+}
+
+
 // get player league
 function getPlayerLeague($playerID,$seasonID) {
 	$query = "select division.number from division,playerdiv where division.id = playerdiv.divisionid AND playerdiv.playerid= $playerID AND division.seasonid = $seasonID";
@@ -95,7 +112,8 @@ function getPlayerLeague($playerID,$seasonID) {
 function getLeagueGamesPlayed($playerID,$seasonID) {
 	$won = getLeagueWins($playerID,$seasonID);
 	$lost = getLeagueLoses($playerID,$seasonID);
-	$played = ($won + $lost);
+	$drawn = getLeagueDraws($playerID,$seasonID);
+	$played = ($won + $lost + $drawn);
 	return $played;
 }
 
