@@ -50,7 +50,7 @@ Choose Season:
 <?php 
 for ($j = 0; $j < $rows ; ++$j) {
 
-	echo '<option value="' . mysql_result($result,$j,'id') . '">' . mysql_result($result,$j,'startdate') . '</option>';
+	echo '<option value="' . mysql_result($result,$j,'id') . '">' . prettyDate(mysql_result($result,$j,'startdate')) . '</option>';
 }
 ?> 
 </select>
