@@ -156,7 +156,7 @@ function getLeaguePoints($playerID,$seasonID) {
 			$lossPoints = 1;
 		}	else if ($player1_score = 3 && $player2_score = "W/O") {
 			$lossPoints = 0;
-		}	
+		}	else {
 		$totalLossPoints = $totalLossPoints + $lossPoints;
 	}
 	// add totals together
