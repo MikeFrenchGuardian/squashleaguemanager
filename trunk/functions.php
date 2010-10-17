@@ -128,8 +128,8 @@ function getLeaguePoints($playerID,$seasonID) {
 			$winPoints = 7; 
 		} else {
 		$totalWinPoints = $totalWinPoints + $winPoints;
-	}	
-
+		}	
+	}
 	// get losing scores
 	$query2 = "select player1_score,player2_score from results where seasonid=$seasonID and player2=$playerID";
 	$result2 = mysql_query($query2);
@@ -158,11 +158,11 @@ function getLeaguePoints($playerID,$seasonID) {
 			$lossPoints = 0;
 		}	else {
 		$totalLossPoints = $totalLossPoints + $lossPoints;
-	}
+		}
 	// add totals together
 	return ($totalWinPoints + $totalLossPoints);
+	}
 }
-
 
 // Get players Name from their player ID
 function getPlayerName($playerID) {
