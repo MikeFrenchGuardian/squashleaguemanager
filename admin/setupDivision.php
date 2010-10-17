@@ -38,13 +38,13 @@ if (isset($_POST['stage3'])) { ?>
 
 
 // Completed Form - Database Updated	
-} else if (isset($_POST['stage2'])) { ?>
+} else if (isset($_GET['stage2'])) { ?>
 	
 	<span class="text-header">Edit Divisions 3</span><br><br> 
 	
 <?php	
-	if (isset($_POST['season'])) {
-		$seasonID = sanitizeString($_POST['season']);
+	if (isset($_GET['season'])) {
+		$seasonID = sanitizeString($_GET['season']);
 	} else {
 		echo "No season selected, please try again";
 	}

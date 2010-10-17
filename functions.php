@@ -56,7 +56,7 @@ function getLeagueWins($playerID,$seasonID) {
 
 // get all league victories
 function getWins($playerID) {
-	$query = "select player1 from results where player1 = $playerID";
+	$query = "select player1 from results where player1 = $playerID and player1_score > player2_score";
 	$result = mysql_query($query);
 	$rows = mysql_num_rows($result);
 	return $rows;
@@ -64,7 +64,7 @@ function getWins($playerID) {
 
 // get specified league defeats
 function getLeagueLoses($playerID,$seasonID) {
-	$query = "select count(player2) from results where seasonID = $seasonID and player2 = $playerID";
+	$query = "select count(player2) from results where seasonID = $seasonID and player2 = $playerID and player2_score < player1_score";
 	$result = mysql_query($query);
 	$row = mysql_fetch_object($result);
 	$name = $row->{'count(player2)'};
@@ -124,7 +124,9 @@ function getLeaguePoints($playerID,$seasonID) {
 			$winPoints = 3;
 		}	else if ($player1_score = 1 && $player2_score = 0) {
 			$winPoints = 4;
-		}
+		}	else if ($player1_score = 3 && $player2_score = "W/O") {
+			$winPoints = 7; 
+		} else {
 		$totalWinPoints = $totalWinPoints + $winPoints;
 	}	
 
@@ -152,7 +154,9 @@ function getLeaguePoints($playerID,$seasonID) {
 			$lossPoints = 3;
 		}	else if ($player1_score = 1 && $player2_score = 0) {
 			$lossPoints = 1;
-		}
+		}	else if ($player1_score = 3 && $player2_score = "W/O") {
+			$lossPoints = 0;
+		}	
 		$totalLossPoints = $totalLossPoints + $lossPoints;
 	}
 	// add totals together
