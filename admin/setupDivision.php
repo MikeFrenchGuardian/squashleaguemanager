@@ -59,25 +59,23 @@ if (isset($_POST['stage3'])) { ?>
 			$name = getPlayerName($playerID);
 			$divisionID = getDivisionID($seasonID,$div);
 
+			if ($div == "remove") {
+				echo "<br>" . $name . " was removed from the league<br>";	
+			} else {
 			echo "<br>" . $name . " was added to division " . $div ."<br>";
 			addPlayerToDiv($playerID,$divisionID);
-		} else {
-			echo "<br>This " . $name . " isn't in a league <br>";
-		}
+		} 
 	}
-
+	}
 
 
 } else if (isset($_GET['stage1'])) { ?>
 
-<span class="text-header">Edit Division 2</span><br><br>
+<span class="text-header">Edit Division - Part 2</span><br><br>
 
 <?php
 		if (isset($_POST['season'])) {
 	$startDate = getSeasonStart($seasonID);
-
-
-
 
 	}
 
@@ -97,16 +95,11 @@ if (isset($_POST['stage3'])) { ?>
 
 	?>
 	<form method="get" action="setupDivision.php">
-
-
-
-
-
 	<?php
 	for ($i = 1; $i <= $prevleagueCount; ++$i) {	
 
 		echo "Division $i<br><br>";
-		echo "<table class=\"stats\">";
+		echo "<table class=\"league\">";
 		echo "<tr>";
 		echo "   <td class=\"hed\">Name</td>";
 		echo "   <td class=\"hed\">Points</td>";
@@ -158,7 +151,9 @@ if (isset($_POST['stage3'])) { ?>
 			} else {
 				echo "<option name=\"" . $position['playerID'] ."\" value=\"" . $j . "\">" . $j . "</option>";
 			}	
+		
 		}
+				echo "<option name=\"" . $position['playerID'] ."\" value=\"remove\">Remove</option>";
    	 echo "</select></td>";
 		echo	'</tr>';
  	 }

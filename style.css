@@ -22,7 +22,7 @@ body {
  	
  .blog {
 	float: left;
- 	width: 750px;
+ 	width: 600px;
  	height: 500px;
 
  	}
@@ -123,13 +123,13 @@ body {
 	
 .text-blog {
 	font-family: Lucida Grande, Arial; 
-	font-size: 12pt;
+	font-size: 10pt;
 	line-height: 170%;
 	color: #000000; }
 
 .text-blog-header {
         font-family: Lucida Grande, Verdana, Arial;
-        font-size: 20pt;
+        font-size: 18pt;
         line-height: 140%;
         font-weight: light;
         color: #000000; } 
