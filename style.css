@@ -127,6 +127,18 @@ body {
 	line-height: 170%;
 	color: #000000; }
 
+.text-blog a:link { 
+	font-family: Lucida Grande, Arial; 
+	font-size: 10pt;
+	line-height: 170%;
+	text-decoration: none;
+	color: #CC0000; }
+.text-blog a:visited { 
+	text-decoration: none; } 
+.text-blog a:hover { 
+	text-decoration: underline; }
+.text-blog a:active { }	
+
 .text-blog-header {
         font-family: Lucida Grande, Verdana, Arial;
         font-size: 18pt;
