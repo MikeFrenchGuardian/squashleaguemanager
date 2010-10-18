@@ -17,7 +17,7 @@ require_once 'functions.php';
 
 
 // grab most recent 5 results from the db
-$query = "SELECT player1, player2, player1_score, player2_score FROM results"; // LIMIT 0,5";
+$query = "SELECT player1, player2, player1_score, player2_score FROM results where player2_score != -1"; // LIMIT 0,5";
 $result = mysql_query($query);
 $rows = mysql_num_rows($result);
 
