@@ -16,7 +16,7 @@
 <?php
 
 // grab 5 most recent blog posts from the db
-$blogquery = "SELECT id, date,subject,synopsis FROM blog order by id desc "; 
+$blogquery = "SELECT id, date,subject,synopsis,contents FROM blog order by id desc "; 
 $blogresult = mysql_query($blogquery);
 $blogrows = mysql_num_rows($blogresult);
 
@@ -25,9 +25,12 @@ for ($i = 0 ; $i < $blogrows ; ++$i) {
 	$niceDate = prettyDate($date);
 	$subject = mysql_result($blogresult,$i,'subject');
 	$synopsis = mysql_result($blogresult,$i,'synopsis');
+	$contents = mysql_result($blogresult,$i,'contents');
 
 	echo '<span class="text-blog-header">' .$subject . '</span><br><span class="text-blog-posted"> Posted on </span><span class="text-blog-date">' . $niceDate . "</span><br>";
-	echo '<span class="text-blog"> ' .$synopsis . '</span><br><br>';
+	echo '<span class="text-blog"> ' .$synopsis . '</span><br>';
+	if ($contents != "NULL") {
+		echo '<span class="text-blog"><a href="blog.php?blogID=$i">Read More</a></span><br><br>';		
 
 } ?>
 </div>
