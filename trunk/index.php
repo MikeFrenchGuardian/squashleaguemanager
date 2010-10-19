@@ -24,10 +24,10 @@ for ($i = 0 ; $i < $blogrows ; ++$i) {
 	$date = mysql_result($blogresult,$i,'date');
 	$niceDate = prettyDate($date);
 	$subject = mysql_result($blogresult,$i,'subject');
-	$contents = mysql_result($blogresult,$i,'contents');
+	$synopsis = mysql_result($blogresult,$i,'synopsis');
 
 	echo '<span class="text-blog-header">' .$subject . '</span><br><span class="text-blog-posted"> Posted on </span><span class="text-blog-date">' . $niceDate . "</span><br>";
-	echo '<span class="text-blog"> ' .$contents . '</span><br><br>';
+	echo '<span class="text-blog"> ' .$synopsis . '</span><br><br>';
 
 } ?>
 </div>
