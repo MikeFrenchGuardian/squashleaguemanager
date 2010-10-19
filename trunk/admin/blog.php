@@ -6,17 +6,18 @@ if (isset($_POST["posted"])) {
 	$contents = $_POST["contents"];
 	$currDate = showCurrentDate();
 	echo '<span class="text-header">Add a post</span><br><br>';
-	addBlogPost($currDate,$subject,$contents);
+	addBlogPost($currDate,$subject,$synopsis,$contents);
 	echo "Post added";
 	
 } else if (isset($_POST["edited"])) {
 
 	$blogID = $_POST['blogID'];
 	$subject = $_POST['subject'];
+	$synopsis = $_POST['synopsis'];
 	$contents = $_POST['contents'];
 	$currDate = showCurrentDate();
 	echo '<span class="text-header">Post Edited</span><br><br>';
-	editBlogPost($blogID,$subject,$contents);
+	editBlogPost($blogID,$subject,$synopsis,$contents);
 	echo "Post edited";
 	
 } else if (isset($_GET["editlist"])) { ?>
