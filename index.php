@@ -30,7 +30,7 @@ for ($i = 0 ; $i < $blogrows ; ++$i) {
 	echo '<span class="text-blog-header">' .$subject . '</span><br><span class="text-blog-posted"> Posted on </span><span class="text-blog-date">' . $niceDate . "</span><br>";
 	echo '<span class="text-blog"> ' .$synopsis . '</span><br>';
 	if ($contents != "NULL") {
-		echo '<span class="text-blog"><a href="blog.php?blogID=$i">Read More</a></span><br><br>';		
+		echo '<span class="text-blog"><a href="blog.php?blogID=' .$i. '">Read More</a></span><br><br>';		
 	}
 } ?>
 </div>
