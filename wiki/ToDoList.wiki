@@ -12,8 +12,6 @@
 
 * Player photos?
 
-* Clear results for beginning of first new league
-
 * Non league players list in the setup division page for people joining
 / rejoining
 
