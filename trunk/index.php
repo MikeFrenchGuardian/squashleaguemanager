@@ -16,7 +16,7 @@
 <?php
 
 // grab 5 most recent blog posts from the db
-$blogquery = "SELECT id, date,subject,contents FROM blog order by id desc "; 
+$blogquery = "SELECT id, date,subject,synopsis FROM blog order by id desc "; 
 $blogresult = mysql_query($blogquery);
 $blogrows = mysql_num_rows($blogresult);
 
