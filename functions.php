@@ -443,7 +443,7 @@ function addBlogPost($currDate,$subject,$synopsis,$contents) {
 }
 
 function editBlogPost($blogID,$subject,$synopsis,$contents) {
-	$query = ("update blog set subject='$subject', synopsis='$synopsis' contents='$contents' where id='$blogID'");
+	$query = ("update blog set subject='$subject', synopsis='$synopsis', contents='$contents' where id='$blogID'");
 	$result = mysql_query($query) or die(mysql_error());
 
 }
