@@ -45,6 +45,7 @@ if (isset($_POST["posted"])) {
 
 	$getBlogRow = mysql_fetch_object($getBlogResult);
 	$subject = $getBlogRow->subject;
+	$synopsis = $getBlogRow->synopsis;
 	$contents = $getBlogRow->contents;
 	?>
 
@@ -52,6 +53,7 @@ if (isset($_POST["posted"])) {
 <span class="text-header">Edit a post</span><br><br>
 <form method="post" action="blog.php">	
 Subject:&nbsp; <input type="text" name="subject" value="<?php echo $subject ?>" /><br />
+Synopsis: <textarea name="contents" wrap="physical" rows="10" cols="30"><?php echo $synopsis ?> </textarea> <br />
 Contents: <textarea name="contents" wrap="physical" rows="10" cols="30"><?php echo $contents ?> </textarea> <br />
 <input type="hidden" name="blogID" value="<?php echo $blogID ?>">
 <input type="hidden" name="edited" value="yes">
@@ -64,6 +66,7 @@ Contents: <textarea name="contents" wrap="physical" rows="10" cols="30"><?php ec
 <span class="text-header">Add a post</span><br><br> 
 <form method="post" action="blog.php">	
 Subject:&nbsp; <input type="text" name="subject" /><br />
+Synopsis: <textarea name="synopsis" wrap="physical" rows="10" cols="30"> </textarea> <br />
 Contents: <textarea name="contents" wrap="physical" rows="10" cols="30"> </textarea> <br />
 <input type="hidden" name="posted" value="yes">
 <input type="submit" value="Submit" />
