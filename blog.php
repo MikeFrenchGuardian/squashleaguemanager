@@ -8,7 +8,7 @@ $blogID = $_GET['blogID'];
 <?php
 
 // grab 5 most recent blog posts from the db
-$blogquery = "SELECT id, date,subject,contents FROM blog where id= $blogID"; 
+$blogquery = "SELECT id, date,subject,synopsis,contents FROM blog where id= $blogID"; 
 $blogresult = mysql_query($blogquery);
 //$blogrows = mysql_num_rows($blogresult);
 
@@ -19,7 +19,7 @@ $blogresult = mysql_query($blogquery);
 
 	$blogrow = mysql_fetch_object($blogresult);
 	$blogdate = $blogrow->date;
-	$niceDate = prettyDate($date);
+	$niceDate = prettyDate($blogdate);
 	$blogsubject = $blogrow->subject;
 	$blogsynopsis = $blogrow->synopsis;
 	$blogcontent = $blogrow->contents;
@@ -29,7 +29,7 @@ $blogresult = mysql_query($blogquery);
 
 	
 	echo '<span class="text-blog-header">' . $blogsubject . '</span><br><span class="text-blog-posted"> Posted on </span><span class="text-blog-date">' . $niceDate . "</span><br>";
-	echo '<span class="text-blog"> ' .$blogsynopsis . '<br><br>' .$blogcontents . '</span><br><br>';
+	echo '<span class="text-blog"> ' .$blogsynopsis . '<br><br>' .$blogcontent . '</span><br><br>';
 
  ?>
 </div>

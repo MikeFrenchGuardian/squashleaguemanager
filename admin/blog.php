@@ -41,7 +41,7 @@ if (isset($_POST["posted"])) {
 } else if (isset($_GET["editpost"])) { 
 	
 	$blogID = $_GET['postNo'];
-	$getBlogQuery = "select subject,contents from blog where id= $blogID";
+	$getBlogQuery = "select subject,synopsis,contents from blog where id= $blogID";
 	$getBlogResult = mysql_query($getBlogQuery);
 
 	$getBlogRow = mysql_fetch_object($getBlogResult);
