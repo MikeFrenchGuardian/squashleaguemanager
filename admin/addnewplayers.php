@@ -38,6 +38,7 @@ echo '<tr><td>' . $playerName . '</td>';
 }
 echo '</table>';
 echo '<input type="hidden" name="stage2" value="yes">';
+echo '<input type="hidden" name="season" value="' . $currentSeason . '">';
 echo '<input type="submit" value="Submit">';
 echo '</form>';
 require_once '../includes/adminfooter.php'; ?>
