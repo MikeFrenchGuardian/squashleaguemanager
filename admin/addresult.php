@@ -26,7 +26,7 @@ if ($duplicate == "yes") {
 //$query = "SELECT id,name from player";
 
 $currSeason = currentSeason();
-$query = "select player.id, player.name, division.number from player,division,playerdiv where player.id=playerdiv.playerID and playerdiv.divisionid = division.id and division.seasonid = $currSeason";
+$query = "select player.id, player.name, division.number from player,division,playerdiv where player.id=playerdiv.playerID and playerdiv.divisionid = division.id and division.seasonid = $currSeason order by division.number";
 $result = mysql_query($query);
 
 $rows = mysql_num_rows($result);
