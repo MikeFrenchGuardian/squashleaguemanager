@@ -1,5 +1,28 @@
 <?php require_once '../includes/adminhead.php';
 
+
+if (isset $_POST['games']) {
+		$seasonID = currentSeason();
+
+if (isset($_POST['player1'])) $player1 = sanitizeString($_POST['player1']);
+if (isset($_POST['player2'])) $player2 = sanitizeString($_POST['player2']);
+if (isset($_POST['p1score'])) $p1score = sanitizeString($_POST['p1score']);
+if (isset($_POST['p1score'])) $p2score = sanitizeString($_POST['p2score']);
+
+
+$duplicate = checkDuplicates($player1,$player2);
+
+if ($duplicate == "yes") {
+	echo "These two have already played this season, try again";
+} else {
+	echo "Your result has been added";	
+	addMatchResult($seasonID,$player1,$player2,$p1_score,$p2_score);
+}
+
+
+} else {
+ 
+
 //$query = "SELECT id,name from player";
 
 $currSeason = currentSeason();
@@ -162,4 +185,6 @@ for ($j = 0; $j < $rows ; ++$j) {
 
 
 <?php
+
+}
 require_once '../includes/adminfooter.php'; ?>
