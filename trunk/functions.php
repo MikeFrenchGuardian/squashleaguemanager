@@ -45,6 +45,14 @@ function getDivPlayers($division,$seasonID,$divPosition) {
 		return $name;
 }
 
+//function getNonDivPlayers($division,$seasonID,$divPosition) {
+//		$query = "select playerdiv.playerid from playerdiv,division where playerdiv.divisionid = division.id and division.number = $division and division.seasonid=$seasonID LIMIT $divPosition,1";
+//		$result = mysql_query($query);
+//		$row = mysql_fetch_object($result);
+//		$name = $row->playerid;
+//		return $name;
+//}
+
 // get specified league victories
 function getLeagueWins($playerID,$seasonID) {
 	$query = "select count(player1) from results where seasonID = $seasonID and player1 = $playerID and player1_score > player2_score";
@@ -200,8 +208,8 @@ function addResult($seasonID,$player1,$player2,$p1g1,$p1g2,$p1g3,$p1g4,$p1g5,$p2
 }
 
 // Add result to the result table
-function addMatchResult($seasonID,$player1,$player2,$p1_score,$p2_score) {
-		$query = "INSERT INTO results (seasonID,player1,player2,p1g1,p1g2,p1g3,p1g4,p1g5,p2g1,p2g2,p2g3,p2g4,p2g5,player1_score,player2_score) VALUES (\"$seasonID\",\"$player1\",\"$player2\",\"N/A\",\"N/A\",\"N/A\",\"N/A\",\"N/A\",\"N/A\",\"N/A\",\"N/A\",\"N/A\",\"N/A\",\"$p1_score\",\"$p2_score\");";
+function addMatchResult($seasonID,$player1,$player2,$p1score,$p2score) {
+		$query = "INSERT INTO results (seasonID,player1,player2,p1g1,p1g2,p1g3,p1g4,p1g5,p2g1,p2g2,p2g3,p2g4,p2g5,player1_score,player2_score) VALUES (\"$seasonID\",\"$player1\",\"$player2\",\"NA\",\"NA\",\"NA\",\"NA\",\"NA\",\"NA\",\"NA\",\"NA\",\"NA\",\"NA\",\"$p1score\",\"$p2score\");";
 		$result = mysql_query($query);
 }
 
