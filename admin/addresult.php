@@ -128,10 +128,10 @@ for ($j = 0; $j < $rows ; ++$j) {
    }
 ?>
 </select>
-</form>
+
 <input type="hidden" name="points" value="yes">
 <input type="submit" />
-
+</form>
 
 <!-- and again for those people who can't remember scores -->
 <br><br>
@@ -180,10 +180,10 @@ for ($j = 0; $j < $rows ; ++$j) {
 	echo '<option value="noshow">No show</option>';
 ?>
 </select>
-</form>
+
 <input type="hidden" name="games" value="yes">
 <input type="submit" />
-
+</form>
 
 <?php
 
