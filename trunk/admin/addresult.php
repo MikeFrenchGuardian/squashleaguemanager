@@ -16,7 +16,7 @@ if ($duplicate == "yes") {
 	echo "These two have already played this season, try again";
 } else {
 	echo "Your result has been added";	
-	addMatchResult($seasonID,$player1,$player2,$p1_score,$p2_score);
+	addMatchResult($seasonID,$player1,$player2,$p1score,$p2score);
 }
 
 
