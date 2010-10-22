@@ -186,6 +186,6 @@ for ($j = 0; $j < $rows ; ++$j) {
 </form>
 
 <?php
-
+ 
 }
 require_once '../includes/adminfooter.php'; ?>
