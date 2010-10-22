@@ -16,10 +16,12 @@ Create a new season <a href="addseason.php">here</a>
 <br><br>
 Add a new player <a href="newplayer.php">here</a>
 <br><br>
-Setup New Leagues <a href="newleagues.php">here</a>
+Choose number of leagues for a season <a href="newleagues.php">here</a>
 <br><br>
 Setup Players into Divisions <a href="setupDivision.php">here</a>
 <br><br>
+Add new / out of league players to division <a href="addnewplayers.php">here</a>
+
 Edit Player <a href="editplayer.php">here</a>
 
 
