@@ -1,7 +1,7 @@
 <?php require_once '../includes/adminhead.php';
 
 
-if (isset $_POST['games']) {
+if (isset ($_POST['games'])) {
 		$seasonID = currentSeason();
 
 if (isset($_POST['player1'])) $player1 = sanitizeString($_POST['player1']);
