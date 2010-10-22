@@ -28,7 +28,6 @@ if ($duplicate == "yes") {
 $currSeason = currentSeason();
 $query = "select player.id, player.name, division.number from player,division,playerdiv where player.id=playerdiv.playerID and playerdiv.divisionid = division.id and division.seasonid = $currSeason order by division.number";
 $result = mysql_query($query);
-
 $rows = mysql_num_rows($result);
 
 ?>
@@ -129,6 +128,7 @@ for ($j = 0; $j < $rows ; ++$j) {
    }
 ?>
 </select>
+</form>
 <input type="hidden" name="points" value="yes">
 <input type="submit" />
 
@@ -180,6 +180,7 @@ for ($j = 0; $j < $rows ; ++$j) {
 	echo '<option value="noshow">No show</option>';
 ?>
 </select>
+</form>
 <input type="hidden" name="games" value="yes">
 <input type="submit" />
 
