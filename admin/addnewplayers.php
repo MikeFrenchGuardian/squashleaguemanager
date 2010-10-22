@@ -1,6 +1,6 @@
 <?php require_once '../includes/adminhead.php';
-$currentLeague = currentLeague();
-$leagueCount = numLeagues($currentLeague);
+$currentSeason = currentSeason();
+$leagueCount = numLeagues($currentSeason);
 $playerListQuery = "select id from player";
 $playerListResult = mysql_query($playerListQuery);
 $playerListRows = mysql_num_rows($playerListResult);
