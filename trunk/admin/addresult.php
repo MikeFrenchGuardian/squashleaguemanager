@@ -1,8 +1,5 @@
 <?php require_once '../includes/adminhead.php';
 
-require_once '/elo-calculator/elo-calculator.php';
-
-
 if (isset ($_POST['games'])) {
 		$seasonID = currentSeason();
 
