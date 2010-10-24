@@ -1,6 +1,6 @@
 <?php require_once 'includes/head.php'; 
 
-$query = "SELECT name,elo_score FROM player ORDER BY elo_score";
+$query = "SELECT name,elo_score FROM player ORDER BY elo_score DESC";
 $result = mysql_query($query);
 
 $rows = mysql_num_rows($result);
@@ -16,7 +16,7 @@ $rows = mysql_num_rows($result);
 <?php
 for ($j = 0 ; $j < $rows ; ++$j)
 {
-	$k = $j -1;
+	$k = $j +1;
 	$id = mysql_result($result,$j,'id');
 	$name = mysql_result($result,$j,'name');
 	$points = mysql_result($result,$j,'elo_score');
