@@ -28,8 +28,8 @@ if ($duplicate == "yes") {
 
 echo $p1NewEloScore . '<br>';
 echo $p2NewEloScore . '<br>';
+	}
 }
-
 
 } else {
  
