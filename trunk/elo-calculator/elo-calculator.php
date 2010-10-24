@@ -1,4 +1,4 @@
-
+<?php
 class elo_calculator
 { public function rating($S1,$S2,$R1,$R2)
   { if (empty($S1) OR empty($S2) OR empty($R1) OR empty($R2)) return null;
@@ -11,3 +11,4 @@ class elo_calculator
     $R['P1']=((($R['R3']-$R['R1'])>0)?"+".($R['R3']-$R['R1']):($R['R3']-$R['R1']));
     $R['P2']=((($R['R4']-$R['R2'])>0)?"+".($R['R4']-$R['R2']):($R['R4']-$R['R2']));
     return $R; }}
+?>
