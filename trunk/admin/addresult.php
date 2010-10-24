@@ -26,8 +26,8 @@ if ($duplicate == "yes") {
 	$p1NewEloScore = $results['R3'];
 	$p2NewEloScore = $results['R4'];  
 
-echo $p1NewEloScore . '<br>'
-echo $p2NewEloScore . '<br>'
+echo $p1NewEloScore . '<br>';
+echo $p2NewEloScore . '<br>';
 }
 
 
