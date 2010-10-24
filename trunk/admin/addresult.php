@@ -27,10 +27,10 @@ if ($duplicate == "yes") {
   $results=$elo_calculator->rating($p1Elo,$p2Elo,$p1score,$p2score);
 	$p1NewEloScore = $results['R3'];
 	$p2NewEloScore = $results['R4'];  
-
+	}
 echo $p1NewEloScore . '<br>';
 echo $p2NewEloScore . '<br>';
-	}
+	
 }
 
 } else {
