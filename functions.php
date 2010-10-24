@@ -216,7 +216,7 @@ function addMatchResult($seasonID,$player1,$player2,$p1score,$p2score) {
 function checkDuplicates($player1,$player2) {
 	//Checks to see if the result has already been added, in which case go to match edit screen.
 	$currSeason = currentSeason();
-	$query = "SELECT player1,player2 FROM results where seasonID = 3 and (player1 = $player1 and player2 = $player2) or (player1 = $player2 and player2 = $player1);";
+	$query = "SELECT player1,player2 FROM results where seasonID = $currSeason and (player1 = $player1 and player2 = $player2) or (player1 = $player2 and player2 = $player1);";
 	$result = mysql_query($query);
 	$rows = mysql_num_rows($result);
 
@@ -479,6 +479,19 @@ function getCurrentPlayerDivID($playerID) {
 	return $name;
 }
 
+class elo_calculator
+{ public function rating($S1,$S2,$R1,$R2)
+  { if (empty($S1) OR empty($S2) OR empty($R1) OR empty($R2)) return null;
+    if ($S1!=$S2) { if ($S1>$S2) { $E=120-round(1/(1+pow(10,(($R2-$R1)/400)))*120); $R['R3']=$R1+$E; $R['R4']=$R2-$E; }
+                            else { $E=120-round(1/(1+pow(10,(($R1-$R2)/400)))*120); $R['R3']=$R1-$E; $R['R4']=$R2+$E; }}
+             else { if ($R1==$R2) { $R['R3']=$R1; $R['R4']=$R2; }
+                             else { if($R1>$R2) { $E=(120-round(1/(1+pow(10,(($R1-$R2)/400)))*120))-(120-round(1/(1+pow(10,(($R2-$R1)/400)))*120)); $R['R3']=$R1-$E; $R['R4']=$R2+$E; }
+                                           else { $E=(120-round(1/(1+pow(10,(($R2-$R1)/400)))*120))-(120-round(1/(1+pow(10,(($R1-$R2)/400)))*120)); $R['R3']=$R1+$E; $R['R4']=$R2-$E; }}}
+    $R['S1']=$S1; $R['S2']=$S2; $R['R1']=$R1; $R['R2']=$R2;
+    $R['P1']=((($R['R3']-$R['R1'])>0)?"+".($R['R3']-$R['R1']):($R['R3']-$R['R1']));
+    $R['P2']=((($R['R4']-$R['R2'])>0)?"+".($R['R4']-$R['R2']):($R['R4']-$R['R2']));
+    return $R; }}
+
 function getEloRating($playerID) {
 	$query = "select elo_score from player where id = $playerID";
 	$result = mysql_query($query);
@@ -488,8 +501,9 @@ function getEloRating($playerID) {
 }
 
 function updateEloRating($playerID,$newEloScore) {
-	$query = "update player set elo_score = $newEloScore where id = $playerID";
-	$result = mysql_query($query) or die(mysql_error());
+        $query = "update player set elo_score='$newEloScore' where id='$playerID'";
+        $result = mysql_query($query) or die(mysql_error());
 }
-	
+
+
 ?>

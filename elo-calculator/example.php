@@ -3,9 +3,12 @@
 require('elo-calculator.php');
 
 if (!empty($_POST['S1']) OR !empty($_POST['S2']) OR !empty($_POST['R1']) OR !empty($_POST['R2']))
-{ $elo_calculator=&new elo_calculator;
+{ $elo_calculator = new elo_calculator;
   $results=$elo_calculator->rating($_POST['S1'],$_POST['S2'],$_POST['R1'],$_POST['R2']);
   $R=$results; /* variable alias. not required but easier for me to write the example */ }
+
+
+
 
 echo '<form action="'.$_SERVER['PHP_SELF'].'" method="post">';
 echo '<table>';
