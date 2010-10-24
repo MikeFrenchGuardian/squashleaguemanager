@@ -12,6 +12,8 @@ if (isset($_POST['p1score'])) $p2score = sanitizeString($_POST['p2score']);
 $p1Elo = getEloRating($player1);
 $p2Elo = getEloRating($player2);
 
+echo $p1Elo . '<br>';
+echo $p2Elo . '<br>';
 
 $duplicate = checkDuplicates($player1,$player2);
 
