@@ -6,6 +6,7 @@ $result = mysql_query($query);
 $rows = mysql_num_rows($result);
 
 ?>
+<span class="text-header">Player Rankings</span><br><br>
 
 <table class="league">
 <tr>
