@@ -477,5 +477,19 @@ function getCurrentPlayerDivID($playerID) {
 	$row = mysql_fetch_object($result);
 	$name = $row->divisionID;
 	return $name;
-}	
+}
+
+function getEloRating($playerID) {
+	$query = "select elo_score from player where id = $playerID";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->elo_score;
+	return $name;
+}
+
+function updateEloRating($playerID,$newEloScore) {
+	$query = "update player set elo_score = $newEloScore where id = $playerID";
+	$result = mysql_query($query) or die(mysql_error());
+}
+	
 ?>

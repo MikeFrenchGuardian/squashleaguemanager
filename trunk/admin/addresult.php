@@ -9,6 +9,9 @@ if (isset($_POST['player2'])) $player2 = sanitizeString($_POST['player2']);
 if (isset($_POST['p1score'])) $p1score = sanitizeString($_POST['p1score']);
 if (isset($_POST['p1score'])) $p2score = sanitizeString($_POST['p2score']);
 
+$p1Elo = getEloRating($player1);
+$p2Elo = getEloRating($player2);
+
 
 $duplicate = checkDuplicates($player1,$player2);
 
@@ -16,7 +19,15 @@ if ($duplicate == "yes") {
 	echo "These two have already played this season, try again";
 } else {
 	echo "Your result has been added";	
-	addMatchResult($seasonID,$player1,$player2,$p1score,$p2score);
+//	addMatchResult($seasonID,$player1,$player2,$p1score,$p2score);
+	
+	{ $elo_calculator=&new elo_calculator;
+  $results=$elo_calculator->rating($p1Elo,$p2Elo,$p1score,$p2score);
+	$p1NewEloScore = $results['R3'];
+	$p2NewEloScore = $results['R4'];  
+
+echo $p1NewEloScore . '<br>'
+echo $p2NewEloScore . '<br>'
 }
 
 
