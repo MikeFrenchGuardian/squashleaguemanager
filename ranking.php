@@ -14,15 +14,16 @@ $rows = mysql_num_rows($result);
    <td class="hed">Points</td>
 </tr>
 <?php
-for ($j = 1 ; $j <= $rows ; ++$j)
+for ($j = 0 ; $j < $rows ; ++$j)
 {
+	$k = $j -1;
 	$id = mysql_result($result,$j,'id');
 	$name = mysql_result($result,$j,'name');
 	$points = mysql_result($result,$j,'elo_score');
 
 	
 echo 	'<tr>';
-echo 	'<td>' . $j . '</td>';
+echo 	'<td>' . $k . '</td>';
 echo 	'<td><a class="text-normal" href="playerdetail.php?id=' . $id . '">' . $name . '</td>';
 echo 	'<td>' . $points . '</td>';
 echo	'</tr>';
