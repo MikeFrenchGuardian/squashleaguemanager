@@ -78,14 +78,74 @@ for ($i = 1; $i <= 4; ++$i) {
 	}
 usort($leagueArray, "sortDescending");
  
+ $k = 0;
 foreach ($leagueArray as $position) {
-	echo	'<tr>';
-	echo	'<td><a href="playerdetail.php?id=' . $position['playerID'] . '" class="text-normal">' . $position['player'] . '</td>';
-	echo	'<td class="text-normal">' . $position['gamesPlayed'] . '</td>';
-	echo	'<td class="text-normal">' . $position['wins'] . '</td>';
-	echo	'<td class="text-normal">' . $position['loses'] . '</td>';
-	echo	'<td class="text-normal">' . $position['draws'] . '</td>';
-	echo	'<td class="text-normal">' . $position['points'] . '</td>';
+	++$k;
+	echo '<tr>';
+	
+        if ($k > $relegation) {
+        echo    '<td class="relegation">';
+        } else if ($k < "3") {
+        echo '<td class="promotion">';
+        } else {
+        echo    '<td class="normal">';
+        }
+
+
+	echo	'<a href="playerdetail.php?id=' . $position['playerID'] . '" class="text-normal">' . $position['player'] . '</td>';
+
+        if ($k > $relegation) {
+        echo    '<td class="relegation">';
+        } else if ($k < "3") {
+        echo '<td class="promotion">';
+        } else {
+        echo    '<td class="normal">';
+        }
+
+
+	echo	$position['gamesPlayed'] . '</td>';
+
+        if ($k > $relegation) {
+        echo    '<td class="relegation">';
+        } else if ($k < "3") {
+        echo '<td class="promotion">';
+        } else {
+        echo    '<td class="normal">';
+        }
+
+
+	echo	$position['wins'] . '</td>';
+
+        if ($k > $relegation) {
+        echo    '<td class="relegation">';
+        } else if ($k < "3") {
+        echo '<td class="promotion">';
+        } else {
+        echo    '<td class="normal">';
+        }
+
+	echo	$position['loses'] . '</td>';
+
+        if ($k > $relegation) {
+        echo    '<td class="relegation">';
+        } else if ($k < "3") {
+        echo '<td class="promotion">';
+        } else {
+        echo    '<td class="normal">';
+        }
+
+
+	echo	$position['draws'] . '</td>';
+
+        if ($k > $relegation) {
+        echo    '<td class="relegation">';
+        } else if ($k < "3") {
+        echo '<td class="promotion">';
+        } else {
+        echo    '<td class="normal">';
+        }
+
+	echo	$position['points'] . '</td>';
 	echo	'</tr>';
   }
 	echo "</table>  <br><br>";
@@ -95,4 +155,5 @@ foreach ($leagueArray as $position) {
 
 
 ?>
+
 <?php require_once 'includes/footer.php'; ?>
