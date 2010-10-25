@@ -53,6 +53,7 @@ for ($i = 1; $i <= 4; ++$i) {
 	$leagueArray = array();
 
 		for ($j = 0 ; $j < $divSize ; ++$j) {
+			$relegation = $divSize - 2;
 			$playerID = getDivPlayers($i,$seasonID,$j);
 			$playerName = getPlayerName($playerID);
 			$gamesPlayed = getLeagueGamesPlayed($playerID,$seasonID);
