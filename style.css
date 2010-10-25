@@ -279,7 +279,7 @@ font-size: 12px;
 font-weight: normal;} 
 
 table.league td.relegation
-{background-color: #ECF1EF;
+{background-color: #FEE0C6;
 color: #A00000;
 padding: 4px;
 text-align: left;
@@ -288,7 +288,7 @@ font-size: 12px;
 font-weight: normal;}
 
 table.league td.promotion
-{background-color: #FEE0C6;
+{background-color: #ECF1EF;
 color: #000;
 padding: 4px;
 text-align: left;
