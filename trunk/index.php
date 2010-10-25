@@ -2,16 +2,6 @@
 
 <span class="text-header"><?php echo daysLeft(); ?></span><br><br> 
 
-<?php if (is_array($feed)): ?>
-<ul>
-	<?php array_splice($feed,5); ?>
-	<?php foreach ($feed as $item): ?>
-	<li><?php echo linkify_tweet($item['desc']); ?></li>
-	<?php endforeach; ?>
-</ul>
-<?php endif; ?>
-
-
 <div class="blog">
 <?php
 
