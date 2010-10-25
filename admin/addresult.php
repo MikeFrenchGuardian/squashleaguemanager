@@ -22,9 +22,14 @@ if ($duplicate == "yes") {
 	echo "Your result has been added";	
 	addMatchResult($seasonID,$player1,$player2,$p1score,$p2score);
 	
-	        $elo_calculator = new elo_calculator;
+	    $elo_calculator = new elo_calculator;
+	if ($p1score == $p2score) {
+        $results=$elo_calculator->rating("draw","draw",$p1Elo,$p2Elo);			
+	
+	} else {
         $results=$elo_calculator->rating("won","lost",$p1Elo,$p2Elo);
 
+	}
         $R=$results;
         $p1NewEloScore = $results['R3'];
         $p2NewEloScore = $results['R4'];
