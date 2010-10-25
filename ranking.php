@@ -1,8 +1,7 @@
 <?php require_once 'includes/head.php'; 
 
-$query = "SELECT name,elo_score FROM player ORDER BY elo_score DESC";
+$query = "SELECT id,name,elo_score FROM player ORDER BY elo_score DESC";
 $result = mysql_query($query);
-
 $rows = mysql_num_rows($result);
 
 ?>
