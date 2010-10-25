@@ -2,8 +2,6 @@
 
 = To Do List =
 
-* Rankings engine
-
 * admin email to all players or all players in the league page
 
 * Remaining games in current league for each player on player detail page
@@ -19,6 +17,7 @@
 
 * Player results will need 'previous' button or scrollability.
 
+* ~~Rankings engine~~
 
 * ~~Backup regime, mysql dump to where? Email google account?~~
 
