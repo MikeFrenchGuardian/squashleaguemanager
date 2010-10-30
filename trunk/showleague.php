@@ -61,7 +61,7 @@ for ($i = 1; $i <= 4; ++$i) {
 			$loses = getLeagueLoses($playerID,$seasonID);
 			$draws = getLeagueDraws($playerID,$seasonID);
 			$points = getLeaguePoints($playerID,$seasonID);
-			$tjRank = getTomJohnRank($playerID,$seasonID)
+			$tjRank = getTomJohnRank($playerID,$seasonID);
 			$arrayNo = "player" .$j;
 	
 				$arrayNo = array
