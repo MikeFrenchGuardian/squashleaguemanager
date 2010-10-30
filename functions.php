@@ -247,8 +247,8 @@ function sortDescending ($a, $b)
 
 function sortWithTomJohn($a, $b)
 {
-  $retval = strnatcmp($a['points'], $b['points']);
-  if(!$retval) return strnatcmp($a['tjRank'], $b['tjRank']);
+  $retval = strnatcmp($b['points'], $a['points']);
+  if(!$retval) return strnatcmp($b['tjRank'], $a['tjRank']);
   return $retval;
 }
 
