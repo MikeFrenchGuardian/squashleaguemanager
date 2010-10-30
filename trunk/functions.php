@@ -53,6 +53,14 @@ function getDivPlayers($division,$seasonID,$divPosition) {
 //		return $name;
 //}
 
+function getTomJohnRank($playerID,$seasonID) {
+	$query = "select playerdiv.tj_ranking from playerdiv,division where division.id = playerdiv.divisionID and division.seasonid = 2 and playerdiv.playerID = 2";
+	$result = "mysql_query($query)";
+	$row = mysql_fetch_object($result);
+	$name = $row->tj_ranking;
+	return $name;
+}
+
 // get specified league victories
 function getLeagueWins($playerID,$seasonID) {
 	$query = "select count(player1) from results where seasonID = $seasonID and player1 = $playerID and player1_score > player2_score";
@@ -236,6 +244,14 @@ function sortDescending ($a, $b)
     }
     return ($a['points'] > $b['points']) ? -1 : 1;
 }
+
+function sortWithTomJohn($a, $b)
+{
+  $retval = strnatcmp($a['points'], $b['points']);
+  if(!$retval) return strnatcmp($a['tjRank'], $b['tjRank']);
+  return $retval;
+}
+
 
 function currentSeason() {
         $query3 = "SELECT id,startDate,endDate FROM season";
