@@ -63,6 +63,7 @@ for ($i = 1; $i <= 4; ++$i) {
 			$points = getLeaguePoints($playerID,$seasonID);
 			$tjRank = getTomJohnRank($playerID,$seasonID);
 			$arrayNo = "player" .$j;
+			echo $tjRank;
 	
 				$arrayNo = array
 				(
