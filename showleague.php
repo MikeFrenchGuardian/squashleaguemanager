@@ -152,7 +152,6 @@ foreach ($leagueArray as $position) {
 
 	echo	$position['points'] . '</td>';
 	echo	'</tr>';
-	echo "TJRANK = " . $tjRank;
   }
 	echo "</table>  <br><br>";
 
