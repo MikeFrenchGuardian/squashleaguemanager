@@ -56,6 +56,7 @@ if (isset($_POST['stage3'])) { ?>
 		$playerID = $i;
 		if ((isset($_GET[$i]))) {
 			$div = $_GET[$i];
+			$tjrank = $_GET[$i . '_tjrank'];
 			$name = getPlayerName($playerID);
 			$divisionID = getDivisionID($seasonID,$div);
 
@@ -63,7 +64,7 @@ if (isset($_POST['stage3'])) { ?>
 				echo "<br>" . $name . " was removed from the league<br>";	
 			} else {
 			echo "<br>" . $name . " was added to division " . $div ."<br>";
-			addPlayerToDiv($playerID,$divisionID);
+			addPlayerToDiv($playerID,$divisionID,$tjrank);
 		} 
 	}
 	}
@@ -104,17 +105,20 @@ if (isset($_POST['stage3'])) { ?>
 		echo "   <td class=\"hed\">Name</td>";
 		echo "   <td class=\"hed\">Points</td>";
 		echo "   <td class=\"hed\">Current League</td>";
+		echo "	 <td class=\"hed\">TJ Rank</td>";
 		echo "</tr>";
 	
 		$leagueArray = "leagueArray" .$i;
 		$leagueArray = array();
 		$divSize = getDivSize($i,$prevSeason);
-		
+		$totalPlayers = getTotalPlayers();
+			
 			for ($j = 0 ; $j < $divSize ; ++$j) {
 				$playerID = getDivPlayers($i,$prevSeason,$j);
 				$playerName = getPlayerName($playerID);
 				$playerLeague = getPlayerLeague($playerID,$seasonID);
 				$points = getLeaguePoints($playerID,$prevSeason);
+				$tjRank = getTomJohnRank($playerID,$seasonID);
 				$arrayNo = "player" .$j;
 
 	
@@ -124,13 +128,14 @@ if (isset($_POST['stage3'])) { ?>
 							"player" => $playerName,
 							"league" => $playerLeague,
 							"points" => $points,
+							"tjRank" => $tjRank,
 					);	   
 
 				$leagueArray[] = $arrayNo;
 
 		}
 
-	usort($leagueArray, "sortDescending");
+	usort($leagueArray, "sortWithTomJohn");
 
 
 
@@ -155,6 +160,15 @@ if (isset($_POST['stage3'])) { ?>
 		}
 				echo "<option name=\"" . $position['playerID'] ."\" value=\"remove\">Remove</option>";
    	 echo "</select></td>";
+   	
+
+		 echo "<td class=\"text-normal\"><select name=\"" . $position['tjrank'] . "\">";   	
+	   	 for ($k = 1; $k <= $totalPlayers; ++$k) {
+
+		 echo "<option name=\"" . $position['tjrank'] . "\" value=\"" . $k . "\">" . $k . "</option>";
+	
+   	 }
+   	 	 echo "</td>";			 
 		echo	'</tr>';
  	 }
 		echo "</table>  <br><br>";
