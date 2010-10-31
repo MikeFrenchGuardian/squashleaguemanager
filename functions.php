@@ -55,7 +55,7 @@ function getDivPlayers($division,$seasonID,$divPosition) {
 
 function getTomJohnRank($playerID,$seasonID) {
 	$query = "select playerdiv.tj_ranking from playerdiv,division where division.id = playerdiv.divisionID and division.seasonid = $seasonID and playerdiv.playerID = $playerID";
-	$result = "mysql_query($query)";
+	$result = mysql_query($query);
 	$row = mysql_fetch_object($result);
 	$name = $row->tj_ranking;
 	return $name;
