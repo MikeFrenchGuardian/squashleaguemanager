@@ -58,6 +58,12 @@ function addPlayerToDiv($playerID,$divisionID) {
 		$result = mysql_query($query) or die(mysql_error());
 }
 
+
+//function addPlayerToDiv($playerID,$divisionID) {
+//		$query = "INSERT INTO playerdiv (divisionID,playerID) values ($divisionID,$playerID)";
+//		$result = mysql_query($query);
+//}
+
 //function editTomJohnRank($playerID,$divisionID) {
 //	$query = INSERT INTO playerdiv (divisionID,playerID) values (
 //	$query = "insert into playerdiv.tj_ranking from playerdiv,division where division.id = playerdiv.divisionID and division.seasonid = $seasonID and playerdiv.playerID = $playerID";
@@ -359,10 +365,6 @@ function getTotalPlayers() {
 		return $rows;
 }
 
-function addPlayerToDiv($playerID,$divisionID) {
-		$query = "INSERT INTO playerdiv (divisionID,playerID) values ($divisionID,$playerID)";
-		$result = mysql_query($query);
-}
 
 function editPlayerDiv($playerID,$divisionID,$newDivisionID) {
 		$query = "UPDATE playerdiv set divisionID = $newDivisionID where playerID = $playerID and divisionID = $divisionID";
