@@ -118,7 +118,7 @@ if (isset($_POST['stage3'])) { ?>
 				$playerName = getPlayerName($playerID);
 				$playerLeague = getPlayerLeague($playerID,$seasonID);
 				$points = getLeaguePoints($playerID,$prevSeason);
-				$tjRank = getTomJohnRank($playerID,$seasonID);
+				$tjrank = getTomJohnRank($playerID,$seasonID);
 				$arrayNo = "player" .$j;
 
 	
@@ -128,7 +128,7 @@ if (isset($_POST['stage3'])) { ?>
 							"player" => $playerName,
 							"league" => $playerLeague,
 							"points" => $points,
-							"tjRank" => $tjRank,
+							"tjrank" => $tjrank,
 					);	   
 
 				$leagueArray[] = $arrayNo;
@@ -162,11 +162,10 @@ if (isset($_POST['stage3'])) { ?>
    	 echo "</select></td>";
    	
 
-		 echo "<td class=\"text-normal\"><select name=\"" . $position['tjrank'] . "\">";   	
+		 echo '<td class="text-normal"><select name="'.$position['playerID'].'_tjrank">';   	
 	   	 for ($k = 1; $k <= $totalPlayers; ++$k) {
 
-		 echo "<option name=\"" . $position['tjrank'] . "\" value=\"" . $k . "\">" . $k . "</option>";
-	
+echo '<option name="'.$position['playerID'].'_tjrank" value="' . $k . '">' . $k . '</option>';	
    	 }
    	 	 echo "</td>";			 
 		echo	'</tr>';
@@ -179,7 +178,6 @@ if (isset($_POST['stage3'])) { ?>
 	}
 	echo '<input type="hidden" name="stage2" value="yes">';
 	echo '<input type="hidden" name="season" value="'. $seasonID .'">';
-$seasonID
 	echo "<input type=\"submit\">";
 	echo "</form>";
 
