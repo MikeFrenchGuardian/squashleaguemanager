@@ -36,7 +36,7 @@ if (isset($_POST['startDay']))  {
     	$seasonID = getSeasonID($startDate);
     	//Lets get the newly created season id here, so we can put it in the url
     	
-    	echo 'The new season has been created, if you\'re ready to put players into divisions click <a href="/admin/setupDivision.php?season=' . $seasonID . '&stage1=yes">here</a>';
+    	echo 'The new season has been created, if you\'re ready to put players into divisions click <a href="/admin/newleagues.php?seasonID=' . $seasonID . '">here</a>';
 	}
   
   

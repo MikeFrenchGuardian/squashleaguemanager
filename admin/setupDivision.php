@@ -37,10 +37,10 @@ if (isset($_POST['stage3'])) { ?>
 
 
 
-// Completed Form - Database Updated	
+// Form 	
 } else if (isset($_GET['stage2'])) { ?>
 	
-	<span class="text-header">Edit Divisions 3</span><br><br> 
+	<span class="text-header">Setup Divisions - Part 3</span><br><br> 
 	
 <?php	
 	if (isset($_GET['season'])) {
@@ -72,7 +72,7 @@ if (isset($_POST['stage3'])) { ?>
 
 } else if (isset($_GET['stage1'])) { ?>
 
-<span class="text-header">Edit Division - Part 2</span><br><br>
+<span class="text-header">Setup Division - Part 2</span><br><br>
 
 <?php
 		if (isset($_POST['season'])) {
@@ -104,7 +104,7 @@ if (isset($_POST['stage3'])) { ?>
 		echo "<tr>";
 		echo "   <td class=\"hed\">Name</td>";
 		echo "   <td class=\"hed\">Points</td>";
-		echo "   <td class=\"hed\">Current League</td>";
+		echo "   <td class=\"hed\">Select League</td>";
 		echo "	 <td class=\"hed\">TJ Rank</td>";
 		echo "</tr>";
 	
@@ -163,7 +163,7 @@ if (isset($_POST['stage3'])) { ?>
    	
 
 		 echo "<td class=\"text-normal\"><select name=\"" . $position['tjrank'] . "\">";   	
-	   	 for ($k = 1; $k <= $totalPlayers; ++$k) {
+	   	 for ($k = 1; $k <= $j; ++$k) {
 
 		 echo "<option name=\"" . $position['tjrank'] . "\" value=\"" . $k . "\">" . $k . "</option>";
 	
