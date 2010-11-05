@@ -163,7 +163,7 @@ if (isset($_POST['stage3'])) { ?>
    	
 
 		 echo "<td class=\"text-normal\"><select name=\"" . $position['tjrank'] . "\">";   	
-	   	 for ($k = 1; $k <= $j; ++$k) {
+	   	 for ($k = 1; $k <= $divSize; ++$k) {
 
 		 echo "<option name=\"" . $position['tjrank'] . "\" value=\"" . $k . "\">" . $k . "</option>";
 	
