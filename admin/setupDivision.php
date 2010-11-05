@@ -163,7 +163,7 @@ if (isset($_POST['stage3'])) { ?>
    	
 
 		 echo "<td class=\"text-normal\"><select name=\"" . $position['tjrank'] . "\">";   	
-	   	 for ($k = 1; $k <= $divSize; ++$k) {
+	   	 for ($k = 1; $k <= $totalPlayers; ++$k) {
 
 		 echo "<option name=\"" . $position['tjrank'] . "\" value=\"" . $k . "\">" . $k . "</option>";
 	
@@ -178,6 +178,8 @@ if (isset($_POST['stage3'])) { ?>
 
 	}
 	echo '<input type="hidden" name="stage2" value="yes">';
+	echo '<input type="hidden" name="season" value="'. $seasonID .'">';
+$seasonID
 	echo "<input type=\"submit\">";
 	echo "</form>";
 
