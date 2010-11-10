@@ -477,7 +477,7 @@ function checkPlayerDiv($seasonID) {
 }
 
 function addBlogPost($currDate,$subject,$synopsis,$contents) {
-	$query = "insert into blog (date,subject,synopsis,contents) values (\"$currDate\", \"$subject\", \"$subject\",  \"$contents\");";
+	$query = "insert into blog (date,subject,synopsis,contents) values (\"$currDate\", \"$subject\", \"$synopsis\",  \"$contents\");";
 	$result = mysql_query($query);
 	echo $query;
 }
