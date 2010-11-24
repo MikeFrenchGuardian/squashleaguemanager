@@ -53,7 +53,7 @@ function getDivPlayers($division,$seasonID,$divPosition) {
 //		return $name;
 //}
 
-function addPlayerToDiv($playerID,$divisionID) {
+function addPlayerToDiv($playerID,$divisionID,$tjRank) {
 		$query = "INSERT INTO playerdiv (divisionID,playerID,tj_ranking) values ($divisionID,$playerID,$tjRank)";
 		$result = mysql_query($query) or die(mysql_error());
 }
