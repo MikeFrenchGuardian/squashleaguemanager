@@ -4,7 +4,7 @@ require_once 'login.php';
 require_once 'dbCheck.php';
 
 ob_start();
-$tbl_name="members"; // Table name
+$tbl_name="player"; // Table name
 
 // Connect to server and select databse.
 mysql_connect("$db_hostname", "$db_username", "$db_password")or die("cannot connect"); 
