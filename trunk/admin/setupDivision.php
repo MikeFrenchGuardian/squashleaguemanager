@@ -64,9 +64,16 @@ if (isset($_POST['stage3'])) { ?>
 				echo "<br>" . $name . " was removed from the league<br>";	
 			} else {
 			echo "<br>" . $name . " was added to division " . $div ."<br>";
+			$edited = checkDivSetup($divisionID);
+			
+			if ($edited == 0) {
 			addPlayerToDiv($playerID,$divisionID,$tjrank);
-		} 
-	}
+			} else {
+				echo 'This league has already been setup, try editing it <a href="/admin/setupDivision.php?stage1=yes">here.</a>
+			
+			} 
+			}
+		}
 	}
 
 
@@ -205,7 +212,7 @@ echo '<option name="'.$position['playerID'].'_tjrank" value="' . $k . '">' . $k 
 		$startDate = mysql_result($seasonResult,$j,'startdate');
 		$convertedDate = prettyDate($startDate);
 	
-	echo '<option value="' . mysql_result($seasonResult,$j,'id') . '">' . $convertedDate . '</option>';
+		echo '<option value="' . mysql_result($seasonResult,$j,'id') . '">' . $convertedDate . '</option>';
 	}
 	?> 
 	</select>

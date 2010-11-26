@@ -58,11 +58,13 @@ function addPlayerToDiv($playerID,$divisionID,$tjRank) {
 		$result = mysql_query($query) or die(mysql_error());
 }
 
-
-//function addPlayerToDiv($playerID,$divisionID) {
-//		$query = "INSERT INTO playerdiv (divisionID,playerID) values ($divisionID,$playerID)";
-//		$result = mysql_query($query);
-//}
+function checkDivSetup($divisionID) {
+		$query = "SELECT COUNT(divisionID) FROM playerdiv WHERE divisionID = $divisionID"
+		$result = mysql_query($query)or die(mysql_error());
+		$row = mysql_fetch_object($result);
+		$name = $row->{'COUNT(divisionID)'};
+		return $name;
+}
 
 //function editTomJohnRank($playerID,$divisionID) {
 //	$query = INSERT INTO playerdiv (divisionID,playerID) values (
