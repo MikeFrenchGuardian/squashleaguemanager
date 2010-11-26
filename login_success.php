@@ -9,10 +9,3 @@ header("location:index.php");
 
 ?>
 
-
-
-<html>
-<body>
-Login Successful
-</body>
-</html>
