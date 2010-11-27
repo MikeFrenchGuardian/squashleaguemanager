@@ -9,7 +9,14 @@ require_once 'login.php';
 require_once 'dbCheck.php';
 require_once 'functions.php';
 
+$ref = getenv("HTTP_REFERER"); 
+session_start();
+if(!session_is_registered(myusername)){
+	$loggedIn = "false";
+} else {
+	$loggedIn = "true";
 
+}
 ?>
 <div class="content">
 <div class="cruising">
