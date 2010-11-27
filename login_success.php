@@ -8,7 +8,4 @@ if(!session_is_registered(myusername)){
 	$loggedIn = "true";
 	header("location:" . $ref);
 }
-
-
 ?>
-

@@ -12,9 +12,7 @@ require_once 'functions.php';
 
 ?>
 <div class="content">
-
 <div class="cruising">
-
 <?php 
 
 
