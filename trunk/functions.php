@@ -251,11 +251,15 @@ function emailMatchResult($player1,$player2,$p1score,$p2score) {
 	$player2Name = getPlayerName($player2);
 	$player1Email = getPlayerEmail($player1);
 	$player2Email = getPlayerEmail($player2);	
-	$to  = 'nick@nickwales.co.uk' . ', '; // note the comma
-	$to .= 'results@tomjohnleague.co.uk';
+	$to  = 'nick@nickwales.co.uk';
+//	$to  = 'nick@nickwales.co.uk' . ', '; // note the comma
+//	$to .= 'results@tomjohnleague.co.uk';
 	$message = "The result of a match you have played has been added \n " . $player1Name . ": " . $p1score . "\n " . $player2Name . ": " . $p2score;
 	$message = wordwrap($message, 70);
-	mail($to, 'TomJohn Result', $message);
+	$headers = 'From: results@tomjohnleague.co.uk' . "\r\n" .
+    'Reply-To: results@tomjohnleague.co.uk' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+	mail($to, 'TomJohn Result', $message, $headers);
 	
 }
 	
