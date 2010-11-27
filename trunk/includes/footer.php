@@ -5,8 +5,8 @@
 	<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="index.php" class="text-normal">Homepage</a><br>
 	<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="showleague.php" class="text-normal">Leagues</a><br>
 	<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="ranking.php" class="text-normal">Rankings</a><br>
-	<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="playerinfo.php" class="text-normal">Player Info</a><br>
 	<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="rules.php" class="text-normal">Rules</a><br><br>
+
 
 
 <?php
@@ -19,11 +19,13 @@ if(!session_is_registered(myusername)){
 
 }
 
-
-
-if ($loggedIn == "true") {
-	echo '<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="/logout.php">Logout</a><br><br>';
-} else if ($loggedIn == "false") { ?>
+	
+	
+if ($loggedIn == "true") { ?>
+	<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="playerinfo.php" class="text-normal">Player Info</a><br>
+	<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="addresult.php" class="text-normal">Add result</a><br>
+	<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="/logout.php">Logout</a><br><br>
+<?php } else if ($loggedIn == "false") { ?>
 	<form name="form1" method="post" action="/checklogin.php">
 	<span class="text-normal">Player Login</span><br>
 	<span class="text-normal">Email: &nbsp;&nbsp;&nbsp; <input name="myusername" type="text" id="myusername"><br>
