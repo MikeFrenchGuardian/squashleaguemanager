@@ -1,8 +1,10 @@
 <?php require_once 'includes/head.php'; 
 
-if (!isset($loggedIn)) {
-	header("location:index.php");
-} 
+if ($loggedIn == "false") {
+	header("location:/index.php");
+} else if ($loggedIn == )
+
+
 
 $query = "SELECT * FROM player";
 $result = mysql_query($query);
