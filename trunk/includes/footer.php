@@ -9,9 +9,9 @@
 	<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="rules.php" class="text-normal">Rules</a><br><br>
 
 <?php
-if ($loggedIn) {
+if ($loggedIn == "true") {
 	echo '<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="/logout.php">Logout</a><br><br>';
-} else { ?>
+} else if ($loggedIn == "true") { ?>
 	<form name="form1" method="post" action="/checklogin.php">
 	<span class="text-normal">Player Login</span><br>
 	<span class="text-normal">Email: <input name="myusername" type="text" id="myusername"><br>
