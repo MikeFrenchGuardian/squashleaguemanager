@@ -9,7 +9,7 @@
 	<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="rules.php" class="text-normal">Rules</a><br><br>
 
 <?php
-if (isset ($loggedIn)) {
+if ($loggedIn) {
 	echo "Logged in as " . $username;
 } else { ?>
 	<form name="form1" method="post" action="/checklogin.php">

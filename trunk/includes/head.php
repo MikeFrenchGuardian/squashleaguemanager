@@ -57,7 +57,7 @@ echo "</table> <br><br>";
 </div>
 
 <span class="logo-white">TomJohn </span><span class="logo-red"> League</span>
-<span class="text-header"><?php echo daysLeft(); ?></span><br><br> 
+//<span class="text-header"><?php echo daysLeft(); ?></span><br><br> 
 
 	
 </div>

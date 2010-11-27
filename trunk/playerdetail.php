@@ -1,5 +1,8 @@
-
 <?php require_once 'includes/head.php';
+
+if ($loggedIn == "false") {
+	header("location:/index.php");
+} else if ($loggedIn == )
 
 $id = $_GET["id"];
 
@@ -112,5 +115,5 @@ Coming soon:
 
 
 
-<?php require_once 'includes/footer.php'; ?>
+<?php } require_once 'includes/footer.php'; ?>
 <!--SHould totally have loads of cool stuff like, w/l tiebreaks, league promotion / demotion graphs -->
