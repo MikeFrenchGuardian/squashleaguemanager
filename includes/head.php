@@ -8,7 +8,7 @@
 require_once 'login.php';
 require_once 'dbCheck.php';
 require_once 'functions.php';
-require_once 'login_success.php';
+
 
 ?>
 <div class="content">
