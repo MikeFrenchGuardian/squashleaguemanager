@@ -8,7 +8,19 @@
 	<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="playerinfo.php" class="text-normal">Player Info</a><br>
 	<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="rules.php" class="text-normal">Rules</a><br><br>
 
+
 <?php
+$ref = getenv("HTTP_REFERER"); 
+session_start();
+if(!session_is_registered(myusername)){
+	$loggedIn = "false";
+} else {
+	$loggedIn = "true";
+
+}
+
+
+
 if ($loggedIn == "true") {
 	echo '<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="/logout.php">Logout</a><br><br>';
 } else if ($loggedIn == "false") { ?>
