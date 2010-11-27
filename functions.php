@@ -59,7 +59,7 @@ function addPlayerToDiv($playerID,$divisionID,$tjRank) {
 }
 
 function checkDivSetup($divisionID) {
-		$query = "SELECT COUNT(divisionID) FROM playerdiv WHERE divisionID = $divisionID"
+		$query = "SELECT COUNT(divisionID) FROM playerdiv WHERE divisionID = $divisionID";
 		$result = mysql_query($query)or die(mysql_error());
 		$row = mysql_fetch_object($result);
 		$name = $row->{'COUNT(divisionID)'};
@@ -225,10 +225,19 @@ function getPlayerName($playerID) {
 	$query = "SELECT name from player WHERE id = $playerID";
 	$result = mysql_query($query);
 	$row = mysql_fetch_object($result);
-
 	$name = $row->name;
 	return $name;
 	}
+
+// Get players Name from their player ID
+function getPlayerEmail($playerID) {
+	$query = "SELECT email from player WHERE id = $playerID";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->name;
+	return $name;
+	}
+
 	
 	
 // Add result to the result table
@@ -237,6 +246,19 @@ function addResult($seasonID,$player1,$player2,$p1g1,$p1g2,$p1g3,$p1g4,$p1g5,$p2
 		$result = mysql_query($query);
 }
 
+function emailMatchResult($player1,$player2,$p1score,$p2score) {
+	$player1Name = getPlayerName($player1);
+	$player2Name = getPlayerName($player2);
+	$player1Email = getPlayerEmail($player1);
+	$player2Email = getPlayerEmail($player2);	
+	$to  = 'nick@nickwales.co.uk' . ', '; // note the comma
+	$to .= 'results@tomjohnleague.co.uk';
+	$message = "The result of a match you have played has been added \n " . $player1Name . ": " . $p1score . "\n " . $player2Name . ": " . $p2score . ";
+	$message = wordwrap($message, 70);
+	mail($to, 'TomJohn Result', $message);
+	
+}
+	
 // Add result to the result table
 function addMatchResult($seasonID,$player1,$player2,$p1score,$p2score) {
 		$query = "INSERT INTO results (seasonID,player1,player2,p1g1,p1g2,p1g3,p1g4,p1g5,p2g1,p2g2,p2g3,p2g4,p2g5,player1_score,player2_score) VALUES (\"$seasonID\",\"$player1\",\"$player2\",\"NA\",\"NA\",\"NA\",\"NA\",\"NA\",\"NA\",\"NA\",\"NA\",\"NA\",\"NA\",\"$p1score\",\"$p2score\");";

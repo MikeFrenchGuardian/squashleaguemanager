@@ -25,7 +25,7 @@ if ($duplicate == "yes") {
 } else {
 	echo "Your result has been added";	
 	addMatchResult($seasonID,$player1,$player2,$p1score,$p2score);
-	
+	emailMatchResult($player1,$player2,$p1score,$p2score);	
 	    $elo_calculator = new elo_calculator;
 	if ($p1score == $p2score) {
         $results=$elo_calculator->rating("draw","draw",$p1Elo,$p2Elo);			
