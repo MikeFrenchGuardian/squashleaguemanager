@@ -1,4 +1,4 @@
-<?php require_once '/includes/head.php';
+<?php require_once 'includes/head.php';
 
 if ($loggedIn == "false") {
 	header("location:/index.php");
@@ -214,4 +214,4 @@ for ($j = 0; $j < $rows ; ++$j) {
 <?php
  
 }
-require_once '/includes/footer.php'; ?>
+require_once 'includes/footer.php'; ?>
