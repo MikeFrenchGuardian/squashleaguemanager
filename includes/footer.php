@@ -14,8 +14,8 @@ if ($loggedIn == "true") {
 } else if ($loggedIn == "false") { ?>
 	<form name="form1" method="post" action="/checklogin.php">
 	<span class="text-normal">Player Login</span><br>
-	<span class="text-normal">Email: <input name="myusername" type="text" id="myusername"><br>
-	<span class="text-normal">Password: <input name="mypassword" type="text" id="mypassword"><br>
+	<span class="text-normal">Email: &nbsp;&nbsp;&nbsp; <input name="myusername" type="text" id="myusername"><br>
+	<span class="text-normal">Password: <input name="mypassword" type="password" id="mypassword"><br>
 	<input type="submit" name="Submit" value="Login">
 <?php } ?>
 
