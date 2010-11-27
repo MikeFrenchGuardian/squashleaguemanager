@@ -2,8 +2,7 @@
 
 if ($loggedIn == "false") {
 	header("location:/index.php");
-} else if ($loggedIn == )
-
+} 
 
 
 $query = "SELECT * FROM player";
