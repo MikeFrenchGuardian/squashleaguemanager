@@ -10,7 +10,7 @@
 
 <?php
 if ($loggedIn) {
-	echo "Logged in as " . $username;
+	echo '<img src="images/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="/logout.php">Logout</a><br><br>';
 } else { ?>
 	<form name="form1" method="post" action="/checklogin.php">
 	<span class="text-normal">Player Login</span><br>
