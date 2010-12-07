@@ -35,7 +35,8 @@ if ($seasonID < $currSeason) {
 echo '<br><br>';
 
 // Render the leagues in a nested loop
-for ($i = 1; $i <= 4; ++$i) {
+$divCount = numLeagues($seasonID);
+for ($i = 1; $i <= $divCount; ++$i) {
 
 	echo '<span class="text-semibold">&nbsp; Division ' . $i . '</span><br>';
 	echo "<table class=\"league\">";
