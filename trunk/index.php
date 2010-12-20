@@ -10,6 +10,11 @@ $blogquery = "SELECT id, date,subject,synopsis,contents FROM blog order by id de
 $blogresult = mysql_query($blogquery);
 $blogrows = mysql_num_rows($blogresult);
 
+if ($blogrows < 10) {
+	
+
+}
+
 for ($i = 0 ; $i < $blogrows ; ++$i) {
 	$id = mysql_result($blogresult,$i,'id');
 	$date = mysql_result($blogresult,$i,'date');

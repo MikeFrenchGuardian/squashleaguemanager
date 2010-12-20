@@ -246,6 +246,7 @@ function addResult($seasonID,$player1,$player2,$p1g1,$p1g2,$p1g3,$p1g4,$p1g5,$p2
 		$result = mysql_query($query);
 }
 
+// Email results to both players and the results address.
 function emailMatchResult($player1,$player2,$p1score,$p2score) {
 	$player1Name = getPlayerName($player1);
 	$player2Name = getPlayerName($player2);
@@ -259,7 +260,6 @@ function emailMatchResult($player1,$player2,$p1score,$p2score) {
     'Reply-To: results@tomjohnleague.co.uk' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 	mail($to, 'TomJohn Result', $message, $headers);
-	
 }
 	
 // Add result to the result table
@@ -268,13 +268,13 @@ function addMatchResult($seasonID,$player1,$player2,$p1score,$p2score) {
 	$result = mysql_query($query);
 }
 
+
 function checkDuplicates($player1,$player2) {
 	//Checks to see if the result has already been added, in which case go to match edit screen.
 	$currSeason = currentSeason();
 	$query = "SELECT player1,player2 FROM results where seasonID = $currSeason and (player1 = $player1 and player2 = $player2) or (player1 = $player2 and player2 = $player1);";
 	$result = mysql_query($query);
 	$rows = mysql_num_rows($result);
-
 		if ($rows != 0) {
 			$dup = "yes";
 		} else {
