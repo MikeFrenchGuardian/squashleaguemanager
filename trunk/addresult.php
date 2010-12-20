@@ -76,7 +76,7 @@ echo '<select name="p1g' . $i . '" size="1">';
    for ($j = 0 ; $j <= 10; ++$j) {
 	echo '<option value="' . $j . '">' . $j . '</option>';
    }
-</select>
+echo '</select>';
 }
 ?>
 
@@ -102,7 +102,7 @@ echo '<select name="p1g' . $k . '" size="1">';
    for ($l = 0 ; $l <= 10; ++$l) {
 	echo '<option value="' . $l . '">' . $l . '</option>';
    }
-</select>
+echo '</select>';
 }
 ?>
 
