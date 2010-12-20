@@ -38,7 +38,6 @@ if ($duplicate == "yes") {
         $p1NewEloScore = $results['R3'];
         $p2NewEloScore = $results['R4'];
 
-
 echo '<br><br>';
 updateEloRating($player1,$p1NewEloScore);
 echo '<br><br>';
@@ -69,43 +68,20 @@ for ($j = 0; $j < $rows ; ++$j) {
 ?>
 
 </select>
-	
-<select name="p1g1" size="1">
+
 <?php 
-   for ($i = 0 ; $i <= 10; ++$i) {
-	echo '<option value="' . $i . '">' . $i . '</option>';
+for ($i = 1; $i <= 5; ++$i) {
+
+echo '<select name="p1g' . $i . '" size="1">';
+   for ($j = 0 ; $j <= 10; ++$j) {
+	echo '<option value="' . $j . '">' . $j . '</option>';
    }
-?>
 </select>
- <select name="p1g2" size="1">
-<?php
-   for ($i = 0 ; $i <= 10; ++$i) {
-        echo '<option value="' . $i . '">' . $i . '</option>';
-   }
-?>
-</select>
-<select name="p1g3" size="1">
-<?php
-   for ($i = 0 ; $i <= 10; ++$i) {
-        echo '<option value="' . $i . '">' . $i . '</option>';
-   }
-?>
-</select>
-<select name="p1g4" size="1">
-<?php
-   for ($i = 0 ; $i <= 10; ++$i) {
-        echo '<option value="' . $i . '">' . $i . '</option>';
-   }
-?>
-</select>
-<select name="p1g5" size="1">
-<?php
-   for ($i = 0 ; $i <= 10; ++$i) {
-        echo '<option value="' . $i . '">' . $i . '</option>';
-   }
+}
 ?>
 
-</select>
+
+
 <br>
 <select name="player2" size="1">
 <option value=Nick Wales>Runner Up</option>
@@ -117,43 +93,20 @@ for ($j = 0; $j < $rows ; ++$j) {
 //        echo '<option value="' . mysql_result($result,$j,'id') . '">' . mysql_result($result,$j,'name') . '</option>';
 }
 ?>
+</select>
 
-</select>
-<select name="p2g1" size="1">
-<?php
-   for ($i = 0 ; $i <= 10; ++$i) {
-        echo '<option value="' . $i . '">' . $i . '</option>';
+<?php 
+for ($k = 1; $k <= 5; ++$k) {
+
+echo '<select name="p1g' . $k . '" size="1">';
+   for ($l = 0 ; $l <= 10; ++$l) {
+	echo '<option value="' . $l . '">' . $l . '</option>';
    }
-?>
 </select>
-<select name="p2g2" size="1">
-<?php
-   for ($i = 0 ; $i <= 10; ++$i) {
-        echo '<option value="' . $i . '">' . $i . '</option>';
-   }
+}
 ?>
-</select>
-<select name="p2g3" size="1">
-<?php
-   for ($i = 0 ; $i <= 10; ++$i) {
-        echo '<option value="' . $i . '">' . $i . '</option>';
-   }
-?>
-</select>
-<select name="p2g4" size="1">
-<?php
-   for ($i = 0 ; $i <= 10; ++$i) {
-        echo '<option value="' . $i . '">' . $i . '</option>';
-   }
-?>
-</select>
-<select name="p2g5" size="1">
-<?php
-   for ($i = 0 ; $i <= 10; ++$i) {
-        echo '<option value="' . $i . '">' . $i . '</option>';
-   }
-?>
-</select>
+
+
 
 <input type="hidden" name="points" value="yes">
 <input type="submit" />
