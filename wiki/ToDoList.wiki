@@ -11,12 +11,12 @@
 
 * Player results will need 'previous' button or scrollability.
 
-* ~results emailed to both players and admin~
+* ~~results emailed to both players and admin~~
 
-* ~Player login, use email address.~
+* ~~Player login, use email address~~
 
-* ~Non league players list in the setup division page for people joining
-/ rejoining~
+* ~~Non league players list in the setup division page for people joining
+/ rejoining~~
 
 * ~~Rankings engine~~
 
