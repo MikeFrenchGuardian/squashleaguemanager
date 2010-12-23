@@ -13,7 +13,8 @@ body {
     height: 1600px; }
 
 .cruising {
-	background-image:  url(images/header.png);
+	background-image:  url(https://s3-eu-west-1.amazonaws.com/tomjohn/header.png);
+
 	float: left;
  	top: 0px;
  	width: 881px; 

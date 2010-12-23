@@ -9,7 +9,7 @@ while($playerListRow = mysql_fetch_array($playerListResult)) {
 	$playerlist_array[] = $playerListRow['id'];
 }
 
-$leaguePlayerQuery = "select playerdiv.playerid from playerdiv,division where playerdiv.divisionid = division.id and  division.seasonid=2";
+$leaguePlayerQuery = "select playerdiv.playerid from playerdiv,division where playerdiv.divisionid = division.id and  division.seasonid=$currentSeason";
 $leaguePlayerResult = mysql_query($leaguePlayerQuery) or die(mysql_error());
 
 while($leaguePlayerRow = mysql_fetch_array($leaguePlayerResult)) {
