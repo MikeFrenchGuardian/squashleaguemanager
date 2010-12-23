@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>TomJohn League</title>
+<link rel="shortcut icon" href="favicon.ico" >
 <link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 <body class="text-normal" bgcolor="#C0C0C0" padding="0">
