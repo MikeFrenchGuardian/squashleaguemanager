@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>TomJohn League</title>
-<link rel="shortcut icon" href="favicon.ico" >
+<link rel="shortcut icon" href="http://s3-eu-west-1.amazonaws.com/tomjohn/favicon.ico" >
 <link rel="stylesheet" type="text/css" href="style.css" />
 <script type="text/javascript">
 
