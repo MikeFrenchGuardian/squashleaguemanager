@@ -2,6 +2,20 @@
 <head>
 <title>TomJohn League</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20394306-1']);
+  _gaq.push(['_setDomainName', '.co.uk']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </head>
 <body class="text-normal" bgcolor="#C0C0C0" padding="0">
 <?php
@@ -62,7 +76,7 @@ echo "</table> <br><br>";
 </div>
 
 <span class="logo-white">TomJohn </span><span class="logo-red"> League</span>
-//<span class="text-header"><?php echo daysLeft(); ?></span><br><br> 
+
 
 	
 </div>
