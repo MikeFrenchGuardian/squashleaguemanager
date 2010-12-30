@@ -10,6 +10,7 @@ for ($i = 1; $i <= $seasons; ++$i ) {
 	for ($j = 1; $j <= $players; ++$j ) {	
 		$arnie = terminatorScore($j, $i);
 		echo $arnie;
+		echo "<br>";
 	}
 }
 
