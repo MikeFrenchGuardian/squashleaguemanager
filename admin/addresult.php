@@ -11,9 +11,6 @@ if (isset($_POST['p1score'])) $p2score = sanitizeString($_POST['p2score']);
 $p1Elo = getEloRating($player1);
 $p2Elo = getEloRating($player2);
 
-echo $p1Elo . '<br>';
-echo $p2Elo . '<br>';
-
 $duplicate = checkDuplicates($player1,$player2);
 
 if ($duplicate == "yes") {
@@ -35,6 +32,11 @@ if ($duplicate == "yes") {
         $p1NewEloScore = $results['R3'];
         $p2NewEloScore = $results['R4'];
 
+$player1Name = getPlayerName($player1);
+$player2Name = getPlayerName($player2);
+
+echo $player1Name . "- Ranking points: "  . $p1Elo . ' => ' . $p1NewEloScore . '<br>';
+echo $player2Name . "- Ranking points: "  . $p2Elo . ' => ' . $p2NewEloScore . '<br>';
 
 echo '<br><br>';
 updateEloRating($player1,$p1NewEloScore);
