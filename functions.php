@@ -587,4 +587,11 @@ function terminatorScore($playerID, $seasonID) {
 	return $terminator;
 }	
 
+function getSeasonCount() {
+	$query = "select COUNT(id) from season";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->{'COUNT(id)'};
+	return $name;
+}
 ?>
