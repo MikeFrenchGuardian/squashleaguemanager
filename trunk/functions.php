@@ -569,15 +569,25 @@ function getGamesWon($playerID, $seasonID) {
 	$result = mysql_query($query) or die(mysql_error());
 	$row = mysql_fetch_object($result);
 	$name = $row->{'SUM(player1_score)'};
-	return $name;
+	$query2 = "select SUM(player2_score) from results where seasonId=$seasonID and player2=$playerID";
+	$result2 = mysql_query($query2) or die(mysql_error());
+	$row2 = mysql_fetch_object($result2);
+	$name2 = $row2->{'SUM(player2_score)'};
+	$total = $name + $name2;
+	return $total;
 }
 	
 function getGamesLost($playerID, $seasonID) {
-	$query = "select SUM(player2_score) from results where seasonId=$seasonID and player2=$playerID";
+	$query = "select SUM(player1_score) from results where seasonId=$seasonID and player2=$playerID";
 	$result = mysql_query($query) or die(mysql_error());
 	$row = mysql_fetch_object($result);
-	$name = $row->{'SUM(player2_score)'};
-	return $name;
+	$name = $row->{'SUM(player1_score)'};
+	$query2 = "select SUM(player2_score) from results where seasonId=$seasonID and player1=$playerID";
+	$result2 = mysql_query($query2) or die(mysql_error());
+	$row2 = mysql_fetch_object($result2);
+	$name2 = $row2->{'SUM(player2_score)'};
+	$total = $name + $name2;
+	return $total;
 }
 	
 function terminatorScore($playerID, $seasonID) {
