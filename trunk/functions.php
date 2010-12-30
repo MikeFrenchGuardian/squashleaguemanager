@@ -564,5 +564,27 @@ function updateEloRating($playerID,$newEloScore) {
         $result = mysql_query($query) or die(mysql_error());
 }
 
+function getGamesWon($playerID, $seasonID) {
+	$query = "select SUM(player1_score) from results where seasonId=$seasonID and player1=$playerID";
+	$result = mysql_query($query) or die(mysql_error());
+	$row = mysql_fetch_object($result);
+	$name = $row->{'SUM(player1_score)'};
+	return $name;
+}
+	
+function getGamesLost($playerID, $seasonID) {
+	$query = "select SUM(player2_score) from results where seasonId=$seasonID and player2=$playerID";
+	$result = mysql_query($query) or die(mysql_error());
+	$row = mysql_fetch_object($result);
+	$name = $row->{'SUM(player2_score)'};
+	return $name;
+}
+	
+function terminatorScore($playerID, $seasonID) {
+	$won = getGamesWon($playerID, $seasonID);
+	$lost = getGamesLost($playerID, $seasonID);	
+	$terminator	= $won - $lost;
+	return $terminator;
+}	
 
 ?>
