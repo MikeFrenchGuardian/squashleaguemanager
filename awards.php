@@ -8,7 +8,7 @@ $seasons = getSeasonCount();
 
 for ($i = 1; $i <= $seasons; ++$i ) {
 	for ($j = 1; $j <= $players; ++$j ) {	
-		$arnie = 0;
+//		$arnie = 0;
 		$score = terminatorScore($j, $i);
 
 		if ($score > $arnie) {
@@ -18,8 +18,10 @@ for ($i = 1; $i <= $seasons; ++$i ) {
 		
 
 	}
-		echo $arnie;
-		echo "<br>";
+	//	echo $arnie;
+	//	echo "<br>";
+	echo	getPlayerName($t1000);
+
 }
 
 ?>
