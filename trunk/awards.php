@@ -13,8 +13,9 @@ for ($i = 1; $i <= $seasons; ++$i ) {
 
 		if ($score > $arnie) {
 			$arnie = $score;
+			$t1000 = $j;
 		}
-		$t1000 = $j;
+		
 		
 
 	}
