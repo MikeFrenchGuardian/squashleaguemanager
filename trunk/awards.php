@@ -23,7 +23,9 @@ for ($i = 1; $i <= $seasons; ++$i ) {
 	//	echo "<br>";
 	echo 	"Season " . $i . ": " . getPlayerName($t1000). " with a game difference of +" . $arnie . "<br>";
 //	echo	getPlayerName($t1000);
-
+	$score = 0;
+	$arnie = 0;
+	$t1000 = 0;
 
 }
 
