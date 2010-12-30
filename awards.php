@@ -5,7 +5,7 @@
 $players = getTotalPlayers();
 $seasons = getSeasonCount();
 
-echo "Terminator Award: For biggest game ratio difference";
+echo "Terminator Award: For biggest game ratio difference<br><br>";
 for ($i = 1; $i <= $seasons; ++$i ) {
 	for ($j = 1; $j <= $players; ++$j ) {	
 //		$arnie = 0;
@@ -21,7 +21,7 @@ for ($i = 1; $i <= $seasons; ++$i ) {
 	}
 	//	echo $arnie;
 	//	echo "<br>";
-	echo 	"Season " . $i . " " . getPlayerName($t1000);
+	echo 	"Season " . $i . " " . getPlayerName($t1000). "<br>";
 //	echo	getPlayerName($t1000);
 
 
