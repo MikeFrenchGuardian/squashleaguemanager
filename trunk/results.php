@@ -23,14 +23,14 @@ echo '<span class="text-header">League Beginning ' . $niceDate . "</span><br><br
 // Previous and Next buttons on the league page.
 $previousSeason = $seasonID - 1;
 if ($seasonID > 1) {
-    echo '<a class="text-normal" href="showleague.php?season=' . $previousSeason . '">Previous Season</a> ';
+    echo '<a class="text-normal" href="results.php?season=' . $previousSeason . '">Previous Season</a> ';
 }
 if (($seasonID > 1) && ($seasonID < $currSeason)) {
   echo ' - ';
   }
 if ($seasonID < $currSeason) {
   $nextSeason = $seasonID + 1;
-  echo '<a class="text-normal" href="showleague.php?season=' . $nextSeason . '">Next Season</a>';
+  echo '<a class="text-normal" href="results.php?season=' . $nextSeason . '">Next Season</a>';
 }
 echo '<br><br>';
 
