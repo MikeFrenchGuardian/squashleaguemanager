@@ -5,8 +5,8 @@
 $players = getTotalPlayers();
 $seasons = getSeasonCount();
 
-echo "Terminator Award: For biggest game ratio difference<br><br>";
-for ($i = 1; $i <= $seasons; ++$i ) {
+echo "Terminator Award: Most efficient killer of games<br><br>";
+for ($i = 1; $i < $seasons; ++$i ) {
 	for ($j = 1; $j <= $players; ++$j ) {	
 //		$arnie = 0;
 		$score = terminatorScore($j, $i);
@@ -21,7 +21,7 @@ for ($i = 1; $i <= $seasons; ++$i ) {
 	}
 	//	echo $arnie;
 	//	echo "<br>";
-	echo 	"Season " . $i . ": " . getPlayerName($t1000). " with a game difference of +" . $arnie . "<br>";
+	echo 	"Season " . $i . ": " . getPlayerName($t1000). " Game difference of +" . $arnie . "<br>";
 //	echo	getPlayerName($t1000);
 	$score = 0;
 	$arnie = 0;
