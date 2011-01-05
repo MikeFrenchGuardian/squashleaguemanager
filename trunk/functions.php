@@ -247,14 +247,14 @@ function addResult($seasonID,$player1,$player2,$p1g1,$p1g2,$p1g3,$p1g4,$p1g5,$p2
 }
 
 // Email results to both players and the results address.
-function emailMatchResult($player1,$player2,$p1score,$p2score) {
+function emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore) {
 	$player1Name = getPlayerName($player1);
 	$player2Name = getPlayerName($player2);
 	$player1Email = getPlayerEmail($player1);
 	$player2Email = getPlayerEmail($player2);	
 	$adminEmail = "results@tomjohnleague.co.uk";
 	$to  = $player1Email . "," . $player2Email . "," . $adminEmail;
-	$message = "The result of a match you have played has been added \n " . $player1Name . ": " . $p1score . "\n " . $player2Name . ": " . $p2score;
+	$message = "The result of a match you have played has been added to the website \n " . $player1Name . " " . $p1score . " - " . $p2score . " " . $player2Name . '\n \n' . $player1Name . '\'s ranking score was ' . $p1Elo . " and is now " . $p1NewEloScore . '\n \n' . $player2Name . '\'s ranking score was ' . $p2Elo . " and is now " . $p2NewEloScore . '\n \n Check your latest position in the league <a href="http://www.tomjohnleague.co.uk/showleague.php">here</a>';
 	$message = wordwrap($message, 70);
 	$headers = 'From: results@tomjohnleague.co.uk' . "\r\n" .
     'Reply-To: results@tomjohnleague.co.uk' . "\r\n" .
