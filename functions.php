@@ -254,7 +254,7 @@ function emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1N
 	$player2Email = getPlayerEmail($player2);	
 	$adminEmail = "results@tomjohnleague.co.uk";
 	$to  = $player1Email . "," . $player2Email . "," . $adminEmail;
-	$message = "The result of a match you have played has been added to the website \n " . $player1Name . " " . $p1score . " - " . $p2score . " " . $player2Name . "\n \n" . $player1Name . '\'s ranking score was ' . $p1Elo . " and is now " . $p1NewEloScore . "\n \n" . $player2Name . '\'s ranking score was ' . $p2Elo . " and is now " . $p2NewEloScore . "\n \n Check your latest position in the league <a href=\"http://www.tomjohnleague.co.uk/showleague.php\">here</a>";
+	$message = "The result of a match you have played has been added to the website \n " . $player1Name . " " . $p1score . " - " . $p2score . " " . $player2Name . "\n \n" . $player1Name . '\'s ranking score was ' . $p1Elo . " and is now " . $p1NewEloScore . "\n \n" . $player2Name . '\'s ranking score was ' . $p2Elo . " and is now " . $p2NewEloScore . "\n \n Check your latest position in the league " .  '<a href="http://www.tomjohnleague.co.uk/showleague.php">here</a>';
 	$message = wordwrap($message, 70);
 	$headers = 'From: results@tomjohnleague.co.uk' . "\r\n" .
     'Reply-To: results@tomjohnleague.co.uk' . "\r\n" .
