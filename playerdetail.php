@@ -100,7 +100,7 @@ $losses = getLosses($id);
 
 if ($losses != 0) {
 	$average = $wins/$losses*100;
-	$average = round($average,2)
+	$average = round($average,2);
 } else {
 	$average = "Insufficient results at the moment";
 }
