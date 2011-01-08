@@ -61,7 +61,7 @@ $rows = mysql_num_rows($result);
 
 for ($j = 0 ; $j < $rows ; ++$j)
 {
-	
+	$season = mysql_results($result,$j,'seasonID');
 	$winner = mysql_result($result,$j,'player1');
 	$loser = mysql_result($result,$j,'player2');
 	$winnerName = getPlayerName($winner);
@@ -80,6 +80,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 	$p2g5 = mysql_result($result,$j,'p2g5');
 	
 echo 	'<tr>';
+echo 	'<td class="text-normal">' . $season . '</td>';
 echo 	'<td class="text-normal">' . $winnerName . '</td>';
 echo 	'<td class="text-normal">' . $loserName . '</td>';
 echo 	'<td class="text-normal">' . $p1g . " " . $p2g . '</td>';
@@ -99,6 +100,7 @@ $losses = getLosses($id);
 
 if ($losses != 0) {
 	$average = $wins/$losses*100;
+	$average = round($average,2)
 } else {
 	$average = "Insufficient results at the moment";
 }
