@@ -6,8 +6,8 @@
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="showleague.php" class="text-normal">Leagues</a><br>
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="ranking.php" class="text-normal">Rankings</a><br>
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="results.php" class="text-normal">Results</a><br>
-	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="rules.php" class="text-normal">Rules</a><br><br>
-
+	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="rules.php" class="text-normal">Rules</a><br>
+	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="http://bookings.wimbledonclub.co.uk/Web/Login.aspx" target=”_blank” class="text-normal">Book a court</a><br><br>
 
 
 <?php
