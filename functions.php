@@ -564,6 +564,12 @@ function updateEloRating($playerID,$newEloScore) {
         $result = mysql_query($query) or die(mysql_error());
 }
 
+function updateElo($playerID,$newEloScore) {
+		$currDate = showCurrentDate();
+		$query = "INSERT INTO elo (date,playerID,elo) values ($currDate,$playerID,$newEloScore)";
+		$result = mysql_query($query) or die(mysql_error());
+}
+
 function getGamesWon($playerID, $seasonID) {
 	$query = "select SUM(player1_score) from results where seasonId=$seasonID and player1=$playerID";
 	$result = mysql_query($query) or die(mysql_error());

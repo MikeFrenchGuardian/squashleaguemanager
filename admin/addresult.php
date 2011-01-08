@@ -43,6 +43,10 @@ updateEloRating($player1,$p1NewEloScore);
 echo '<br><br>';
 updateEloRating($player2,$p2NewEloScore);
 
+updateElo($player1,$p1NewEloScore);
+updateElo($player2,$p2NewEloScore);
+
+
 emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore);	
 }
 
