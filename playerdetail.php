@@ -66,11 +66,19 @@ for ($j = 0 ; $j < $rows ; ++$j)
 		
 echo 	'<tr>';
 echo 	'<td class="text-normal">' . $season . '</td>';
-echo 	'<td class="text-normal">' . $winnerName . '</td>';
+if ($winner == $id){
+	echo 	'<td class="text-normal-bold">' . $winnerName . '</td>';
+} else {
+	echo	'<td class="text-normal">' . $winnerName . '</td>';
+}
+
+
 echo 	'<td class="text-normal">' . $p1g . " " . $p2g . '</td>';
-echo 	'<td class="text-normal">' . $loserName . '</td>';
-
-
+if ($loser == $id){
+	echo 	'<td class="text-normal-bold">' . $loserName . '</td>';
+} else {
+	echo 	'<td class="text-normal">' . $loserName . '</td>';
+}
 
 echo	'</tr>';
 }
