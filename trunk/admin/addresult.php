@@ -58,12 +58,12 @@ $rows = mysql_num_rows($result);
 
 ?>
 <span class="text-header">Add a result</span><br><br>
-<span class="text-normal"></span><br><br>
 
-<!-- and again for those people who can't remember scores -->
-<br><br>
 
-<br><br>
+<!-- Only doing match scores now, game scores look unlikely to be workable -->
+
+
+
 
 <form method="post" action="addresult.php">
 <select name="player1" size="1">
