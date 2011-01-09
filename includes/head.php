@@ -17,6 +17,9 @@
   })();
 
 </script>
+
+<script language="javascript" src="http://www.google.com/jsapi"></script>
+
 </head>
 <body class="text-normal" bgcolor="#C0C0C0" padding="0">
 <?php
