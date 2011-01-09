@@ -1,9 +1,6 @@
 <?php require_once 'includes/head.php';
 
 
-if ($loggedIn == "false") {
-	header("location:/index.php");
-}
 
 $id = $_GET["id"];
 
@@ -111,8 +108,8 @@ echo "Win Ratio: " . $average . "<br><br>";
 	$eloresult = mysql_query($eloquery);
 	$elorows = mysql_num_rows($eloresult);
 
-	$eloMax = getEloMax($id) + 20;
-	$eloMin = getEloMin($id) - 20;
+	$eloMax = getEloMax($id);
+	$eloMin = getEloMin($id);
 
 
 ?>
@@ -150,9 +147,10 @@ echo "Win Ratio: " . $average . "<br><br>";
       function draw(dataTable) {
         var vis = new google.visualization.ImageChart(document.getElementById('chart'));
         var options = {
+	  chtt: 'Ranking Score Movement',
           chxl: '',
           chxp: '',
-          chxr: '0,<?php echo $eloMax ?>,<?php echo $eloMax ?>',
+          chxr: '0,<?php echo $eloMin ?>,<?php echo $eloMax ?>,5',
           chxs: '',
           chxtc: '',
           chxt: 'y',
@@ -160,7 +158,6 @@ echo "Win Ratio: " . $average . "<br><br>";
           cht: 'lc',
           chco: '3D7930',
           chd: 's:Xhiugtqi',
-          chdl: '',
           chg: '14.3,-1,1,1',
           chls: '2,4,0',
           chm: 'B,C5D4B5BB,0,0,0'
