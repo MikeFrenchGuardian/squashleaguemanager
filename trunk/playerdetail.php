@@ -67,7 +67,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 echo 	'<tr>';
 echo 	'<td class="text-normal">' . $season . '</td>';
 if ($winner == $id){
-	echo 	'<td class="text-normal-bold">' . $winnerName . '</td>';
+	echo 	'<td class="text-normal-bold"><b>' . $winnerName . '</b></td>';
 } else {
 	echo	'<td class="text-normal">' . $winnerName . '</td>';
 }
@@ -75,7 +75,7 @@ if ($winner == $id){
 
 echo 	'<td class="text-normal">' . $p1g . " " . $p2g . '</td>';
 if ($loser == $id){
-	echo 	'<td class="text-normal-bold">' . $loserName . '</td>';
+	echo 	'<td class="text-normal"><b>' . $loserName . '</b></td>';
 } else {
 	echo 	'<td class="text-normal">' . $loserName . '</td>';
 }
@@ -102,9 +102,86 @@ $averagePointsPerSeason;
 echo "Total Wins: " . $wins . "<br>";
 echo "Total Defeats: " . $losses . "<br>";
 echo "Win Ratio: " . $average . "<br><br>";
+
+
+
+
+// ELO Graph:
+	$eloquery = "SELECT date,elo FROM elo WHERE playerid=$id";
+	$eloresult = mysql_query($eloquery);
+	$elorows = mysql_num_rows($eloresult);
+
 ?>
+
+  <div id="chart"></div>
+
+   <script type="text/javascript">
+      var queryString = '';
+      var dataUrl = '';
+
+      function onLoadCallback() {
+        if (dataUrl.length > 0) {
+          var query = new google.visualization.Query(dataUrl);
+          query.setQuery(queryString);
+          query.send(handleQueryResponse);
+        } else {
+          var dataTable = new google.visualization.DataTable();
+          dataTable.addRows(<?php echo $elorows ?>);
+
+          dataTable.addColumn('number');
+          
+
+          
+          <?php for ($k = 0; $k < $elorows; ++$k) {
+          	$eloScore = mysql_result($eloresult,$k,'elo');
+          	$scaled = $eloScore / 100;
+          	echo "dataTable.setValue(" . $k . ", 0, ". $scaled . ");";
+          }	
+          ?>
+       
+          draw(dataTable);
+        }
+      }
+
+      function draw(dataTable) {
+        var vis = new google.visualization.ImageChart(document.getElementById('chart'));
+        var options = {
+          chxl: '',
+          chxp: '',
+          chxr: '0,0,1500',
+          chxs: '',
+          chxtc: '',
+          chxt: 'y',
+          chs: '300x225',
+          cht: 'lc',
+          chco: '3D7930',
+          chd: 's:Xhiugtqi',
+          chdl: '',
+          chg: '14.3,-1,1,1',
+          chls: '2,4,0',
+          chm: 'B,C5D4B5BB,0,0,0'
+        };
+        vis.draw(dataTable, options);
+      }
+
+      function handleQueryResponse(response) {
+        if (response.isError()) {
+          alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+          return;
+        }
+        draw(response.getDataTable());
+      }
+
+      google.load("visualization", "1", {packages:["imagechart"]});
+      google.setOnLoadCallback(onLoadCallback);
+
+    </script>
+
+
 <span class="text-header">League Movement</span><br>
 Coming soon:
+
+
 
 
 
