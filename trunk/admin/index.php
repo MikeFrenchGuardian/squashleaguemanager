@@ -21,7 +21,7 @@ Choose number of leagues for a season <a href="newleagues.php">here</a>
 Setup Players into Divisions <a href="setupDivision.php">here</a>
 <br><br>
 Add new / out of league players to division <a href="addnewplayers.php">here</a>
-
+<br><br>
 Edit Player <a href="editplayer.php">here</a>
 
 
