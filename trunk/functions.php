@@ -611,5 +611,21 @@ function getSeasonCount() {
 	return $name;
 }
 
+function getEloMax($playerID){
+$eloMaxquery = "SELECT MAX(elo) FROM elo WHERE playerid=$playerID";
+	$eloMaxresult = mysql_query($eloMaxquery);
+	$eloMaxRow = mysql_fetch_object($eloMaxresult);
+	$eloMax = $eloMaxRow->{'MAX(elo)'};
+	return $eloMax;
+}
+
+function getEloMin($playerID){
+	$eloMinquery = "SELECT MIN(elo) FROM elo WHERE playerid=$playerID";
+	$eloMinresult = mysql_query($eloMinquery);
+	$eloMinRow = mysql_fetch_object($eloMinresult);
+	$eloMin = $eloMinRow->{'MIN(elo)'};
+	return $eloMin;
+}
+
 
 ?>
