@@ -111,6 +111,10 @@ echo "Win Ratio: " . $average . "<br><br>";
 	$eloresult = mysql_query($eloquery);
 	$elorows = mysql_num_rows($eloresult);
 
+	$eloMax = getEloMax($id) + 20;
+	$eloMin = getEloMin($id) - 20;
+
+
 ?>
 
   <div id="chart"></div>
@@ -148,7 +152,7 @@ echo "Win Ratio: " . $average . "<br><br>";
         var options = {
           chxl: '',
           chxp: '',
-          chxr: '0,0,1500',
+          chxr: '0,<?php echo $eloMax ?>,<?php echo $eloMax ?>',
           chxs: '',
           chxtc: '',
           chxt: 'y',
