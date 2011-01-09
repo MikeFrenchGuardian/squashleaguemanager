@@ -150,7 +150,7 @@ echo "Win Ratio: " . $average . "<br><br>";
 	  chtt: 'Ranking Score Movement',
           chxl: '',
           chxp: '',
-          chxr: '0,<?php echo $eloMin ?>,<?php echo $eloMax ?>,5',
+          chxr: '0,<?php echo $eloMax ?>,<?php echo $eloMax ?>,5',
           chxs: '',
           chxtc: '',
           chxt: 'y',
