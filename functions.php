@@ -559,6 +559,14 @@ function getEloRating($playerID) {
 	return $name;
 }
 
+function getElo($playerID) {
+	$query = "select id,elo from elo where playerid = $playerID ORDER BY id DESC limit 0,1";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->elo;
+	return $name;
+}
+
 function updateEloRating($playerID,$newEloScore) {
         $query = "update player set elo_score='$newEloScore' where id='$playerID'";
         $result = mysql_query($query) or die(mysql_error());
