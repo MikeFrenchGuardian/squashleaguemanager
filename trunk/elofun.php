@@ -8,8 +8,8 @@ if (isset($_GET['player2'])) $player2 = sanitizeString($_GET['player2']);
 if (isset($_GET['p1score'])) $p1score = sanitizeString($_GET['p1score']);
 if (isset($_GET['p2score'])) $p2score = sanitizeString($_GET['p2score']);
 
-$p1Elo = getEloRating($player1);
-$p2Elo = getEloRating($player2);
+$p1Elo = getElo($player1);
+$p2Elo = getElo($player2);
 
 $p1name = getPlayerName($player1);
 $p2name = getPlayerName($player2);
@@ -30,8 +30,12 @@ $p2name = getPlayerName($player2);
 
 
 
-updateEloRating($player1,$p1NewEloScore);
-updateEloRating($player2,$p2NewEloScore);
+//updateEloRating($player1,$p1NewEloScore);
+//updateEloRating($player2,$p2NewEloScore);
+
+updateElo($player1,$p1NewEloScore);
+updateElo($player2,$p2NewEloScore);
+
 	
 echo "Result \n";
 echo $p1name . ", ";
