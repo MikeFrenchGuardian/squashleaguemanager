@@ -1,6 +1,10 @@
 <?php require_once 'includes/head.php';
 
-
+if ($loggedIn == "true") {		
+	$member = yes;	
+} else {
+	$member = no;
+}
 
 $id = $_GET["id"];
 
@@ -28,7 +32,12 @@ for ($i = 0 ; $i < $toPlayRows ; ++$i)
 
 	echo 	'<tr>';
 	echo 	'<td>' . $toPlayName . '</td>';
-	echo 	'<td><a class="text-normal" href="mailto:" . $toPlayName . ">' . $toPlayEmail . '</td>';	
+	if ($member == yes){
+		echo 	'<td><a class="text-normal" href="mailto:" . $toPlayName . ">' . $toPlayEmail . '</td>';	
+	} else {
+			echo 	'<td><span class="text-normal">Requires login</span></td>';	
+	}
+
 	echo	'</tr>';
 }
 	echo "</table><br>";
@@ -150,7 +159,7 @@ echo "Win Ratio: " . $average . "<br><br>";
 	  chtt: 'Ranking Score Movement',
           chxl: '',
           chxp: '',
-          chxr: '0,<?php echo $eloMax ?>,<?php echo $eloMax ?>,5',
+          chxr: '0,<?php echo $eloMin ?>,<?php echo $eloMax ?>,20',
           chxs: '',
           chxtc: '',
           chxt: 'y',
