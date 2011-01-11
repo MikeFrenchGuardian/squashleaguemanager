@@ -1,9 +1,11 @@
 <?php require_once 'includes/head.php'; 
 
 
-if ($loggedIn == "false") {
-	header("location:/index.php");
-} 
+if ($loggedIn == "true") {		
+	$member = yes;	
+} else {
+	$member = no;
+}
 
 
 $query = "SELECT * FROM player";
@@ -31,9 +33,26 @@ for ($j = 0 ; $j < $rows ; ++$j)
 	
 echo 	'<tr>';
 echo 	'<td><a class="text-normal" href="playerdetail.php?id=' . $id . '">' . $name . '</td>';
-echo 	'<td>' . $mobilephone . '</td>';
-echo 	'<td>' . $phone . '</td>';
-echo 	'<td><a class="text-normal" href="mailto:' . $email . '">' . $email . '</td>';
+if ($member == yes){
+	echo 	'<td>' . $mobilephone . '</td>';
+} else {
+	echo 	'<td><span class="text-normal">Requires login</span></td>';	
+}
+
+if ($member == yes){
+	echo 	'<td>' . $phone . '</td>';
+} else {
+	echo 	'<td><span class="text-normal">Requires login</span></td>';	
+}
+
+if ($member == yes){
+	echo 	'<td><a class="text-normal" href="mailto:' . $email . '">' . $email . '</td>';
+} else {
+	echo 	'<td><span class="text-normal">Requires login</span></td>';	
+}
+
+
+
 echo	'</tr>';
 }
 ?>
