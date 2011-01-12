@@ -27,13 +27,13 @@ echo '<table>';
 echo '<tr><td>' . $playerName . '</td>';
 
 	echo	"<td class=\"text-normal\"><select name=\"" . $playerID . "\">";
+	echo '<option name="' . $playerName  . '" value="None">None</option>';
 			// Run through number of leagues in the given season for each dropdown
 		for ($j = 1; $j <= $leagueCount ; ++$j ) {
 		
 				// Render the option name as the playerID
 				echo '<option name="' . $playerName  . '" value="' . $j . '">' . $j . '</option>';
 		}
-	echo '<option name="' . $playerName  . '" value="None">None</option>';
 	echo '</td></tr>';
 }
 echo '</table>';
