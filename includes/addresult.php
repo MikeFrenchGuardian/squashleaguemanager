@@ -1,4 +1,4 @@
-if (isset ($_POST['games'])) {
+<?php if (isset ($_POST['games'])) {
 		$seasonID = currentSeason();
 
 if (isset($_POST['player1'])) $player1 = sanitizeString($_POST['player1']);
@@ -72,7 +72,7 @@ $rows = mysql_num_rows($result);
 <option value=Nick Wales>Winner</option>
 <?php 
 for ($k = 0; $k < $rows ; ++$k) {
-	echo '<option value="' . mysql_result($result,$k,'id') . '">Div:' .  mysql_result($result,$k,'number') . " " .  mysql_result($result,$k,'name') . '</option>';
+	echo '<option value="' . mysql_result($result,$k,'player.id') . '">Div:' .  mysql_result($result,$k,'division.number') . " " .  mysql_result($result,$k,'player.name') . '</option>';
 }
 ?>
 
@@ -95,7 +95,7 @@ for ($k = 0; $k < $rows ; ++$k) {
 
 <?php
 for ($j = 0; $j < $rows ; ++$j) {
-		echo '<option value="' . mysql_result($result,$j,'id') . '">Div:' .  mysql_result($result,$j,'number') . " " .  mysql_result($result,$j,'name') . '</option>';
+		echo '<option value="' . mysql_result($result,$j,'player.id') . '">Div:' .  mysql_result($result,$j,'division.number') . " " .  mysql_result($result,$j,'player.name') . '</option>';
 
 }
 ?>
