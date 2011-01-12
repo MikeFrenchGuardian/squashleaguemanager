@@ -1,4 +1,4 @@
-<?php if (isset ($_POST['games'])) {
+if (isset ($_POST['games'])) {
 		$seasonID = currentSeason();
 
 if (isset($_POST['player1'])) $player1 = sanitizeString($_POST['player1']);
@@ -40,6 +40,10 @@ echo '<br><br>';
 updateEloRating($player1,$p1NewEloScore);
 echo '<br><br>';
 updateEloRating($player2,$p2NewEloScore);
+
+updateElo($player1,$p1NewEloScore);
+updateElo($player2,$p2NewEloScore);
+
 
 emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore);	
 }
@@ -110,4 +114,4 @@ for ($j = 0; $j < $rows ; ++$j) {
 <input type="submit" />
 </form>
 
-?>
+<?php } ?>
