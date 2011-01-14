@@ -506,8 +506,7 @@ function checkPlayerDiv($seasonID) {
 function addBlogPost($currDate,$subject,$synopsis,$contents) {
 	$query = "insert into blog (date,subject,synopsis,contents) values (\"$currDate\", \"$subject\", \"$synopsis\",  \"$contents\");";
 	$result = mysql_query($query);
-	echo $query;
-}
+	}
 
 function editBlogPost($blogID,$subject,$synopsis,$contents) {
 	$query = ("update blog set subject='$subject', synopsis='$synopsis', contents='$contents' where id='$blogID'");
