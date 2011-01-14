@@ -3,6 +3,7 @@
 if (isset($_POST["posted"])) {
 
 	$subject = $_POST["subject"];
+	$synopsis = $_POST["synopsis"];
 	$contents = $_POST["contents"];
 	$currDate = showCurrentDate();
 	echo '<span class="text-header">Add a post</span><br><br>';
