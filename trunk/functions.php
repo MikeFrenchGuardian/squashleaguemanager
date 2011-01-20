@@ -333,9 +333,9 @@ function daysLeft() {
         $daysLeft = (strtotime($eDate) - (strtotime($currentDate))) / (60 * 60 * 24);
 
         if ($daysLeft < 1) {
-        		echo "This league is finished. New one soon!	 \n";
+        		echo "This league is finished. New one coming very soon!	 \n";
         } else if ($daysLeft < 10) {
-                echo "The current league has " . $daysLeft . " days to go people, get those games in! \n";
+                echo "The current league has " . $daysLeft . " days to go, get those games in! \n";
         } else if ($daysLeft > 28) {
                 echo "The current league has " . $daysLeft . " days to go \n";
         } else echo $daysLeft . " days to go.";
