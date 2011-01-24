@@ -1,6 +1,6 @@
 <?php require_once 'includes/head.php'; 
 
-$query = "SELECT id,name,tjRank FROM player";
+$query = "SELECT id,name,elo_score FROM player";
 $result = mysql_query($query);
 $rows = mysql_num_rows($result);
 
@@ -24,7 +24,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 	$k = $j +1;
 	$id = mysql_result($result,$j,'id');
 	$name = mysql_result($result,$j,'name');
-	$name = mysql_result($result,$j,'tjRank');
+	$tjRank = mysql_result($result,$j,'elo_score');
 	$wins = getWins($id);
 	$losses = getLosses($id);
 	$played = $wins + $losses;
