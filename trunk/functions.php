@@ -59,7 +59,7 @@ function addPlayerToDiv($playerID,$divisionID,$tjRank) {
 }
 
 function setTJRank($playerID,$divisionID,$tjRank) {
-		$query = "UPDATE playerdiv set tjrank=$tjRank where playerID=$playerID"
+		$query = "UPDATE playerdiv set tjrank=$tjRank where playerID=$playerID";
 		$result = mysql_query($query) or die(mysql_error());
 }
 
