@@ -48,6 +48,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 				"tjrank" => $tjRank
 
 		);	   
+	}
 
 	$playerArray[] = $arrayName;
 	
@@ -73,7 +74,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 		echo	$position['tjRank'] . '</td>';
 		echo	'</tr>';
 	}
-}
+
 
 ?>
 </table>
