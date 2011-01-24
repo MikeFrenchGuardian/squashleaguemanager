@@ -1,7 +1,7 @@
 <?php require_once 'includes/head.php'; 
 
-$ordering = $_GET['order'];
-
+$ordering = ($_GET["order"]);
+	
 $query = "SELECT id,name,elo_score FROM player";
 $result = mysql_query($query);
 $rows = mysql_num_rows($result);
