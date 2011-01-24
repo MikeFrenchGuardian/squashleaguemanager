@@ -50,7 +50,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 	usort($playerArray, "sortRatio");
 	
 
-	foreach ($playerArray as $position) {
+
 
 		echo 	'<tr>';
 		echo    '<td class="normal">';
@@ -68,7 +68,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 		echo    '<td class="normal">';
 		echo	$position['tjRank'] . '</td>';
 		echo	'</tr>';
-	}
+	
 }
 
 ?>
