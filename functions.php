@@ -58,6 +58,12 @@ function addPlayerToDiv($playerID,$divisionID,$tjRank) {
 		$result = mysql_query($query) or die(mysql_error());
 }
 
+function setTJRank($playerID,$divisionID,$tjRank) {
+		$query = "UPDATE playerdiv set tjrank=$tjRank where playerID=$playerID"
+		$result = mysql_query($query) or die(mysql_error());
+}
+
+
 function checkDivSetup($divisionID) {
 		$query = "SELECT COUNT(divisionID) FROM playerdiv WHERE divisionID = $divisionID";
 		$result = mysql_query($query)or die(mysql_error());
@@ -115,6 +121,19 @@ function getLosses($playerID) {
 	$result = mysql_query($query);
 	$rows = mysql_num_rows($result);
 	return $rows;
+}
+
+function getRatio($playerID){
+	$wins = getWins($playerID);
+	$losses = getLosses($playerID);
+	if ($losses != 0) {
+		$average = $wins/$losses*100;
+		$average = round($average,2);
+		return $average;
+	} else {
+		$average = "Insufficient results at the moment";
+		return $average;
+	}
 }
 
 // get specified league draws
