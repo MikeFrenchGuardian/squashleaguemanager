@@ -49,7 +49,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 
 		);	   
 
-	$playerArray[] = $array;
+	$playerArray[] = $arrayName;
 	
 //	usort($playerArray, "sortRatio");
 	
