@@ -36,7 +36,8 @@ for ($j = 0 ; $j < $rows ; ++$j)
 		$arrayNo = array
 		(
 				"playerID" => $playerID,
-				"player" => $playerName,
+				"player" => $name,
+				"played" => $played,
 				"wins" => $wins,
 				"losses" => $loses,
 				"ratio" => $ratio,
