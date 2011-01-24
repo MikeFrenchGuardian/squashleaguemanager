@@ -39,9 +39,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 	$played = $wins + $losses;
 	$ratio = getRatio($id);
 	
-	$array = "rankingTable";
-
-
+	$array = "rankingTable"
 		(
 				"playerID" => $playerID,
 				"player" => $name,
