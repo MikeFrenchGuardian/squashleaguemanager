@@ -1,6 +1,9 @@
 <html>
 <head>
 <title>TomJohn League</title>
+
+<META name="description" content="Wimbledon Squash and Fitness Club Online Squash Leagues and Team Website">
+<META name="keywords" content="Wimbledon, squash, league, league management, surrey cup">
 <link rel="shortcut icon" href="http://s3-eu-west-1.amazonaws.com/tomjohn/favicon.ico" >
 <link rel="stylesheet" type="text/css" href="style.css" />
 
