@@ -1,5 +1,7 @@
 <?php require_once 'includes/head.php'; 
 
+$ordering = $_GET['order'];
+
 $query = "SELECT id,name,elo_score FROM player";
 $result = mysql_query($query);
 $rows = mysql_num_rows($result);
@@ -12,11 +14,11 @@ $rows = mysql_num_rows($result);
 
    <td class="hed">Rank</td>
    <td class="hed">Name</td>
-   <td class="hed">Played</td>
-   <td class="hed">Won</td>
-   <td class="hed">Lost</td>
-   <td class="hed">Ratio</td>
-   <td class="hed">Ranking</td>
+   <td class="hed"><a href="ratio.php?order=played">Played</a></td>
+   <td class="hed"><a href="ratio.php?order=won">Won</a></td>
+   <td class="hed"><a href="ratio.php?order=lost">Lost</a></td>
+   <td class="hed"><a href="ratio.php?order=ratio">Ratio</a></td>
+   <td class="hed"><a href="ratio.php?order=tjrank">Ranking</a></td>
 </tr>
 <?php
 
@@ -52,14 +54,31 @@ for ($j = 0 ; $j < $rows ; ++$j)
 
 	$playerArray[] = $arrayName;
 }	
-//	usort($playerArray, "sortRatio");
-	
+
+	if ($ordering = "played") {
+		usort($playerArray, "sortPlayed");
+	} else if ($ordering = "won") {
+		usort($playerArray, "sortWon");
+	} else if ($ordering = "lost") {
+		usort($playerArray, "sortLost");
+	} else if ($ordering = "ratio") {
+		usort($playerArray, "sortRatio");
+	} else {
+		usort($playerArray, "sortRank");
+	}
+
+
+
+
+
+	$rank = 1;
 
 	foreach ($playerArray as $position) {
-
+	++$rank;
+	
 		echo 	'<tr>';
 		echo    '<td class="normal">';
-		echo	$k . '</td>';
+		echo	$rank . '</td>';
         echo    '<td class="normal">';
 		echo	'<a href="playerdetail.php?id=' . $position['playerID'] . '" class="text-normal">' . $position['player'] . '</td>';
         echo    '<td class="normal">';
@@ -71,7 +90,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 	    echo    '<td class="normal">';
 		echo	$position['ratio'] . '</td>';
 		echo    '<td class="normal">';
-		echo	$position['tjRank'] . '</td>';
+		echo	$position['tjrank'] . '</td>';
 		echo	'</tr>';
 	}
 
