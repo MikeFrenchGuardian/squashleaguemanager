@@ -200,6 +200,21 @@ body {
 	text-decoration: underline; }
 .text-normal a:active { }	
 
+.text-normal-white {
+	font-family: Lucida Grande, Arial; 
+	font-size: 9pt;
+	line-height: 170%;
+	color: white; }
+.text-normal-white a:link { 
+	font-family: Lucida Grande, Arial; 
+	font-size: 9pt;
+	line-height: 170%;
+	text-decoration: none; }
+.text-normal-white a:visited { 
+	text-decoration: none; } 
+.text-normal-white a:hover { 
+	text-decoration: underline; }
+.text-normal-white a:active { }
 
 
 .playerInfoBox {
