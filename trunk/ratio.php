@@ -15,9 +15,9 @@ $rows = mysql_num_rows($result);
 
    <td class="hed">Rank</td>
    <td class="hed">Name</td>
-   <td class="hed" style="width:80px"><a href="ratio.php?order=played">Played</a></td>
-   <td class="hed" style="width:80px"><a href="ratio.php?order=won">Won</a></td>
-   <td class="hed" style="width:80px"><a href="ratio.php?order=lost">Lost</a></td>
+   <td class="hed" style="width:50px"><a href="ratio.php?order=played">Played</a></td>
+   <td class="hed" style="width:50px"><a href="ratio.php?order=won">Won</a></td>
+   <td class="hed" style="width:50px"><a href="ratio.php?order=lost">Lost</a></td>
    <td class="hed" style="width:80px"><a href="ratio.php?order=ratio">W/L Ratio</a></td>
    <td class="hed" style="width:80px"><a href="ratio.php?order=tjrank">Ranking</a></td>
 </tr>
