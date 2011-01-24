@@ -14,6 +14,8 @@ $rows = mysql_num_rows($result);
 ?>
 <span class="text-header">Player Win/Loss Ratio Ranking</span><br><br>
 
+<span class="text-normal">Click the headings to sort by them</span>
+
 <table class="league">
 <tr>
 
