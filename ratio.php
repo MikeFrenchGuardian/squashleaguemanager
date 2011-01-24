@@ -10,9 +10,10 @@ $rows = mysql_num_rows($result);
 
 <table class="league">
 <tr>
+
    <td class="hed">Rank</td>
-   <td class="hed">Played</td>
    <td class="hed">Name</td>
+   <td class="hed">Played</td>
    <td class="hed">Won</td>
    <td class="hed">Lost</td>
    <td class="hed">Ratio</td>
@@ -51,6 +52,8 @@ for ($j = 0 ; $j < $rows ; ++$j)
 	foreach ($playerArray as $position) {
 		++$k;
 		echo 	'<tr>';
+		echo    '<td class="normal">';
+		echo	$k . '</td>';
         echo    '<td class="normal">';
 		echo	'<a href="playerdetail.php?id=' . $position['playerID'] . '" class="text-normal">' . $position['player'] . '</td>';
         echo    '<td class="normal">';
