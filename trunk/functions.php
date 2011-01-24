@@ -313,7 +313,7 @@ function sortDescending ($a, $b)
 
 function sortRatio ($a, $b)
 {
-    if ($a['ratio'] == $b['$ratio']) {
+    if ($a['ratio'] == $b['ratio']) {
         return 0;
     }
     return ($a['ratio'] > $b['ratio']) ? -1 : 1;
