@@ -48,10 +48,10 @@ for ($j = 0 ; $j < $rows ; ++$j)
 				"tjrank" => $tjRank
 
 		);	   
-	}
+
 
 	$playerArray[] = $arrayName;
-	
+}	
 //	usort($playerArray, "sortRatio");
 	
 
