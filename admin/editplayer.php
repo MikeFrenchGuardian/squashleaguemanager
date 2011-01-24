@@ -9,17 +9,18 @@ if (isset($_POST['player'])) {
 
 	$playerID = sanitizeString($_POST['player']);
 	$query = "select id,name,email,phone,mobilephone from player where id = $playerID";
-	$result = mysql_query($query);	
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);	
 	
 ?>
 
 <form method="post" action="editplayer.php">
 <?php 
-echo '<input type="hidden" name="id" value="' . mysql_result($result,$j,'id') . '">';
-echo 'Name: <input name="name" type="text" size="25" value="' . mysql_result($result,$j,'name') . '"><br>';
-echo 'Email: <input name="email" type="text" size="25" value="' . mysql_result($result,$j,'email') . '"><br>';
-echo 'Phone: <input name="phone" type="text" size="25" value="' . mysql_result($result,$j,'phone') . '"><br>';
-echo 'Mobile: <input name="mobilephone" type="text" size="25" value="' . mysql_result($result,$j,'mobilephone') . '"><br>';
+echo '<input type="hidden" name="id" value="' . $row->id . '">';
+echo 'Name: <input name="name" type="text" size="25" value="' . $row->name . '"><br>';
+echo 'Email: <input name="email" type="text" size="25" value="' . $row->email . '"><br>';
+echo 'Phone: <input name="phone" type="text" size="25" value="' . $row->phone . '"><br>';
+echo 'Mobile: <input name="mobilephone" type="text" size="25" value="' . $row->mobilephone . '"><br>';
 ?>
 <input type="submit">
 <?php
