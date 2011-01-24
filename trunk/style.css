@@ -279,7 +279,7 @@ table.league td.normal
 {background-color: #fff;
 color: #000;
 padding: 4px;
-text-align: left;
+text-align: center;
 font-size: 12px;
 font-weight: normal;
 border-bottom: 1px #000 solid;
@@ -289,7 +289,7 @@ table.league td.relegation
 {background-color: #fff;
 color: #FE2E2E;
 padding:4px;
-text-align: left;
+text-align: center;
 font-size: 12px;
 font-weight: normal;
 border-bottom: 1px #000 solid;
@@ -299,7 +299,7 @@ table.league td.promotion
 {background-color: #fff;
 color: #4974E8;
 padding: 4px;
-text-align: left;
+text-align: center;
 font-size: 12px;
 font-weight: normal;
 border-bottom: 1px #000 solid;
@@ -309,7 +309,7 @@ table.league tr.normal
 {background-color: #fff;
 color: #000;
 padding: 4px;
-text-align: left;
+text-align: center;
 font-size: 12px;
 border: 1px;
 }
