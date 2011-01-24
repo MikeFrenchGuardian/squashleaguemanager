@@ -1,6 +1,7 @@
 <?php require_once 'includes/head.php'; 
 
 $ordering = ($_GET["order"]);
+
 	
 $query = "SELECT id,name,elo_score FROM player";
 $result = mysql_query($query);
@@ -41,7 +42,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 	$arrayName = array
 	
 		(
-				"playerID" => $playerID,
+				"playerID" => $id,
 				"player" => $name,
 				"played" => $played,
 				"wins" => $wins,
@@ -55,13 +56,13 @@ for ($j = 0 ; $j < $rows ; ++$j)
 	$playerArray[] = $arrayName;
 }	
 
-	if ($ordering = "played") {
+	if ($ordering =="played") {
 		usort($playerArray, "sortPlayed");
-	} else if ($ordering = "won") {
+	} else if ($ordering == "won") {
 		usort($playerArray, "sortWon");
-	} else if ($ordering = "lost") {
+	} else if ($ordering =="lost") {
 		usort($playerArray, "sortLost");
-	} else if ($ordering = "ratio") {
+	} else if ($ordering == "ratio") {
 		usort($playerArray, "sortRatio");
 	} else {
 		usort($playerArray, "sortRank");
@@ -71,7 +72,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 
 
 
-	$rank = 1;
+	$rank = 0;
 
 	foreach ($playerArray as $position) {
 	++$rank;
