@@ -86,8 +86,9 @@ for ($j = 0 ; $j < $rows ; ++$j)
 		echo	$rank . '</td>';
         echo    '<td class="normal">';
 		echo	'<a href="playerdetail.php?id=' . $position['playerID'] . '" class="text-normal">' . $position['player'] . '</td>';
-        if ($ordering == "played") {
-			echo '<td class="bold">';
+       
+ 		if ($ordering == "played") {
+			echo '<td class="selected">';
 		} else {
 			echo    '<td class="normal">';
 		}

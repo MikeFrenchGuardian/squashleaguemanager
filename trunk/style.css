@@ -209,11 +209,12 @@ body {
 	font-family: Lucida Grande, Arial; 
 	font-size: 9pt;
 	line-height: 170%;
-	text-decoration: none; }
-.text-normal-white a:visited { 
-	text-decoration: none; } 
-.text-normal-white a:hover { 
 	text-decoration: underline; }
+.text-normal-white a:visited { 
+	text-decoration: underline; } 
+.text-normal-white a:hover { 
+	text-decoration: underline;
+	color: #909090; }
 .text-normal-white a:active { }
 
 
