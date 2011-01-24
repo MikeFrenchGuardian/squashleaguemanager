@@ -1,5 +1,5 @@
 <?php require_once 'includes/head.php'; 
-
+$ordering = "tjrank";
 $ordering = ($_GET["order"]);
 
 	
@@ -64,7 +64,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 		usort($playerArray, "sortLost");
 	} else if ($ordering == "ratio") {
 		usort($playerArray, "sortRatio");
-	} else {
+	} else if ($ordering == "tjrank") {
 		usort($playerArray, "sortRank");
 	}
 
@@ -82,15 +82,39 @@ for ($j = 0 ; $j < $rows ; ++$j)
 		echo	$rank . '</td>';
         echo    '<td class="normal">';
 		echo	'<a href="playerdetail.php?id=' . $position['playerID'] . '" class="text-normal">' . $position['player'] . '</td>';
-        echo    '<td class="normal">';
+        if ($ordering == "played") {
+			echo '<td class="bold">';
+		} else {
+			echo    '<td class="normal">';
+		}
 		echo	$position['played'] . '</td>';
-        echo    '<td class="normal">';
+		
+        if ($ordering == "won") {
+			echo '<td class="bold">';
+		} else {
+        	echo    '<td class="normal">';
+		}
 		echo	$position['wins'] . '</td>';	
-        echo    '<td class="normal">';
+        
+       if ($ordering == "won") {
+			echo '<td class="bold">';
+		} else {
+			echo    '<td class="normal">';
+		}
 		echo	$position['losses'] . '</td>';
-	    echo    '<td class="normal">';
+	    
+	   if ($ordering == "ratio") {
+			echo '<td class="bold">';
+		} else {
+			echo    '<td class="normal">';
+		}
 		echo	$position['ratio'] . '</td>';
-		echo    '<td class="normal">';
+		
+		if ($ordering == "tjrank") {
+			echo '<td class="bold">';
+		} else {
+			echo    '<td class="normal">';
+		}
 		echo	$position['tjrank'] . '</td>';
 		echo	'</tr>';
 	}
