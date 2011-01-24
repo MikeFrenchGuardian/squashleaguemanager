@@ -90,28 +90,28 @@ for ($j = 0 ; $j < $rows ; ++$j)
 		echo	$position['played'] . '</td>';
 		
         if ($ordering == "won") {
-			echo '<td class="bold">';
+			echo '<td class="selected">';
 		} else {
         	echo    '<td class="normal">';
 		}
 		echo	$position['wins'] . '</td>';	
         
-       if ($ordering == "won") {
-			echo '<td class="bold">';
+       if ($ordering == "lost") {
+			echo '<td class="selected">';
 		} else {
 			echo    '<td class="normal">';
 		}
 		echo	$position['losses'] . '</td>';
 	    
 	   if ($ordering == "ratio") {
-			echo '<td class="bold">';
+			echo '<td class="selected">';
 		} else {
 			echo    '<td class="normal">';
 		}
 		echo	$position['ratio'] . '</td>';
 		
 		if ($ordering == "tjrank") {
-			echo '<td class="bold">';
+			echo '<td class="selected">';
 		} else {
 			echo    '<td class="normal">';
 		}
