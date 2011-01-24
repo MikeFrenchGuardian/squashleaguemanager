@@ -1,7 +1,11 @@
 <?php require_once 'includes/head.php'; 
-$ordering = "tjrank";
-$ordering = ($_GET["order"]);
 
+
+if (isset ($_GET["order"])) {
+	$ordering = ($_GET["order"]);
+} else {
+	$ordering = "tjrank";
+}
 	
 $query = "SELECT id,name,elo_score FROM player";
 $result = mysql_query($query);
