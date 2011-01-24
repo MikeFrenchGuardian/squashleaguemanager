@@ -4,6 +4,13 @@ $query = "SELECT id,name,elo_score FROM player";
 $result = mysql_query($query);
 $rows = mysql_num_rows($result);
 
+$playerid;
+$player;
+$played;
+$wins;
+$losses;
+$ratio;
+$tjRank;
 
 ?>
 <span class="text-header">Player Win/Loss Ratio Ranking</span><br><br>
@@ -39,7 +46,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 				"player" => $name,
 				"played" => $played,
 				"wins" => $wins,
-				"losses" => $loses,
+				"losses" => $losses,
 				"ratio" => $ratio,
 				"tjrank" => $tjRank
 
