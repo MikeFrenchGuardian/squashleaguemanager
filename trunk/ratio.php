@@ -51,7 +51,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 
 	$playerArray[] = $array;
 	
-	usort($playerArray, "sortRatio");
+//	usort($playerArray, "sortRatio");
 	
 
 	foreach ($playerArray as $position) {
