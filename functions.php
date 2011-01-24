@@ -311,6 +311,15 @@ function sortDescending ($a, $b)
     return ($a['points'] > $b['points']) ? -1 : 1;
 }
 
+function sortRatio ($a, $b)
+{
+    if ($a['ratio'] == $b['$ratio']) {
+        return 0;
+    }
+    return ($a['ratio'] > $b['ratio']) ? -1 : 1;
+}
+
+
 function sortWithTomJohn($a, $b)
 {
   $retval = strnatcmp($b['points'], $a['points']);
