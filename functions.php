@@ -126,12 +126,12 @@ function getLosses($playerID) {
 function getRatio($playerID){
 	$wins = getWins($playerID);
 	$losses = getLosses($playerID);
-	if ($losses != 0) {
+	if ($losses != 0 || $wins != 0) {
 		$average = $wins/$losses*100;
 		$average = round($average,2);
 		return $average;
 	} else {
-		$average = "Insufficient results at the moment";
+		$average = "N/A";
 		return $average;
 	}
 }
