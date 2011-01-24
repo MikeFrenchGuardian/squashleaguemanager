@@ -48,9 +48,9 @@ for ($j = 0 ; $j < $rows ; ++$j)
 	
 	usort($playerArray, "sortRatio");
 	
-	$k = 0;
+
 	foreach ($playerArray as $position) {
-		++$k;
+
 		echo 	'<tr>';
 		echo    '<td class="normal">';
 		echo	$k . '</td>';
