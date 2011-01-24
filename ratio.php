@@ -64,8 +64,10 @@ for ($j = 0 ; $j < $rows ; ++$j)
 		echo    '<td class="normal">';
 		echo	$position['tjRank'] . '</td>';
 		echo	'</tr>';
+	}
 }
+
 ?>
 </table>
 
-<?php require_once 'includes/footer.php';
+<?php require_once 'includes/footer.php'; ?>
