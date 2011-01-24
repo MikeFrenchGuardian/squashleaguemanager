@@ -319,6 +319,37 @@ function sortRatio ($a, $b)
     return ($a['ratio'] > $b['ratio']) ? -1 : 1;
 }
 
+function sortPlayed ($a, $b)
+{
+    if ($a['played'] == $b['played']) {
+        return 0;
+    }
+    return ($a['played'] > $b['played']) ? -1 : 1;
+}
+
+function sortWon ($a, $b)
+{
+    if ($a['wins'] == $b['wins']) {
+        return 0;
+    }
+    return ($a['wins'] > $b['wins']) ? -1 : 1;
+}
+
+function sortLost ($a, $b)
+{
+    if ($a['losses'] == $b['losses']) {
+        return 0;
+    }
+    return ($a['losses'] > $b['losses']) ? -1 : 1;
+}
+
+function sortRank ($a, $b)
+{
+    if ($a['tjrank'] == $b['tjrank']) {
+        return 0;
+    }
+    return ($a['tjrank'] > $b['tjrank']) ? -1 : 1;
+}
 
 function sortWithTomJohn($a, $b)
 {
