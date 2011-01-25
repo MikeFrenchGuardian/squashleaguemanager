@@ -25,7 +25,7 @@ $rows = mysql_num_rows($result);
    <td class="hed" style="width:50px"><a class="text-normal-white" href="ranking.php?order=won">Won</a></td>
    <td class="hed" style="width:50px"><a class="text-normal-white" href="ranking.php?order=lost">Lost</a></td>
    <td class="hed" style="width:80px"><a class="text-normal-white" href="ranking.php?order=ratio">W/L Ratio</a></td>
-   <td class="hed" style="width:80px"><a class="text-normal-white" href="ranking.php?order=tjrank">Ranking</a></td>
+   <td class="hed" style="width:80px"><a class="text-normal-white" href="ranking.php?order=tjrank">Ranking *</a></td>
 </tr>
 <?php
 
@@ -130,4 +130,5 @@ for ($j = 0 ; $j < $rows ; ++$j)
 ?>
 </table>
 
+<span class="text-normal">* Ranking points include results from Jan 2010 onwards, so are not representative of the other metrics.</span>
 <?php require_once 'includes/footer.php'; ?>
