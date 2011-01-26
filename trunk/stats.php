@@ -5,14 +5,14 @@
 <span class="text-semibold">Matches Played</span>
 
 <?php
-$seasonQuery = "select MAX(id) from season";
-$seasonResult = mysql_query($seasonQuery);
-$row = mysql_fetch_object($seasonResult);
-$name = $row->{'MAX(id)'};
-return $name;
+$maxSeason = getMaxSeasonID();
+
+for ($i = 0; $i < $maxSeason; ++$i) {
+	echo seasonMatchCount($i);
+	echo '<br>';
+}
 
 
-echo $name;
 
 ?>
 

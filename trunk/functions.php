@@ -707,4 +707,12 @@ function seasonMatchCount($seasonID) {
 	return $name;
 }
 
+function getMaxSeasonID() {
+	$query = "select MAX(id) from season";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->{'MAX(id)'};
+	return $name;
+}
+
 ?>
