@@ -66,12 +66,12 @@ if (isset($_POST['stage3'])) { ?>
 			echo "<br>" . $name . " was added to division " . $div ."<br>";
 			$edited = checkDivSetup($divisionID);
 			
-			if ($edited == 0) {
+//			if ($edited == 0) {
 			addPlayerToDiv($playerID,$divisionID,$tjrank);
-			} else {
+//			} else {
 				echo 'This league has already been setup, try editing it <a href="/admin/setupDivision.php?stage1=yes">here.</a>';
 			
-			} 
+//			} 
 			}
 		}
 	}
