@@ -69,7 +69,7 @@ if (isset($_POST['stage3'])) { ?>
 			if ($edited == 0) {
 			addPlayerToDiv($playerID,$divisionID,$tjrank);
 			} else {
-				echo 'This league has already been setup, try editing it <a href="/admin/setupDivision.php?stage1=yes">here.</a>
+				echo 'This league has already been setup, try editing it <a href="/admin/setupDivision.php?stage1=yes">here.</a>';
 			
 			} 
 			}
@@ -196,31 +196,34 @@ echo '<option name="'.$position['playerID'].'_tjrank" value="' . $k . '">' . $k 
 	<span class="text-header">Edit Divisions</span><br><br>
 	
 <?php
-	// Setup the season drop down, will want to reverse the order eventually
-	$seasonQuery = "select id,startdate from season ORDER BY id DESC";
-	$seasonResult = mysql_query($seasonQuery);
-	$seasonRows = mysql_num_rows($seasonResult);
-?>
-	<form method="get" action="setupDivision.php">
+		// Setup the season drop down, will want to reverse the order eventually
+		$seasonQuery = "select id,startdate from season where setup <> 1 ORDER BY id DESC";
+		$seasonResult = mysql_query($seasonQuery);
+		$seasonRows = mysql_num_rows($seasonResult);
+		if ($seasonRows == 0){
+				echo 'There are no seasons to setup currently, please go <a href="/admin/newSeason.php">here</a> to create a new one.';
+		} else {
+		?>
+		<form method="get" action="setupDivision.php">
 
-	Choose season to setup: 
-	<!-- choose season in the dropdown -->
-	<select name="season" size="1">
-	<option value=<?php echo $currSeason ?>><?php echo $name ?></option>
-	<?php 
-	for ($j = 0; $j < $seasonRows ; ++$j) {
-		$startDate = mysql_result($seasonResult,$j,'startdate');
-		$convertedDate = prettyDate($startDate);
+		Choose season to setup: 
+		<!-- choose season in the dropdown -->
+		<select name="season" size="1">
+		<option value=<?php echo $currSeason ?>><?php echo $name ?></option>
+		<?php 
+		for ($j = 0; $j < $seasonRows ; ++$j) {
+			$startDate = mysql_result($seasonResult,$j,'startdate');
+			$convertedDate = prettyDate($startDate);
 	
-		echo '<option value="' . mysql_result($seasonResult,$j,'id') . '">' . $convertedDate . '</option>';
+			echo '<option value="' . mysql_result($seasonResult,$j,'id') . '">' . $convertedDate . '</option>';
+		}
+		?> 
+		</select>
+		<?php
+		echo '<input type="hidden" name="stage1" value="yes">';
+		echo "<input type=\"submit\">";
+		echo "</form>";
+
 	}
-	?> 
-	</select>
-	<?php
-	echo '<input type="hidden" name="stage1" value="yes">';
-	echo "<input type=\"submit\">";
-	echo "</form>";
-
-
 }	
  require_once '../includes/adminfooter.php'; ?>
