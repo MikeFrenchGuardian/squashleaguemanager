@@ -34,7 +34,7 @@ if (isset($_POST['stage3'])) { ?>
 			echo "<br>This " . $name . " isn't in a league <br>";
 		}
 	}
-
+	lockSeason($seasonID);
 
 
 // Form 	
