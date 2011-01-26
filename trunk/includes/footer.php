@@ -34,8 +34,8 @@ if ($loggedIn == "true") { ?>
 	<input type="submit" name="Submit" value="Login">
 <?php } ?>
 
-<br><br>
-Links<br><br>
+<br>
+Links<br>
 
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://wimbledonclub.co.uk/">Wimbledon Racquets</a><br>
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://county.leaguemaster.co.uk">Surrey Cup</a><br>
