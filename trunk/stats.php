@@ -7,10 +7,12 @@
 <?php
 $maxSeason = getMaxSeasonID();
 
+
+
 for ($i = 1; $i < $maxSeason; ++$i) {
 	$matches = seasonMatchCount($i);
 	$revenue = $matches * 4.60;
-	echo 'Season starting ' . getSeasonStart($i) . ' ';
+	echo 'Season starting ' . prettyDate(getSeasonStart($i)) . ' ';
 	echo  $matches . ' - Revenue - ' . $revenue;
 	echo '<br>';
 }
