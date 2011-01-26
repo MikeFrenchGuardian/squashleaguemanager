@@ -694,5 +694,9 @@ function getEloMin($playerID){
 	return $eloMin;
 }
 
+function lockSeason($seasonID) {
+	$query = "UPDATE season SET setup = 1 where id = $seasonID";
+	$result = mysql_query($query) or die(mysql_error());
+}
 
 ?>
