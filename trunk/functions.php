@@ -543,7 +543,7 @@ function checkSeasonLength($startDate,$endDate) {
 }
 
 function createSeason($startDate, $endDate) {
-	$query = "INSERT INTO season (startDate,endDate,setup) VALUES (\"$startDate\", \"$endDate\","0");";
+	$query = "INSERT INTO season (startDate,endDate,setup) VALUES (\"$startDate\", \"$endDate\", 0)";
 	$result = mysql_query($query);	
 }
 
