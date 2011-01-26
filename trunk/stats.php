@@ -20,7 +20,7 @@ $maxSeason = getMaxSeasonID();
 	echo "<tr>";
 	echo "<td>" . prettyDate(getSeasonStart($i)) . "</td>";
 	echo "<td>" . $matches . "</td>";
-	echo "<td>" . $revenue . "</td>";
+	echo "<td>&pound;" . $revenue . "</td>";
 	echo "</tr>";
 	echo '<br>';
 }
