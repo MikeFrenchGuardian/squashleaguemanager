@@ -63,7 +63,7 @@ function setTJRank($playerID,$divisionID,$tjRank) {
 		$result = mysql_query($query) or die(mysql_error());
 }
 
-
+// Cant remember why i call this now... 
 function checkDivSetup($divisionID) {
 		$query = "SELECT COUNT(divisionID) FROM playerdiv WHERE divisionID = $divisionID";
 		$result = mysql_query($query)or die(mysql_error());
