@@ -37,7 +37,7 @@ if ($loggedIn == "true") { ?>
 <br><br>
 Links<br><br>
 
-<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://wimbledonclub.co.uk/">Wimbledon Racquets and Fitness Club</a><br>
+<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://wimbledonclub.co.uk/">Wimbledon Racquets</a><br>
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://county.leaguemaster.co.uk">Surrey Cup</a><br>
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://www.surreysra.co.uk">Surrey SRA</a><br>
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://www.squashsite.co.uk">Squashsite</a><br>
