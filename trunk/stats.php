@@ -25,7 +25,7 @@ $maxSeason = getMaxSeasonID();
 	echo '<br>';
 }
 
-echo </table>
+echo </table>;
 
 ?>
 
