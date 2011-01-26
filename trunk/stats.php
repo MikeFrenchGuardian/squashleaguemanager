@@ -10,7 +10,7 @@ $seasonResult = mysql_query($seasonQuery);
 $row = mysql_fetch_object($seasonResult);
 $name = $row->{'MAX(id)'};
 return $name;
-}
+
 
 echo $name;
 
