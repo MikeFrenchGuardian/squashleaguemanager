@@ -699,4 +699,12 @@ function lockSeason($seasonID) {
 	$result = mysql_query($query) or die(mysql_error());
 }
 
+function seasonMatchCount($seasonID) {
+	$query = "select COUNT(id) from results where seasonid=$seasonID";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->{'COUNT(id)'};
+	return $name;
+}
+
 ?>
