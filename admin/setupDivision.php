@@ -106,7 +106,7 @@ if (isset($_POST['stage3'])) { ?>
 	<?php
 	for ($i = 1; $i <= $prevleagueCount; ++$i) {	
 
-		echo '<span class="text-semibold">&nbsp; Division $i<br>';
+		echo '<span class="text-semibold">&nbsp; Division' . $i . '<br>';
 		echo "<table class=\"league\">";
 		echo "<tr>";
 		echo "   <td class=\"hed\">Name</td>";
