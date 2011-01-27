@@ -17,6 +17,19 @@ function checkPlayer($email) {
 //}
 
 
+
+function getRequiredMatches($division,$seasonID) {
+	$toPlay = getDivSize($division,$seasonID) -1;	
+}
+
+function getLastMatch() {
+	$query = "select MAX(id) from results where player1=$playerID and seasonid=$seasonID or  player2=$playerID and seasonid=$seasonID";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->{'MAX(id)'};
+	
+}
+
 function getDivSize($division,$seasonID) {
 	//	$query = "select playerdiv.playerID from playerdiv,division where  playerdiv.divisionID=division.number and division.seasonid=$seasonID and playerdiv.divisionid=$division";
 		$query = "select playerdiv.playerid from playerdiv,division where playerdiv.divisionid = division.id and division.number = $division and division.seasonid=$seasonID";
@@ -274,7 +287,11 @@ function emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1N
 	$player2Email = getPlayerEmail($player2);	
 	$adminEmail = "results@tomjohnleague.co.uk";
 	$to  = $player1Email . "," . $player2Email . "," . $adminEmail;
-	$message = "The result of a match you have played has been added to the website \n " . $player1Name . " " . $p1score . " - " . $p2score . " " . $player2Name . "\n \n" . $player1Name . '\'s ranking score was ' . $p1Elo . " and is now " . $p1NewEloScore . "\n \n" . $player2Name . '\'s ranking score was ' . $p2Elo . " and is now " . $p2NewEloScore . "\n \n Check your latest position in the league http://www.tomjohnleague.co.uk/showleague.php";
+	if ($p1NewEloScore == "nochange"){
+		$message = "The result of a match you have played has been added to the website \n " . $player1Name . " " . $p1score . " - " . $p2score . " " . $player2Name . "\n \n Check your latest position in the league http://www.tomjohnleague.co.uk/showleague.php";
+	} else {
+		$message = "The result of a match you have played has been added to the website \n " . $player1Name . " " . $p1score . " - " . $p2score . " " . $player2Name . "\n \n" . $player1Name . '\'s ranking score was ' . $p1Elo . " and is now " . $p1NewEloScore . "\n \n" . $player2Name . '\'s ranking score was ' . $p2Elo . " and is now " . $p2NewEloScore . "\n \n Check your latest position in the league http://www.tomjohnleague.co.uk/showleague.php";
+	}
 	$message = wordwrap($message, 70);
 	$headers = 'From: results@tomjohnleague.co.uk' . "\r\n" .
     'Reply-To: results@tomjohnleague.co.uk' . "\r\n" .
@@ -289,6 +306,8 @@ function addMatchResult($seasonID,$player1,$player2,$p1score,$p2score) {
 }
 
 
+// Adding Results Checks
+// 1. Check the result has not been added
 function checkDuplicates($player1,$player2) {
 	//Checks to see if the result has already been added, in which case go to match edit screen.
 	$currSeason = currentSeason();
@@ -300,9 +319,28 @@ function checkDuplicates($player1,$player2) {
 		} else {
 			$dup = "no";
 		}
-		return $dup;
+		return $dup;	
+}
+
+// 2. Check the players are not the same
+function checkPlayers($player1,$player2) {
+	if ($player1 == $player2) {
+		$error = true;
+		return $error;
+	} else {
+		$error = false;
+	}	
+}
+
+// 3. Check the players are in the same division
+function checkPlayerDiv($player1,$player2){
+	$currSeason = currentSeason();
 	
 }
+
+
+
+// Sorting Functions
 
 function sortDescending ($a, $b)
 {
@@ -714,5 +752,6 @@ function getMaxSeasonID() {
 	$name = $row->{'MAX(id)'};
 	return $name;
 }
+
 
 ?>
