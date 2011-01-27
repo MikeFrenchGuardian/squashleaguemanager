@@ -20,32 +20,38 @@ if ($duplicate == "yes") {
 	
 	    $elo_calculator = new elo_calculator;
 	if ($p1score == $p2score) {
-        $results=$elo_calculator->rating("draw","draw",$p1Elo,$p2Elo);			
-	
+        $results=$elo_calculator->rating("draw","draw",$p1Elo,$p2Elo);	
+		emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore);		
+		
+	} else if ($p2score == "noshow") {
+		$p1NewEloScore = "nochange";
+		$p2NewEloScore = "nochange";
+		emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore);
+
 	} else {
         $results=$elo_calculator->rating("won","lost",$p1Elo,$p2Elo);
 
-	}
+	 
         $R=$results;
         $p1NewEloScore = $results['R3'];
         $p2NewEloScore = $results['R4'];
 
-$player1Name = getPlayerName($player1);
-$player2Name = getPlayerName($player2);
+		$player1Name = getPlayerName($player1);
+		$player2Name = getPlayerName($player2);
 
-echo $player1Name . "- Ranking points: "  . $p1Elo . ' => ' . $p1NewEloScore . '<br>';
-echo $player2Name . "- Ranking points: "  . $p2Elo . ' => ' . $p2NewEloScore . '<br>';
+		echo $player1Name . "- Ranking points: "  . $p1Elo . ' => ' . $p1NewEloScore . '<br>';
+		echo $player2Name . "- Ranking points: "  . $p2Elo . ' => ' . $p2NewEloScore . '<br>';
 
-echo '<br><br>';
-updateEloRating($player1,$p1NewEloScore);
-echo '<br><br>';
-updateEloRating($player2,$p2NewEloScore);
+		echo '<br><br>';
+		updateEloRating($player1,$p1NewEloScore);
+		echo '<br><br>';
+		updateEloRating($player2,$p2NewEloScore);
 
-updateElo($player1,$p1NewEloScore);
-updateElo($player2,$p2NewEloScore);
-
-
-emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore);	
+		updateElo($player1,$p1NewEloScore);
+		updateElo($player2,$p2NewEloScore);
+			
+		emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore);	
+	}
 }
 
 } else {
