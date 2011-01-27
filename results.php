@@ -60,7 +60,6 @@ $rows = mysql_num_rows($result);
 	echo "<tr>";
 	echo "   <td class=\"hed\">Player 1</td>";
 	echo "   <td class=\"hed\">Score</td>";
-	echo "   <td class=\"hed\">Score</td>";
 	echo "   <td class=\"hed\">Player 2</td>";
 	echo "</tr>";
 	
@@ -76,8 +75,11 @@ $rows = mysql_num_rows($result);
 
 echo 	'<tr>';
 echo 	'<td class="text-normal">' . $winnerName . '</td>';
-echo 	'<td class="text-normal">' . $p1g . '</td>';
-echo 	'<td class="text-normal">' . $p2g . '</td>';
+if ($p2g == "-1") {
+	echo 	'<td class="text-normal">W/O</td>';	
+} else {
+	echo 	'<td class="text-normal">' . $p1g . ' - ' . $p2g . '</td>';
+}
 echo 	'<td class="text-normal">' . $loserName . '</td>';
 echo	'</tr>';
 }
