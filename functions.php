@@ -333,10 +333,10 @@ function checkPlayers($player1,$player2) {
 }
 
 // 3. Check the players are in the same division
-function checkPlayerDiv($player1,$player2){
-	$currSeason = currentSeason();
+//function checkPlayerDiv($player1,$player2){
+//	$currSeason = currentSeason();
 	
-}
+//}
 
 
 
