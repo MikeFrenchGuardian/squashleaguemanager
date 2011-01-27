@@ -288,7 +288,7 @@ function emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1N
 	$adminEmail = "results@tomjohnleague.co.uk";
 	$to  = $player1Email . "," . $player2Email . "," . $adminEmail;
 	if ($p1NewEloScore == "nochange"){
-		$message = "The result of a match you have played has been added to the website \n " . $player1Name . " " . $p1score . " - " . $p2score . " " . $player2Name . "\n \n Check your latest position in the league http://www.tomjohnleague.co.uk/showleague.php";
+		$message = "Sadly " . $player2Name . " was unable to attend, handing the points to " . $player1Name . "\n \n Check your latest position in the league http://www.tomjohnleague.co.uk/showleague.php";
 	} else {
 		$message = "The result of a match you have played has been added to the website \n " . $player1Name . " " . $p1score . " - " . $p2score . " " . $player2Name . "\n \n" . $player1Name . '\'s ranking score was ' . $p1Elo . " and is now " . $p1NewEloScore . "\n \n" . $player2Name . '\'s ranking score was ' . $p2Elo . " and is now " . $p2NewEloScore . "\n \n Check your latest position in the league http://www.tomjohnleague.co.uk/showleague.php";
 	}
