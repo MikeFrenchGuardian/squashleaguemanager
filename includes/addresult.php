@@ -23,7 +23,7 @@ if ($duplicate == "yes") {
         $results=$elo_calculator->rating("draw","draw",$p1Elo,$p2Elo);	
 		emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore);		
 		
-	} else if ($p2score == "noshow") {
+	} else if ($p2score == "-1") {
 		$p1NewEloScore = "nochange";
 		$p2NewEloScore = "nochange";
 		emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore);
