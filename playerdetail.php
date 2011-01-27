@@ -78,8 +78,12 @@ if ($winner == $id){
 	echo	'<td class="text-normal">' . $winnerName . '</td>';
 }
 
-
+if ($p2g == "-1") {
+	echo '<td class="text-normal">W/O</td>';
+} else {
 echo 	'<td class="text-normal">' . $p1g . " " . $p2g . '</td>';
+}
+
 if ($loser == $id){
 	echo 	'<td class="text-normal"><b>' . $loserName . '</b></td>';
 } else {
