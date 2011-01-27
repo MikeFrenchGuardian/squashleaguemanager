@@ -112,7 +112,7 @@ for ($j = 0; $j < $rows ; ++$j) {
    for ($i = 0 ; $i <= 2; ++$i) {
         echo '<option value="' . $i . '">' . $i . '</option>';
    }
-	echo '<option value="noshow">No show</option>';
+	echo '<option value="-1">No show</option>';
 ?>
 </select>
 
