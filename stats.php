@@ -29,7 +29,7 @@ for ($i = 1; $i <= $maxSeason; ++$i) {
 			$divSize = getDivSize($j,$i);
 			$leagueMatches = ($divSize / 2) * ($divSize -1);
 			$totalMatches = $totalMatches + $leagueMatches;
-			$leagueSize = $leagueSize + $leagueSize;
+			$leagueSize = $leagueSize + $divSize;
 	}
 	$matchesPlayed = (($matches/$totalMatches)*100);
 	
