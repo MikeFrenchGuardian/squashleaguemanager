@@ -10,12 +10,12 @@ $maxSeason = getMaxSeasonID();
 ?>
 <table class="league">
 	<tr>
-		<td class="hed">Season Start</td>
-		<td class="hed">Divisions</td>
-		<td class="hed">Matches Played</td>
-		<td class="hed">Potential Matches</td>
+		<td class="hed">Season</td>
+		<td class="hed">Divs</td>
+		<td class="hed">Players</td>
+		<td class="hed">Matches</td>
+		<td class="hed">Max Matches</td>
 		<td class="hed">Matches Played %</td>
-		<td class="hed">Revenue</td>
 	</tr>
 <?php 
 for ($i = 1; $i <= $maxSeason; ++$i) {
@@ -23,11 +23,13 @@ for ($i = 1; $i <= $maxSeason; ++$i) {
 	$revenue = $matches * 4.60;
 	$divCount = numLeagues($i);
 	$totalMatches = 0;
+	$leagueSize = 0;
 	
 	for ($j = 1; $j <= $divCount; ++$j) {
 			$divSize = getDivSize($j,$i);
 			$leagueMatches = ($divSize / 2) * ($divSize -1);
 			$totalMatches = $totalMatches + $leagueMatches;
+			$leagueSize = $leagueSize + $leagueSize;
 	}
 	$matchesPlayed = (($matches/$totalMatches)*100);
 	
@@ -36,10 +38,10 @@ for ($i = 1; $i <= $maxSeason; ++$i) {
 	echo "<tr>";
 	echo "<td>" . prettyDate(getSeasonStart($i)) . "</td>";
 	echo "<td>" . $divCount . "</td>";
+	echo "<td>" . $leagueSize . "</td>";
 	echo "<td>" . $matches . "</td>";
 	echo "<td>" . $totalMatches . "</td>";
 	echo "<td>" . round($matchesPlayed) . "</td>";
-	echo "<td>&pound;" . $revenue . "</td>";
 	echo "</tr>";
 	echo '<br>';
 }
