@@ -18,7 +18,7 @@ $maxSeason = getMaxSeasonID();
 		<td class="hed">Revenue</td>
 	</tr>
 <?php 
-for ($i = 1; $i < $maxSeason; ++$i) {
+for ($i = 1; $i <= $maxSeason; ++$i) {
 	$matches = seasonMatchCount($i);
 	$revenue = $matches * 4.60;
 	$divCount = numLeagues($i);
