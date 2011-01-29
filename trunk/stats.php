@@ -13,6 +13,7 @@ $maxSeason = getMaxSeasonID();
 <table class="league">
 	<tr>
 		<td class="hed">Season Start</td>
+		<td class="hed">Divisions</td>
 		<td class="hed">Matches Played</td>
 		<td class="hed">Potential Matches</td>
 		<td class="hed">Revenue</td>
@@ -35,6 +36,7 @@ for ($i = 1; $i <= $maxSeason; ++$i) {
 
 	echo "<tr>";
 	echo "<td>" . prettyDate(getSeasonStart($i)) . "</td>";
+	echo "<td>" . $divCount . "</td>";
 	echo "<td>" . $matches . "</td>";
 	echo "<td>" . round($matchesPlayed) . "</td>";
 	echo "<td>&pound;" . $revenue . "</td>";
