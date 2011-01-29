@@ -26,7 +26,7 @@ for ($i = 1; $i <= $maxSeason; ++$i) {
 	$divCount = numLeagues($i);
 	$totalMatches = 0;
 	
-	for ($j = 1; $j < $divCount; ++$j) {
+	for ($j = 1; $j <= $divCount; ++$j) {
 			$divSize = getDivSize($j,$i);
 			$leagueMatches = ($divSize / 2) * ($divSize -1);
 			$totalMatches = $totalMatches + $leagueMatches;
