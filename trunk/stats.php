@@ -16,6 +16,7 @@ $maxSeason = getMaxSeasonID();
 		<td class="hed">Divisions</td>
 		<td class="hed">Matches Played</td>
 		<td class="hed">Potential Matches</td>
+		<td class="hed">Matches Played %</td>
 		<td class="hed">Revenue</td>
 	</tr>
 <?php 
