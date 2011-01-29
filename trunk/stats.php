@@ -1,6 +1,6 @@
 <?php require_once 'includes/head.php'; ?>
 
-<br><span class="text-header">League Stats</span><br><br>
+<br><span class="text-header">League Stats</span><br>
 
 <?php
 $maxSeason = getMaxSeasonID();
