@@ -14,7 +14,7 @@ $maxSeason = getMaxSeasonID();
 	<tr>
 		<td class="hed">Season Start</td>
 		<td class="hed">Matches Played</td>
-		<td class="hed">% Matches Played</td>
+		<td class="hed">Potential Matches</td>
 		<td class="hed">Revenue</td>
 	</tr>
 <?php 
@@ -22,6 +22,7 @@ for ($i = 1; $i <= $maxSeason; ++$i) {
 	$matches = seasonMatchCount($i);
 	$revenue = $matches * 4.60;
 	$divCount = numLeagues($i);
+	$totalMatches = 0;
 	
 	for ($j = 1; $j < $divCount; ++$j) {
 			$divSize = getDivSize($j,$i);
