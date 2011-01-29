@@ -35,7 +35,7 @@ for ($i = 1; $i < $maxSeason; ++$i) {
 	echo "<tr>";
 	echo "<td>" . prettyDate(getSeasonStart($i)) . "</td>";
 	echo "<td>" . $matches . "</td>";
-	echo "<td>" . $matchesPlayed . "</td>";
+	echo "<td>" . round($matchesPlayed) . "</td>";
 	echo "<td>&pound;" . $revenue . "</td>";
 	echo "</tr>";
 	echo '<br>';
