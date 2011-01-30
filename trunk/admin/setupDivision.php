@@ -58,13 +58,14 @@ if (isset($_POST['stage3'])) { ?>
 			$div = $_GET[$i];
 			$tjrank = $_GET[$i . '_tjrank'];
 			$name = getPlayerName($playerID);
-			$divisionID = getDivisionID($seasonID,$div);
+	
 
 			if ($div == "remove") {
 				echo "<br>" . $name . " was removed from the league<br>";	
 			} else {
+			$divisionID = getDivisionID($seasonID,$div);
 			echo "<br>" . $name . " was added to division " . $div ."<br>";
-			$edited = checkDivSetup($divisionID);
+//			$edited = checkDivSetup($divisionID);
 			
 //			if ($edited == 0) {
 			addPlayerToDiv($playerID,$divisionID,$tjrank);
