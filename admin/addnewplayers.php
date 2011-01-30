@@ -38,7 +38,7 @@ echo '<tr><td>' . $playerName . '</td>';
 	
 	echo '<td class="text-normal"><select name="'.$playerID .'_tjrank">';   	
 		   	 for ($k = 1; $k <= 10; ++$k) {
-					echo '<option name="'.$playerID. '_tjrank value="' . $k . '">' . $k . '</option>';	
+					echo '<option name="'.$playerID. '_tjrank" value="' . $k . '">' . $k . '</option>';	
 	   	 }
 	   	 	 echo "</td>";			 
 			echo	'</tr>';
