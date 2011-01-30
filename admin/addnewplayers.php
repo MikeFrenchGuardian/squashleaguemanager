@@ -27,7 +27,7 @@ echo '<table>';
 echo '<tr><td>' . $playerName . '</td>';
 
 	echo	"<td class=\"text-normal\"><select name=\"" . $playerID . "\">";
-	echo '<option name="' . $playerName  . '" value="None">None</option>';
+	echo '<option name="' . $playerName  . '" value="remove">None</option>';
 			// Run through number of leagues in the given season for each dropdown
 		for ($j = 1; $j <= $leagueCount ; ++$j ) {
 		
@@ -37,6 +37,7 @@ echo '<tr><td>' . $playerName . '</td>';
 	echo '</td></tr>';
 }
 echo '</table>';
+
 echo '<input type="hidden" name="stage2" value="yes">';
 echo '<input type="hidden" name="season" value="' . $currentSeason . '">';
 echo '<input type="submit" value="Submit">';
