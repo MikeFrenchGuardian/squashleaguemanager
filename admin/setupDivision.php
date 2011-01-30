@@ -37,7 +37,7 @@ if (isset($_POST['stage3'])) { ?>
 	lockSeason($seasonID);
 
 
-// Form 	
+// Stage 2 = Actually adding players to the divisions
 } else if (isset($_GET['stage2'])) { ?>
 	
 	<span class="text-header">Setup Divisions - Part 3</span><br><br> 
@@ -69,7 +69,7 @@ if (isset($_POST['stage3'])) { ?>
 //			if ($edited == 0) {
 			addPlayerToDiv($playerID,$divisionID,$tjrank);
 //			} else {
-				echo 'This league has already been setup, try editing it <a href="/admin/setupDivision.php?stage1=yes">here.</a>';
+//				echo 'This league has already been setup, try editing it <a href="/admin/setupDivision.php?stage1=yes">here.</a>';
 			
 //			} 
 			}
