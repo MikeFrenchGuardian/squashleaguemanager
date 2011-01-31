@@ -5,8 +5,17 @@
 <div class="blog">
 <?php
 
+
+$rowsPerPage = 9;
+// counting the offset
+$offset = ($page - 1) * $rowsPerPage;
+$thisPageStart = $rowsPerPage * $page;
+
+
+
+
 // grab 5 most recent blog posts from the db
-$blogquery = "SELECT id, date,subject,synopsis,contents FROM blog order by id desc "; 
+$blogquery = "SELECT id, date,subject,synopsis,contents FROM blog order by id desc LIMIT $offset, $rowsPerPage"; 
 $blogresult = mysql_query($blogquery);
 $blogrows = mysql_num_rows($blogresult);
 
@@ -28,7 +37,20 @@ for ($i = 0 ; $i < $blogrows ; ++$i) {
 	if ($contents != "NULL") {
 		echo '<span class="text-blog"><a href="blog.php?blogID=' . $id . '">Read More</a></span><br><br>';		
 	}
-} ?>
-</div>
+} 
+echo "</div>";
+
+// setup paging
+
+$prev = $page -1;
+$next = $page +1;
+
+if ($rowsPerPage == $rows) {
+echo '<a href="index.php?&page=' . $next . '">Newer Posts</a>';
+}
+if ($page != 1) {
+echo ' ';
+echo '<a href="results.php?&page=' . $prev . '">Older Posts</a>';			
+}
 
 <?php require_once 'includes/footer.php'; ?>
