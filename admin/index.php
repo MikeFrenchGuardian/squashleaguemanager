@@ -26,8 +26,7 @@ Edit a homepage post <a href="blog.php?editlist=yes">here</a></span>
 
 
 <span class="text-semibold">Player Management:</span><br>
-<span class="text-normal">Add a new player <a href="newplayer.php">here</a>
-<br><br>
+<span class="text-normal">Add a new player <a href="newplayer.php">here</a><br>
 Edit Player <a href="editplayer.php">here</a></span>
 
 
