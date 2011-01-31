@@ -5,6 +5,13 @@
 <div class="blog">
 <?php
 
+// Paging Setup
+
+if (isset($_GET["page"])) {
+	$page = ($_GET["page"]);
+} else {
+	$page = 1;		
+}
 
 $rowsPerPage = 9;
 // counting the offset
@@ -19,7 +26,7 @@ $blogquery = "SELECT id, date,subject,synopsis,contents FROM blog order by id de
 $blogresult = mysql_query($blogquery);
 $blogrows = mysql_num_rows($blogresult);
 
-if ($blogrows < 10) {
+
 	
 
 }
@@ -46,11 +53,11 @@ $prev = $page -1;
 $next = $page +1;
 
 if ($rowsPerPage == $rows) {
-echo '<a href="index.php?&page=' . $next . '">Newer Posts</a>';
+echo '<a class="text-normal" href="index.php?&page=' . $next . '">Newer Posts</a>';
 }
 if ($page != 1) {
 echo ' ';
-echo '<a href="results.php?&page=' . $prev . '">Older Posts</a>';			
+echo '<a class="text-normal" href="index.php?&page=' . $prev . '">Older Posts</a>';			
 }
 
-<?php require_once 'includes/footer.php'; ?>
+< require_once 'includes/footer.php'; ?>
