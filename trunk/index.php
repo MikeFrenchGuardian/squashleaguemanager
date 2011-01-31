@@ -52,12 +52,12 @@ echo "</div>";
 $prev = $page -1;
 $next = $page +1;
 
-if ($rowsPerPage == $rows) {
-echo '<a class="text-normal" href="index.php?&page=' . $next . '">Newer Posts</a>';
+if ($rowsPerPage == $blogrows) {
+echo '<a class="text-normal" href="index.php?&page=' . $next . '">Older Posts</a>';
 }
 if ($page != 1) {
 echo ' ';
-echo '<a class="text-normal" href="index.php?&page=' . $prev . '">Older Posts</a>';			
+echo '<a class="text-normal" href="index.php?&page=' . $prev . '">Newer Posts</a>';			
 }
 
 require_once 'includes/footer.php'; ?>
