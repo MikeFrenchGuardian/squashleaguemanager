@@ -29,7 +29,7 @@ $blogrows = mysql_num_rows($blogresult);
 
 	
 
-}
+
 
 for ($i = 0 ; $i < $blogrows ; ++$i) {
 	$id = mysql_result($blogresult,$i,'id');
