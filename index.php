@@ -60,4 +60,4 @@ echo ' ';
 echo '<a class="text-normal" href="index.php?&page=' . $prev . '">Older Posts</a>';			
 }
 
-< require_once 'includes/footer.php'; ?>
+require_once 'includes/footer.php'; ?>
