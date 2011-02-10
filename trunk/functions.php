@@ -768,7 +768,7 @@ function getMaxSeasonID() {
 }
 
 function getTotalLeaguePlayers($seasonID) {
-	$query = "select COUNT()"
+	$query = "select COUNT()";
 }
 
 ?>
