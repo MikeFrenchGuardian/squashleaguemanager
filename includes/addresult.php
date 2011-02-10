@@ -11,7 +11,7 @@ $p2Elo = getEloRating($player2);
 
 $duplicate = checkDuplicates($player1,$player2);
 $diffPlayers = checkPlayersAreDifferent($player1,$player2);
-$sameLeague = checkSameLeague($player1,$player2)
+$sameLeague = checkSameLeague($player1,$player2);
 
 if ($duplicate == "yes") {
 	echo "These two have already played this season, try again";
