@@ -328,7 +328,7 @@ function checkPlayersAreDifferent($player1,$player2) {
 	if ($player1 == $player2) {
 		$dup = "yes";
 	} else {
-		$dup = "no"
+		$dup = "no";
 	}
 }
 
