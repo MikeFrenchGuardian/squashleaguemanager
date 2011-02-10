@@ -330,6 +330,7 @@ function checkPlayersAreDifferent($player1,$player2) {
 	} else {
 		$dup = "no";
 	}
+	return $dup;
 }
 
 function checkSameLeague($player1,$player2) {
