@@ -322,6 +322,28 @@ function checkDuplicates($player1,$player2) {
 		return $dup;	
 }
 
+// Check players are not the same
+
+function checkPlayersAreDifferent($player1,$player2) {
+	if ($player1 == $player2) {
+		$dup = "yes";
+	} else {
+		$dup = "no"
+	}
+}
+
+function checkSameLeague($player1,$player2) {
+	$currSeason = currentSeason();
+	$p1 = getCurrentPlayerDivID($player1);
+	$p2 = getCurrentPlayerDivID($player2);
+	if ($p1 == $p2) {
+		$sameDiv = "yes";
+	} else {
+		$sameDiv = "no";
+	}
+	return $sameDiv;
+}
+
 // 2. Check the players are not the same
 function checkPlayers($player1,$player2) {
 	if ($player1 == $player2) {
@@ -331,14 +353,6 @@ function checkPlayers($player1,$player2) {
 		$error = false;
 	}	
 }
-
-// 3. Check the players are in the same division
-//function checkPlayerDiv($player1,$player2){
-//	$currSeason = currentSeason();
-	
-//}
-
-
 
 // Sorting Functions
 
@@ -753,5 +767,8 @@ function getMaxSeasonID() {
 	return $name;
 }
 
+function getTotalLeaguePlayers($seasonID) {
+	$query = "select COUNT()"
+}
 
 ?>

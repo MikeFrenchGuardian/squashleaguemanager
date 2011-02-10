@@ -10,9 +10,15 @@ $p1Elo = getEloRating($player1);
 $p2Elo = getEloRating($player2);
 
 $duplicate = checkDuplicates($player1,$player2);
+$diffPlayers = checkPlayersAreDifferent($player1,$player2);
+$sameLeague = checkSameLeague($player1,$player2)
 
 if ($duplicate == "yes") {
 	echo "These two have already played this season, try again";
+} else if ($diffPlayers == "yes") {
+	echo "You have chosen the same player twice";
+} else if ($sameLeague == "no") {
+	echo "League Matches must be between people in the same league";
 } else {
 	echo "Your result has been added <br><br>";	
 	addMatchResult($seasonID,$player1,$player2,$p1score,$p2score);
@@ -56,9 +62,6 @@ if ($duplicate == "yes") {
 
 } else {
  
-
-//$query = "SELECT id,name from player";
-
 $currSeason = currentSeason();
 $query = "select player.id, player.name, division.number from player,division,playerdiv where player.id=playerdiv.playerID and playerdiv.divisionid = division.id and division.seasonid = $currSeason order by division.number";
 $result = mysql_query($query);
