@@ -14,11 +14,11 @@ $diffPlayers = checkPlayersAreDifferent($player1,$player2);
 $sameLeague = checkSameLeague($player1,$player2);
 
 if ($duplicate == "yes") {
-	echo "These two have already played this season, <a href="javascript:history.go(-1)">click here to try again</a>";
+	echo 'These two have already played this season, <a href="javascript:history.go(-1)">click here to try again</a>';
 } else if ($diffPlayers == "yes") {
-	echo "You have chosen the same player twice,  <a href="javascript:history.go(-1)">click here to try again</a>";
+	echo 'You have chosen the same player twice,  <a href="javascript:history.go(-1)">click here to try again</a>';
 } else if ($sameLeague == "no") {
-	echo "League Matches must be between people in the same league,  <a href="javascript:history.go(-1)">click here to try again</a>";
+	echo 'League Matches must be between people in the same league,  <a href="javascript:history.go(-1)">click here to try again</a>';
 } else {
 	echo "Your result has been added <br><br>";	
 	addMatchResult($seasonID,$player1,$player2,$p1score,$p2score);
