@@ -1,5 +1,20 @@
 <?php require_once 'includes/head.php'; 
 
+// Paging for extra leagues
+if (isset($_GET["page"])) {
+	$page = ($_GET["page"]);
+} else {
+	$page = 1;		
+}
+
+$rowsPerPage = 2;
+
+// counting the offset
+$offset = ($page - 1) * $rowsPerPage;
+$thisPageStart = $rowsPerPage * $page;
+
+
+
  // Grab the season ID from the URL if available
 $seasonID = ($_GET["season"]);
 
@@ -36,7 +51,7 @@ echo '<br><br>';
 
 // Render the leagues in a nested loop
 $divCount = numLeagues($seasonID);
-for ($i = 1; $i <= $divCount; ++$i) {
+for ($i = $offset; $i <= $rowsPerPage; ++$i) {
 
 	echo '<span class="text-semibold">&nbsp; Division ' . $i . '</span><br>';
 	echo "<table class=\"league\">";
