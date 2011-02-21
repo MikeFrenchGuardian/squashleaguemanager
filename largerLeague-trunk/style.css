@@ -1,0 +1,340 @@
+body {
+    margin-top: 0px;
+}
+
+.content { 
+    width: 881px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    padding-top: 0px;
+    height: 1600px; }
+
+.cruising {
+	background-image:  url(https://s3-eu-west-1.amazonaws.com/tomjohn/header.png);
+	float: left;
+ 	top: 0px;
+ 	width: 881px; 
+ 	height: 236px;
+ 	text-align: bottom; }
+ 	
+ .blog {
+	float: left;
+ 	width: 600px;
+	height: 1500px;
+ 	}
+ 
+ .recentResults {
+ 	float: right;
+ 	width: 300px;
+ 	height: 100px;
+ 	padding-right: 0px;
+
+ 	}
+
+	
+.logo-white {
+	
+	float: left;
+	font-family: Lucida Grande, Verdana, Arial;
+	font-size: 20pt;
+	font-weight: lighter; 
+	color: #ffffff;
+ 	margin-top: 190px; 
+ 	margin-left: 10px; }
+
+.logo-red {
+	float: left; 
+	font-family: Lucida Grande, Verdana, Arial;
+	font-size: 20pt;
+	font-weight: bold;
+	color: #A00000; 
+	z-index: 2;
+	margin-top: 190px; }
+	
+.text-area {
+	float: left;
+	width: 610px;
+	height: 1600px;
+	margin: 0px;
+	background-color: #ffffff; 
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-right: 30px; }
+
+.login {
+	float: left;
+	width: 211px;
+	height: 30px;
+	margin: 0px;
+ 	background-color: #888888 ;
+	z-index: 1000; 
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-right: 10px; }
+
+
+
+.menubar {
+	float: left;
+	width: 211px;
+	height: 1365px;
+	margin: 0px;
+	background-color: #E0E0E0;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-right: 10px; }
+
+
+.divider {
+	float: left;
+	width: 100%;
+	height: 1px;
+	margin: 0px;
+	background-color: #C0C0C0; }
+
+.bottom {
+	float: left;
+	width: 861px;
+	height: 50px;
+	margin: 0px;
+	background-color: #ffffff; 
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-right: 10px; }
+	
+.text-header {
+	font-family: Lucida Grande, Verdana, Arial; 
+	font-size: 14pt;
+	line-height: 140%;
+	font-weight: bold;
+	color: #909090; }
+	
+.text-medium-header {
+        font-family: Lucida Grande, Verdana, Arial;
+        font-size: 12pt;
+        line-height: 140%;
+        font-weight: bold;
+        color: #909090; }
+        
+	
+.text-blog {
+	font-family: Lucida Grande, Arial; 
+	font-size: 10pt;
+	line-height: 170%;
+	color: #000000; }
+
+.text-blog a:link { 
+	font-family: Lucida Grande, Arial; 
+	font-size: 10pt;
+	line-height: 170%;
+	text-decoration: none;
+	color: #CC0000; }
+.text-blog a:visited { 
+	text-decoration: none; 
+	color: #CC0000; }
+.text-blog a:hover { 
+	color: #CC0000; 
+	text-decoration: underline; }
+.text-blog a:active {
+	color: #CC0000;  }	
+
+.text-blog-header {
+        font-family: Lucida Grande, Verdana, Arial;
+        font-size: 18pt;
+        line-height: 140%;
+        font-weight: light;
+        color: #000000; } 
+
+.text-blog-posted {
+        font-family: Lucida Grande, Verdana, Arial;
+        font-size: 8pt;
+        line-height: 140%;
+
+        color: #000000; }      
+
+.text-blog-date {
+        font-family: Lucida Grande, Verdana, Arial;
+        font-size: 8pt;
+        line-height: 140%;
+        color: CC0000; } 
+
+.text-semibold {
+	font-family: Lucida Grande, Verdana, Arial; 
+	font-size: 9pt;
+	line-height: 140%;
+	font-weight: bold;
+	color: #909090; }
+	
+.text-normal {
+	font-family: Lucida Grande, Arial; 
+	font-size: 9pt;
+	line-height: 170%;
+	color: black; }
+	
+.text-normal-bold {
+	font-family: Lucida Grande, Verdana, Arial; 
+	font-size: 9pt;
+	line-height: 170%;
+	font-weight: bold;
+	color: black; }
+
+.text-date {
+	font-family: Lucida Grande, Arial; 
+	font-size: 7pt;
+	line-height: 170%;
+	color: 778899; }
+
+	
+.text-normal a:link { 
+	font-family: Lucida Grande, Arial; 
+	font-size: 9pt;
+	line-height: 170%;
+	text-decoration: none; }
+.text-normal a:visited { 
+	text-decoration: none; } 
+.text-normal a:hover { 
+	text-decoration: underline; }
+.text-normal a:active { }	
+
+.text-normal-white {
+	font-family: Lucida Grande, Arial; 
+	font-size: 9pt;
+	line-height: 170%;
+	color: white; }
+.text-normal-white a:link { 
+	font-family: Lucida Grande, Arial; 
+	font-size: 9pt;
+	line-height: 170%;
+	text-decoration: underline; }
+.text-normal-white a:visited { 
+	text-decoration: underline; } 
+.text-normal-white a:hover { 
+	text-decoration: underline;
+	color: #909090; }
+.text-normal-white a:active { }
+
+
+.playerInfoBox {
+        float: left;
+        width: 320px;
+        height: 20px;
+        margin: 0px;
+	border: 1px;
+        background-color: #123456; 
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-right: 10px; }
+
+########### Recent Results Table ############
+
+table.stats
+{text-align: center;
+font-family: Lucida Grande, Arial, Helvetica, sans-serif ;
+font-weight: normal;
+font-size: 4px;
+color: #fff;
+width: 300px;
+border: 0px;
+border-collapse: collapse;
+border-spacing: 0px;}
+
+table.stats td {
+background-color:black;filter:alpha(opacity=80);opacity:.7;
+color: #fff;
+padding: 4px;
+text-align: left;
+font-size: 12px;
+font-weight: bold;
+border: 0px #fff solid; }
+
+table.stats td.hed {
+background-color: #666;
+color: #fff;
+padding: 4px;
+text-align: left;
+border-bottom: 2px #fff solid;
+font-size: 12px;
+font-weight: bold; } 
+
+
+########### League Table ############
+
+table.league
+{text-align: center;
+font-family: Lucida Grande, Arial, Helvetica, sans-serif ;
+font-weight: normal;
+font-size: 11px;
+color: #fff;
+width: 280px;
+background-color: #666;
+border: 0px;
+border-collapse: collapse;
+border-spacing: 0px;}
+
+table.league td
+{background-color: #CCC;
+color: #000;
+padding: 4px;
+text-align: center;
+font-size: 12px;
+}
+table.league td.hed
+{background-color: #666;
+color: #fff;
+padding: 4px;
+text-align: center;
+border-bottom: 2px #fff solid;
+font-size: 12px;
+font-weight: bold;} 
+
+table.league td.normal
+{background-color: #fff;
+color: #000;
+padding: 4px;
+text-align: center;
+font-size: 12px;
+font-weight: normal;
+border-bottom: 1px #000 solid;
+} 
+
+table.league td.selected
+{background-color: #fff;
+color: #000;
+padding: 4px;
+text-align: center;
+font-size: 12px;
+font-weight: bold;
+border-bottom: 1px #000 solid;
+}
+
+table.league td.relegation
+{background-color: #fff;
+color: #FE2E2E;
+padding:4px;
+text-align: center;
+font-size: 12px;
+font-weight: normal;
+border-bottom: 1px #000 solid;
+}
+
+table.league td.promotion
+{background-color: #fff;
+color: #4974E8;
+padding: 4px;
+text-align: center;
+font-size: 12px;
+font-weight: normal;
+border-bottom: 1px #000 solid;
+}
+
+table.league tr.normal
+{background-color: #fff;
+color: #000;
+padding: 4px;
+text-align: center;
+font-size: 12px;
+border: 1px;
+}
