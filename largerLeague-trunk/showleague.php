@@ -53,6 +53,11 @@ echo '<br><br>';
 
 // Render the leagues in a nested loop
 $divCount = numLeagues($seasonID);
+if ($divCount < 5) {
+	$thisPageStart = 1;
+	$thisPageEnd = $divCount;
+}
+
 for ($i = $thisPageStart; $i <= $thisPageEnd; ++$i) {
 
 	echo '<span class="text-semibold">&nbsp; Division ' . $i . '</span><br>';
