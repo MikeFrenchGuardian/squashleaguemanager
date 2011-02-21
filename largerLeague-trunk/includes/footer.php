@@ -12,7 +12,7 @@ if ($divCount <= 5) {
 
 	echo '<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="showleague.php" class="text-normal">Leagues</a><br>';
 
-<?php else {
+} else {
 	$numLinks = $divcount / 5;
 	echo '<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal">Leagues<br>';
 	for ($i = 1; $i <= $numLinks; ++$i) {
