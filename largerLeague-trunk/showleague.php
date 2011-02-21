@@ -7,7 +7,7 @@ if (isset($_GET["page"])) {
 	$page = 1;		
 }
 
-$rowsPerPage = 2;
+$rowsPerPage = 5;
 
 // counting the offset
 $offset = ($rowsPerPage - 1);
