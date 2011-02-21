@@ -11,7 +11,9 @@ $rowsPerPage = 2;
 
 // counting the offset
 $offset = ($page - 1) * $rowsPerPage;
-$thisPageStart = $rowsPerPage * $page;
+
+$thisPageStart = ($page * 2) -1;
+$thisPageEnd = $rowsPerPage * $page;
 
 
 
@@ -51,7 +53,7 @@ echo '<br><br>';
 
 // Render the leagues in a nested loop
 $divCount = numLeagues($seasonID);
-for ($i = $offset; $i <= $rowsPerPage; ++$i) {
+for ($i = $thisPageStart; $i <= $thisPageEnd; ++$i) {
 
 	echo '<span class="text-semibold">&nbsp; Division ' . $i . '</span><br>';
 	echo "<table class=\"league\">";
