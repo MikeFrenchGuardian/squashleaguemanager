@@ -10,9 +10,9 @@ if (isset($_GET["page"])) {
 $rowsPerPage = 2;
 
 // counting the offset
-$offset = ($page - 1) * $rowsPerPage;
+$offset = ($rowsPerPage - 1);
 
-$thisPageStart = ($page * 2) -1;
+$thisPageStart = ($page * $rowsPerPage) - $offset;
 $thisPageEnd = $rowsPerPage * $page;
 
 
