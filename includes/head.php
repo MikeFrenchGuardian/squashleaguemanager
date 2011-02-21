@@ -48,8 +48,8 @@ $last5 = $rows-5; //not required anymore... db going the other way?!?
 <span class="text-medium-header">Latest Results</span><br>
 <table class="stats">
 <tr>
-   <td class="hed">Winner</td>
-   <td class="hed">Runner-Up</td>
+   <td class="hed" colspan="2">Winner</td>
+   <td class="hed" colspan="2">Runner-Up</td>
 
 </tr>
 <?php
@@ -62,8 +62,8 @@ for ($j = $last5 ; $j < $rows ; ++$j)
 
 
 echo    '<tr>';
-echo    '<td>' . getPlayerName($player1) . ' ' . $p1_score . '</td>';
-echo    '<td>' . $p2_score . ' ' . getPlayerName($player2) . '</td>';
+echo    '<td>' . getPlayerName($player1) . '</td><td>' . $p1_score . '</td>';
+echo    '<td>' . $p2_score . '</td><td>' . getPlayerName($player2) . '</td>';
 echo    '</tr>';
 }
 echo "</table> <br><br>";
