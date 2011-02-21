@@ -20,6 +20,7 @@ if ($divCount <= 5) {
 		$start =  $i - 4;
 		echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">Leagues ' . $start . '-' . $end . '</a><br>';
 	}
+}
 ?>
 		
 
