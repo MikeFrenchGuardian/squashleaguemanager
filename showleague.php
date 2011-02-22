@@ -13,10 +13,13 @@ $currSeason =  currentSeason();
 
 // This gives the page heading the right date
 $startDate = getSeasonStart($seasonID);
-$niceDate = prettyDate($startDate);
+$niceStartDate = prettyDate($startDate);
+
+$endDate = getSeasonEnd($seasonID);
+$niceEndDate = prettyDate($endDate);
 
 // The page heading
-echo '<span class="text-header">League Beginning ' . $niceDate . "</span><br><br>";
+echo '<span class="text-header">Session ' . $niceStartDate . " - " . $niceEndDate </span><br><br>";
 
 
 
