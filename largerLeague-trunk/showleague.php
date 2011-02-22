@@ -53,6 +53,14 @@ echo '<br><br>';
 
 // Render the leagues in a nested loop
 $divCount = numLeagues($seasonID);
+
+$leftOvers = $divCount % $page;
+if ($leftOvers <= 5) {
+	$thisPageStart = ($page * 5) + 1;
+	$thisPageEnd = $thisPageStart + $leftOvers;
+}
+	
+
 if ($divCount < 5) {
 	$thisPageStart = 1;
 	$thisPageEnd = $divCount;
