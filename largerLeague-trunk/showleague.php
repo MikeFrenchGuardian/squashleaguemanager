@@ -58,13 +58,14 @@ $offset = ($rowsPerPage - 4);
 
 // Find if we're on the last page or not
 $remaining = ($divCount / ($page * 5));
-
+echo $remaining;
+echo "<br>";
 
 
 if ($divCount < 5) {
 	$thisPageStart = 1;
 	$thisPageEnd = $divCount;
-} else if ($remaining => 1) {
+} else if ($remaining >= 1) {
 	$thisPageStart = ($page * $rowsPerPage) - $offset;
 	$thisPageEnd = $rowsPerPage * $page;
 } else if ($remaining < 1 ) {
