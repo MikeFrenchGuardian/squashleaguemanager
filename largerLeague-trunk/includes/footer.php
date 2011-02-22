@@ -27,7 +27,7 @@ if ($divCount < 5) {
 
 		$start = $i;
 		$end = ($i + $remainder) - 1;
-		echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $ . '" class="text-normal">Leagues ' . $start . '-' . $end . '</a><br>';
+		echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">Leagues ' . $start . '-' . $end . '</a><br>';
 }
 ?>
 		
