@@ -5,21 +5,29 @@
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="index.php" class="text-normal">Homepage</a><br>
 	
 <?php 	
-$footerSeason =  currentSeason();
+$footerSeason = currentSeason();
 $divCount = numLeagues($footerSeason);
 
-if ($divCount <= 5) {
+if ($divCount < 5) {
 
 	echo '<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="showleague.php" class="text-normal">Leagues</a><br>';
 
 } else {
 	$numLinks = $divcount / 5;
+	echo $divCount;
 	echo '<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal">Leagues<br>';
 	for ($i = 1; $i <= $numLinks; ++$i) {
 		$end = $i * 5;
-		$start =  $i - 4;
+		$start =  $end - 4;
+		$remainder = $numLinks % 5;
 		echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">Leagues ' . $start . '-' . $end . '</a><br>';
 	}
+	if ($remainder != 0) {
+		++$i;
+
+		$start = $i;
+		$end = ($i + $remainder) - 1;
+		echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $ . '" class="text-normal">Leagues ' . $start . '-' . $end . '</a><br>';
 }
 ?>
 		
