@@ -9,11 +9,7 @@ if (isset($_GET["page"])) {
 
 $rowsPerPage = 5;
 
-// counting the offset
-$offset = ($rowsPerPage - 1);
 
-$thisPageStart = ($page * $rowsPerPage) - $offset;
-$thisPageEnd = $rowsPerPage * $page;
 
 
 
@@ -54,17 +50,24 @@ echo '<br><br>';
 // Render the leagues in a nested loop
 $divCount = numLeagues($seasonID);
 
+// Getting the remainder
 $leftOvers = $divCount % $page;
-if ($leftOvers <= 5) {
-	$thisPageStart = ($page * 5) + 1;
-	$thisPageEnd = $thisPageStart + $leftOvers;
-}
-	
+
+// counting the offset
+$offset = ($rowsPerPage - 1);
+
+
 
 if ($divCount < 5) {
 	$thisPageStart = 1;
 	$thisPageEnd = $divCount;
-}
+} else if ($leftOvers >= 5) {
+	$thisPageStart = ($page * $rowsPerPage) - $offset;
+	$thisPageEnd = $rowsPerPage * $page;
+} else if ($leftOvers <= 5) {
+	$thisPageStart = ($page * 5) + 1;
+	$thisPageEnd = $thisPageStart + $leftOvers;
+} 
 
 for ($i = $thisPageStart; $i <= $thisPageEnd; ++$i) {
 
