@@ -59,12 +59,15 @@ $offset = ($rowsPerPage - 1);
 
 
 if ($divCount < 5) {
+	echo "1";
 	$thisPageStart = 1;
 	$thisPageEnd = $divCount;
 } else if ($leftOvers >= 5) {
+	echo "2";
 	$thisPageStart = ($page * $rowsPerPage) - $offset;
 	$thisPageEnd = $rowsPerPage * $page;
 } else if ($leftOvers <= 5) {
+	echo "3";
 	$thisPageStart = ($page * 5) + 1;
 	$thisPageEnd = $thisPageStart + $leftOvers;
 } 
