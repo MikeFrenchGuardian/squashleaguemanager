@@ -14,18 +14,18 @@ if ($divCount < 5) {
 
 } else {
 	$numLinks = $divCount / 5;
+	echo $numLinks;
 	echo '<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal">Leagues<br>';
 	for ($i = 1; $i <= $numLinks; ++$i) {
 		$end = $i * 5;
 		$start =  $end - 4;
-		$remainder = $numLinks % 5;
 		echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">Leagues ' . $start . '-' . $end . '</a><br>';
 	}
+	
+	$remainder = $numLinks % 5;
 	if ($remainder != 0) {
-		++$i;
-
 		$start = $i;
-		$end = ($i + $remainder) - 1;
+		$end = ($start + $remainder) - 1;
 		echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">Leagues ' . $start . '-' . $end . '</a><br>';
 	}
 }
