@@ -19,7 +19,7 @@ $endDate = getSeasonEnd($seasonID);
 $niceEndDate = prettyDate($endDate);
 
 // The page heading
-echo '<span class="text-header">Session ' . $niceStartDate . " - " . $niceEndDate </span><br><br>";
+echo '<span class="text-header">Session ' . $niceStartDate . " - " . $niceEndDate . "</span><br><br>";
 
 
 
