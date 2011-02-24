@@ -49,9 +49,8 @@ echo '<br><br>';
 
 // Render the leagues in a nested loop
 $divCount = numLeagues($seasonID);
-
 // Getting the remainder
-$leftOvers = $divCount % $page;
+$leftOvers = $divCount % ($page -1);
 
 // counting the offset
 $offset = ($rowsPerPage -1);
@@ -59,15 +58,18 @@ $offset = ($rowsPerPage -1);
 // Find if we're on the last page or not
 $remaining = ($divCount / ($page * 5));
 
+
 if ($divCount < 5) {
 	$thisPageStart = 1;
 	$thisPageEnd = $divCount;
 } else if ($remaining >= 1) {
 	$thisPageStart = ($page * $rowsPerPage) - $offset;
 	$thisPageEnd = $rowsPerPage * $page;
+} else if ($leftOvers == 0) {
+	
 } else if ($remaining < 1 ) {
 	$thisPageStart = (($page -1) * 5) + 1;
-	$thisPageEnd = $thisPageStart + ($leftOvers -2);
+	$thisPageEnd = $thisPageStart + ($remaining);
 } 
 
 for ($i = $thisPageStart; $i <= $thisPageEnd; ++$i) {
