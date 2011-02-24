@@ -23,12 +23,12 @@ if ($divCount < 5) {
 	
 	$remainder = $divCount % 5;
 	if ($remainder != 0) {
-		$start = $end +1;
-		$end = ($start + $remainder);
-		if ($start == $end){
-			echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">League ' . $start . '</a><br>';
+		$remainderStart = $end +1;
+		$remainderEnd = ($end + $remainder);
+		if ($remainderStart == $remainderEnd){
+			echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">League ' . $remainderStart . '</a><br>';
 		} else {
-		echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">Leagues ' . $start . '-' . $end . '</a><br>';
+		echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">Leagues ' . $remainderStart . '-' . $remainderEnd . '</a><br>';
 	}
 }
 }
