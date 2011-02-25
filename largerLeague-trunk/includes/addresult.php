@@ -58,8 +58,11 @@ if ($duplicate == "yes") {
 
 		updateElo($player1,$p1NewEloScore);
 		updateElo($player2,$p2NewEloScore);
-			
+		
+		$host = $_SERVER['HTTP_HOST'];
+		if ($host == "www.tomjohnleague.co.uk" || $host == "tomjohnleague.co.uk") { 		
 		emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore);	
+		}
 	}
 }
 
