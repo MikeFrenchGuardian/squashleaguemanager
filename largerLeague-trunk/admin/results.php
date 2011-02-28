@@ -1,4 +1,4 @@
-<?php require_once '/includes/adminhead.php'; 
+<?php require_once '../includes/adminhead.php'; 
 
  // Grab the season ID from the URL if available
 $seasonID = ($_GET["seasonID"]);
@@ -77,7 +77,7 @@ $rows = mysql_num_rows($result);
 //fill it with content
 
 	for ($j = 0 ; $j < $rows ; ++$j) {
-		$id = mysql_result($result,$j,'id');
+		$resultid = mysql_result($result,$j,'id');
 		$winner = mysql_result($result,$j,'player1');
 		$loser = mysql_result($result,$j,'player2');
 		$winnerName = getPlayerName($winner);
@@ -93,23 +93,25 @@ if ($p2g == "-1") {
 	echo 	'<td class="text-normal">' . $p1g . ' - ' . $p2g . '</td>';
 }
 echo 	'<td class="text-normal">' . $loserName . '</td>';
-echo 	'<td class="text-normal"><a href="results.php?edit=yes&id="' . $id . '">delete</td>';
-echo 	'<td class="text-normal"><a href="results.php?delete=yes&id="' . $id . '">delete</td>';
+echo 	'<td class="text-normal"><a href="results.php?edit=yes&id="' . $resultid . '">delete</td>';
+echo 	'<td class="text-normal"><a href="results.php?delete=yes&id="' . $resultid . '">delete</td>';
 
 echo	'</tr>';
 }
 echo "</table><br>";
 
-// setup paging
+	// setup paging
 
-$prev = $page -1;
-$next = $page +1;
+	$prev = $page -1;
+	$next = $page +1;
 
-if ($rowsPerPage == $rows) {
-echo '<a href="results.php?seasonID=' . $seasonID . '&page=' . $next . '">Next</a>';
-}
-if ($page != 1) {
-echo ' ';
-echo '<a href="results.php?seasonID=' . $seasonID . '&page=' . $prev . '">Previous</a>';			
-}
-} require_once '/includes/adminfooter.php'; ?>
+	if ($rowsPerPage == $rows) {
+	echo '<a href="results.php?seasonID=' . $seasonID . '&page=' . $next . '">Next</a>';
+	}
+	if ($page != 1) {
+	echo ' ';
+	echo '<a href="results.php?seasonID=' . $seasonID . '&page=' . $prev . '">Previous</a>';			
+	}
+
+} 
+require_once '../includes/adminfooter.php'; ?>
