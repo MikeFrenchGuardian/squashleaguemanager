@@ -33,7 +33,7 @@ for ($j = 0 ; $j < $rows ; ++$j)
 	$email = mysql_result($result,$j,'email');
 	
 echo 	'<tr>';
-echo 	'<td><a class="text-normal" href="playerdetail.php?id=' . $id . '">' . $fame . $lname . '</td>';
+echo 	'<td><a class="text-normal" href="playerdetail.php?id=' . $id . '">' . $fname . $lname . '</td>';
 if ($member == yes){
 	echo 	'<td>' . $mobilephone . '</td>';
 } else {
