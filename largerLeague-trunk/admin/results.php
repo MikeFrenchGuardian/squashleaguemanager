@@ -1,4 +1,4 @@
-<?php require_once 'includes/head.php'; 
+<?php require_once '/includes/adminhead.php'; 
 
  // Grab the season ID from the URL if available
 $seasonID = ($_GET["seasonID"]);
@@ -112,4 +112,4 @@ if ($page != 1) {
 echo ' ';
 echo '<a href="results.php?seasonID=' . $seasonID . '&page=' . $prev . '">Previous</a>';			
 }
-} require_once 'includes/footer.php'; ?>
+} require_once '/includes/adminfooter.php'; ?>
