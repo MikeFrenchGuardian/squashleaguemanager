@@ -1,5 +1,20 @@
 <?php require_once 'includes/head.php'; 
 
+if (isset($_GET["page"])) {
+	$page = ($_GET["page"]);
+} else {
+	$page = 1;		
+}
+
+
+// Create multiple pages if players are more than 45 in total
+
+$rowsPerPage = 45;
+// counting the offset
+$offset = ($page - 1) * $rowsPerPage;
+$thisPageStart = $rowsPerPage * $page;
+
+
 
 if ($loggedIn == "true") {		
 	$member = yes;	
@@ -8,7 +23,7 @@ if ($loggedIn == "true") {
 }
 
 
-$query = "SELECT * FROM player ORDER by lname";
+$query = "SELECT * FROM player ORDER by lname LIMIT $offset, $rowsPerPage";
 $result = mysql_query($query);
 
 $rows = mysql_num_rows($result);
@@ -58,5 +73,21 @@ echo	'</tr>';
 }
 ?>
 </table>
+
+<?php 
+
+// setup paging
+
+$prev = $page -1;
+$next = $page +1;
+
+if ($rowsPerPage == $rows) {
+echo '<a href="playerinfo.php?page=' . $next . '">Next</a>';
+}
+if ($page != 1) {
+echo ' ';
+echo '<a href="playerinfo.php?page=' . $prev . '">Previous</a>';			
+}
+
 
 <?php require_once 'includes/footer.php'; 
