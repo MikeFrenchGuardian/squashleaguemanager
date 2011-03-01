@@ -58,8 +58,8 @@ $offset = ($page - 1) * $rowsPerPage;
 $thisPageStart = $rowsPerPage * $page;
 
 
-$query = "select * from results where seasonID = $seasonID LIMIT $offset, $rowsPerPage";
-$result = mysql_query($query);
+$query = "select * from results where seasonID = $seasonID and deleted = \"false\" LIMIT $offset, $rowsPerPage";
+$result = mysql_query($query)  or die(mysql_error());
 $rows = mysql_num_rows($result);
 
 // build the table header
@@ -93,9 +93,8 @@ if ($p2g == "-1") {
 	echo 	'<td class="text-normal">' . $p1g . ' - ' . $p2g . '</td>';
 }
 echo 	'<td class="text-normal">' . $loserName . '</td>';
-echo 	'<td class="text-normal"><a href="results.php?edit=yes&id="' . $resultid . '">delete</td>';
-echo 	'<td class="text-normal"><a href="results.php?delete=yes&id="' . $resultid . '">delete</td>';
-
+echo 	'<td class="text-normal"><a href="results.php?edit=yes&id=' . $resultid . '">delete</td>';
+echo 	'<td class="text-normal"><a href="results.php?delete=yes&id=' . $resultid . '">delete</td>';
 echo	'</tr>';
 }
 echo "</table><br>";
