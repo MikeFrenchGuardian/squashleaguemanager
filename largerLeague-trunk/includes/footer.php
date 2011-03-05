@@ -21,7 +21,9 @@ if ($divCount < 5) {
 		if ($i == 1) {
 			echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">TomJohn ' . $start . '-' . $end . '</a><br>';
 		} else { 
-			echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">Gold ' . $start - 5 . '-' . $end -5 . '</a><br>';
+			$start = $start -5;
+			$end = $end -5;
+			echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">Gold ' . $start . '-' . $end . '</a><br>';
 		}
 	}
 	
