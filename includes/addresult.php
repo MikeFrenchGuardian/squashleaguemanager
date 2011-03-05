@@ -59,7 +59,10 @@ if ($duplicate == "yes") {
 		updateElo($player1,$p1NewEloScore);
 		updateElo($player2,$p2NewEloScore);
 			
-		emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore);	
+		$env = getEnvironment();
+		if ($env == "prod") {
+			emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore);	
+		}
 	}
 }
 
