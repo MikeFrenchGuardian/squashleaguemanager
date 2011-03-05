@@ -18,7 +18,11 @@ if ($divCount < 5) {
 	for ($i = 1; $i <= $numLinks; ++$i) {
 		$end = $i * 5;
 		$start =  $end - 4;
-		echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">Leagues ' . $start . '-' . $end . '</a><br>';
+		if ($i == 1) {
+			echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">TomJohn ' . $start . '-' . $end . '</a><br>';
+		} else { 
+			echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">Gold ' . $start - 5 . '-' . $end -5 . '</a><br>';
+		}
 	}
 	
 	$remainder = $divCount % 5;
