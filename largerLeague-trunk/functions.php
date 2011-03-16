@@ -779,4 +779,11 @@ function getEnvironment() {
 	return $env;
 }
 
+function getEnvironment() {
+	$query = "select env from environment";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$env = $row->env;
+	return $env;
+}
 ?>
