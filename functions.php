@@ -617,7 +617,7 @@ function checkPlayerDiv($seasonID) {
 }
 
 function addBlogPost($currDate,$subject,$synopsis,$contents) {
-	$query = "insert into blog (date,subject,synopsis,contents) values (\"$currDate\", \"$subject\", \"$synopsis\",  \"$contents\");";
+	$query = "insert into blog (date,subject,synopsis,contents) values ('$currDate', '$subject', '$synopsis',  '$contents');";
 	$result = mysql_query($query) or die(mysql_error());
 	}
 
@@ -780,11 +780,4 @@ function getEnvironment() {
 	return $env;
 }
 
-function getEnvironment() {
-	$query = "select env from environment";
-	$result = mysql_query($query);
-	$row = mysql_fetch_object($result);
-	$env = $row->env;
-	return $env;
-}
 ?>
