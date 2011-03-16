@@ -1,5 +1,18 @@
 <?php require_once 'includes/head.php'; 
 
+// Paging for extra leagues
+if (isset($_GET["page"])) {
+	$page = ($_GET["page"]);
+} else {
+	$page = 1;		
+}
+
+$rowsPerPage = 5;
+
+
+
+
+
  // Grab the season ID from the URL if available
 $seasonID = ($_GET["season"]);
 
@@ -13,13 +26,10 @@ $currSeason =  currentSeason();
 
 // This gives the page heading the right date
 $startDate = getSeasonStart($seasonID);
-$niceStartDate = prettyDate($startDate);
-
-$endDate = getSeasonEnd($seasonID);
-$niceEndDate = prettyDate($endDate);
+$niceDate = prettyDate($startDate);
 
 // The page heading
-echo '<span class="text-header">Session ' . $niceStartDate . " - " . $niceEndDate . "</span><br><br>";
+echo '<span class="text-header">League Beginning ' . $niceDate . "</span><br><br>";
 
 
 
@@ -39,7 +49,30 @@ echo '<br><br>';
 
 // Render the leagues in a nested loop
 $divCount = numLeagues($seasonID);
-for ($i = 1; $i <= $divCount; ++$i) {
+// Getting the remainder
+$leftOvers = $divCount % ($page -1);
+
+// counting the offset
+$offset = ($rowsPerPage -1);
+
+// Find if we're on the last page or not
+$remaining = ($divCount / ($page * 5));
+
+
+if ($divCount < 5) {
+	$thisPageStart = 1;
+	$thisPageEnd = $divCount;
+} else if ($remaining >= 1) {
+	$thisPageStart = ($page * $rowsPerPage) - $offset;
+	$thisPageEnd = $rowsPerPage * $page;
+} else if ($leftOvers == 0) {
+	
+} else if ($remaining < 1 ) {
+	$thisPageStart = (($page -1) * 5) + 1;
+	$thisPageEnd = $thisPageStart + ($remaining);
+} 
+
+for ($i = $thisPageStart; $i <= $thisPageEnd; ++$i) {
 
 	echo '<span class="text-semibold">&nbsp; Division ' . $i . '</span><br>';
 	echo "<table class=\"league\">";
