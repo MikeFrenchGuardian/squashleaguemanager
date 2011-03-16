@@ -3,7 +3,45 @@
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px"><a href="admin" class="text-normal">&nbsp; Admin area</a></div>
 <div class="menubar">
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="index.php" class="text-normal">Homepage</a><br>
-	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="showleague.php" class="text-normal">Leagues</a><br>
+	
+<?php 	
+$footerSeason = currentSeason();
+$divCount = numLeagues($footerSeason);
+ 
+if ($divCount < 5) {
+
+	echo '<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="showleague.php" class="text-normal">Leagues</a><br>';
+
+} else {
+	$numLinks = $divCount / 5;
+	echo '<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal">Leagues<br>';
+	for ($i = 1; $i <= $numLinks; ++$i) {
+		$end = $i * 5;
+		$start =  $end - 4;
+		if ($i == 1) {
+			echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">TomJohn ' . $start . '-' . $end . '</a><br>';
+		} else { 
+			$start = $start -5;
+			$end = $end -5;
+			echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">Gold ' . $start . '-' . $end . '</a><br>';
+		}
+	}
+	
+	$remainder = $divCount % 5;
+	if ($remainder != 0) {
+		$remainderStart = $end +1;
+		$remainderEnd = ($end + $remainder);
+		if ($remainderStart == $remainderEnd){
+			echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">League ' . $remainderStart . '</a><br>';
+		} else {
+		echo '&nbsp;&nbsp;&nbsp;&nbsp; <span class="text-normal"><a href="showleague.php?page=' . $i . '" class="text-normal">Leagues ' . $remainderStart . '-' . $remainderEnd . '</a><br>';
+	}
+}
+}
+?>
+		
+
+	
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="playerinfo.php" class="text-normal">Player Info</a><br>
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="ranking.php" class="text-normal">Rankings</a><br>
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="results.php" class="text-normal">Results</a><br>

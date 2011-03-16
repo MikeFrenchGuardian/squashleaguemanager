@@ -173,10 +173,10 @@ if (isset($_POST['stage3'])) { ?>
 		 echo '<td class="text-normal"><select name="'.$position['playerID'].'_tjrank">';   	
 	   	 for ($k = 1; $k <= $totalPlayers; ++$k) {
 
-echo '<option name="'.$position['playerID'].'_tjrank" value="' . $k . '">' . $k . '</option>';	
-   	 }
-   	 	 echo "</td>";			 
-		echo	'</tr>';
+			echo '<option name="'.$position['playerID'].'_tjrank" value="' . $k . '">' . $k . '</option>';	
+   		 }
+  	 	echo "</td>";			 
+		echo "</tr>";
  	 }
 		echo "</table>  <br><br>";
 

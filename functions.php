@@ -664,10 +664,11 @@ class elo_calculator
     return $R; }}
 
 function getEloRating($playerID) {
-	$query = "select elo_score from player where id = $playerID";
+	//$query = "select elo_score from player where id = $playerID";
+	$query = "select elo from elo where playerID=$playerID ORDER BY id DESC LIMIT 1";
 	$result = mysql_query($query);
 	$row = mysql_fetch_object($result);
-	$name = $row->elo_score;
+	$name = $row->elo;
 	return $name;
 }
 
@@ -771,5 +772,19 @@ function getMaxSeasonID() {
 function getTotalLeaguePlayers($seasonID) {
 	$query = "select COUNT()";
 }
+function getEnvironment() {
+	$query = "select env from environment";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$env = $row->env;
+	return $env;
+}
 
+function getEnvironment() {
+	$query = "select env from environment";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$env = $row->env;
+	return $env;
+}
 ?>
