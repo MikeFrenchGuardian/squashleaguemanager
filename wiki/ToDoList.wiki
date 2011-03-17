@@ -2,11 +2,15 @@
 
 = To Do List =
 
+* Paging for div setups
+
+* Advert banners
+
 * admin email to all players or all players in the league page
 
-* Exportable league tables for printing
-
 * Player results will need 'previous' button or scrollability.
+
+* ~~Exportable league tables for printing~~
 
 * ~~Remaining games in current league for each player on player detail page~~
 
