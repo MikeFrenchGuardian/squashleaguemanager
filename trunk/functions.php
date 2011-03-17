@@ -567,8 +567,8 @@ function checkExistingPlayer ($name) {
 	}
 }
 
-function createPlayer ($name, $phone, $mobilePhone, $email) {
-	$query =  "INSERT INTO player (name,phone,mobilephone,email) VALUES (\"$name\", \"$phone\",\"$mobilePhone\", \"$email\");";
+function createPlayer ($name, $fname, $lname, $phone, $mobilePhone, $email) {
+	$query =  "INSERT INTO player (name,fname,lname,phone,mobilephone,email,elo_score) VALUES (\"$name\",\"$fname\",\"$lname\", \"$phone\",\"$mobilePhone\", \"$email\", 1000);";
 	$result = mysql_query($query) or die(mysql_error());
 	echo '<span class="text-normal">';
 	echo $name;
