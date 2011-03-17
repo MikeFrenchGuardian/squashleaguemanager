@@ -3,7 +3,7 @@ require_once '../includes/adminhead.php';
 require_once '../login.php';
 require_once '../functions.php';
 
-if (isset($_POST['name'])) {
+if (isset($_POST['fname'])) {
 ?>
 <span class="text-header">New Player Added</span><br><br>
 <?php
@@ -18,7 +18,7 @@ $name = $fname . ' ' . $lame;
 
 
 if ( checkExistingPlayer ("$name") != 1 ) {
-	createPlayer ($name, $phone, $mobilePhone, $email);
+	createPlayer ($name, $fname, $lname, $phone, $mobilePhone, $email);
 } else {
 	echo "Stupid boy, this player is already here";
 }
