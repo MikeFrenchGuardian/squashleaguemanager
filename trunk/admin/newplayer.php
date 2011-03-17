@@ -8,10 +8,13 @@ if (isset($_POST['name'])) {
 <span class="text-header">New Player Added</span><br><br>
 <?php
 
-  if (isset($_POST['name'])) $name = sanitizeString($_POST['name']);
-  if (isset($_POST['phone'])) $phone = sanitizeString($_POST['phone']);
-  if (isset($_POST['mobilephone'])) $mobilePhone = sanitizeString($_POST['mobilephone']);
-  if (isset($_POST['email'])) $email = sanitizeString($_POST['email']);
+if (isset($_POST['fname'])) $fname = sanitizeString($_POST['fname']);
+if (isset($_POST['lname'])) $lname = sanitizeString($_POST['lname']);
+if (isset($_POST['phone'])) $phone = sanitizeString($_POST['phone']);
+if (isset($_POST['mobilephone'])) $mobilePhone = sanitizeString($_POST['mobilephone']);
+if (isset($_POST['email'])) $email = sanitizeString($_POST['email']);
+
+$name = $fname . ' ' . $lame;
 
 
 if ( checkExistingPlayer ("$name") != 1 ) {
@@ -27,7 +30,8 @@ if ( checkExistingPlayer ("$name") != 1 ) {
 ?>
 <span class="text-header">Add new player</span><br><br>
 <form method="post" action="newplayer.php">
-<span class="text-normal">Name: <input type="text" name="name" size="25" maxlength="50" /><br />
+<span class="text-normal">First Name: <input type="text" name="fname" size="25" maxlength="50" /><br />
+Last Name: <input type="text" name="lname" size="25" maxlength="50" /><br />
 Phone: <input type="text" name="phone" size="25" maxlength="50" /><br />
 Mobile: <input type="text" name="mobilephone" size="25" maxlength="50" /><br />
 Email: <input type="text" name="email" size="25" maxlength="50" /><br /></span>
