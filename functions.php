@@ -178,13 +178,12 @@ function getPlayerLeague($playerID,$seasonID) {
 }
 
 // get player league
-function getPlayerID($email) {
-	$query = "select id from player where email = $email";
+function getMaxPlayerID() {
+	$query = "select MAX(id) from player";
 	$result = mysql_query($query);
 	$row = mysql_fetch_object($result);
-	$name = $row->id;
+	$name = $row->{'MAX(id)'};
 	return $name;
-	//return $query;
 }
 
 // get specified league games played #

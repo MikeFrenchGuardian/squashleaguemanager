@@ -20,9 +20,10 @@ $name = $fname . ' ' . $lame;
 if ( checkExistingPlayer ("$name") != 1 ) {
 	createPlayer ($name, $fname, $lname, $phone, $mobilePhone, $email);
 	
-	$playerID = getPlayerID($email);
-	
-	updateElo($playerID,1000);
+	$playerID = getMaxPlayerID();
+	echo $playerID;
+	$eloScore = 1000;
+	updateElo($playerID, $eloScore);
 	
 } else {
 	echo "Stupid boy, this player is already here";
