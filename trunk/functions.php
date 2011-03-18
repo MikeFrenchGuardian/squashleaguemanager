@@ -177,7 +177,15 @@ function getPlayerLeague($playerID,$seasonID) {
 	//return $query;
 }
 
-
+// get player league
+function getPlayerID($email) {
+	$query = "select id from player where email = $email";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->id;
+	return $name;
+	//return $query;
+}
 
 // get specified league games played #
 function getLeagueGamesPlayed($playerID,$seasonID) {

@@ -19,6 +19,11 @@ $name = $fname . ' ' . $lame;
 
 if ( checkExistingPlayer ("$name") != 1 ) {
 	createPlayer ($name, $fname, $lname, $phone, $mobilePhone, $email);
+	
+	$playerID = getPlayerID($email);
+	
+	updateElo($playerID,1000);
+	
 } else {
 	echo "Stupid boy, this player is already here";
 }
