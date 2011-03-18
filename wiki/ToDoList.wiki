@@ -2,6 +2,10 @@
 
 = To Do List =
 
+* Start players on 1000
+
+* Blog post headings should also be links
+
 * Paging for div setups
 
 * Advert banners
