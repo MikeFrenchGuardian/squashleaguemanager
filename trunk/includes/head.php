@@ -1,5 +1,31 @@
 <html>
 <head>
+
+<?php
+require_once 'login.php';
+require_once 'dbCheck.php';
+require_once 'functions.php';
+
+$curPage = curPageName();
+
+if ($curPage == "rules.php"){
+        echo '<title>League Rules | TomJohn League</title>';
+} else if ($curPage == "showleague.php") {
+        echo '<title>Leagues | TomJohn League</title>';
+} else if ($curPage == "ranking.php") {
+        echo '<title>Rankings | TomJohn League</title>';
+} else if ($curPage == "results.php") {
+        echo '<title>Results | TomJohn League</title>';
+} else if ($curPage == "stats.php") {
+        echo '<title>Statistics | TomJohn League</title>';
+} else if ($curPage == "playerinfo.php") {
+        echo '<title>Player Info | TomJohn League</title>';
+} else {
+        echo '<title>TomJohn League</title>';
+}
+?>
+
+
 <title>TomJohn League</title>
 
 <META name="description" content="Wimbledon Squash and Fitness Club Online Squash Leagues and Team Website">
@@ -13,10 +39,8 @@
 
 </head>
 <body class="text-normal" bgcolor="#C0C0C0" padding="0">
+
 <?php
-require_once 'login.php';
-require_once 'dbCheck.php';
-require_once 'functions.php';
 
 $ref = getenv("HTTP_REFERER"); 
 session_start();
