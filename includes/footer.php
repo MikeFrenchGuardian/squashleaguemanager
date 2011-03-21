@@ -47,7 +47,6 @@ if ($divCount < 5) {
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="results.php" class="text-normal">Results</a><br>
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="stats.php" class="text-normal">League Stats</a><br>
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="rules.php" class="text-normal">Rules</a><br>
-	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="http://bookings.wimbledonclub.co.uk/Web/Login.aspx" target=”_blank” class="text-normal">Book a court</a><br><br>
 
 
 <?php
@@ -77,15 +76,17 @@ if ($loggedIn == "true") { ?>
 Links<br>
 
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://wimbledonclub.co.uk/">Wimbledon Racquets</a><br>
+<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="http://bookings.wimbledonclub.co.uk/Web/Login.aspx" target=”_blank” class="text-normal">Book a court</a><br><br>
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://county.leaguemaster.co.uk">Surrey Cup</a><br>
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://www.surreysra.co.uk">Surrey SRA</a><br>
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://www.squashsite.co.uk">Squashsite</a><br>
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://no-let.blogspot.com">no-let blog</a><br>
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://www.psasquashtv.com">PSA Squash TV</a><br><br>
 
+<a href="http://www.psasquashtv.com/page/canarywharfcompetition?WT.mc_id=aff2101"><img border=0 src="/images/canarywharf2010/120x600.jpg"></a>
 
-<script type="text/javascript" src="http://cdn.widgetserver.com/syndication/subscriber/InsertWidget.js"></script><script type="text/javascript">if (WIDGETBOX) WIDGETBOX.renderWidget('2f41a594-c3d2-4984-9c01-363c10c8f62b');</script><noscript>Get the <a href="http://www.widgetbox.com/widget/squash-site-all-about-squash">Squash Site - all about Squash</a> widget and many other <a href="http://www.widgetbox.com/">great free widgets</a> at <a href="http://www.widgetbox.com">Widgetbox</a>! Not seeing a widget? (<a href="http://docs.widgetbox.com/using-widgets/installing-widgets/why-cant-i-see-my-widget/">More info</a>)</noscript>
-
+<!--<script type="text/javascript" src="http://cdn.widgetserver.com/syndication/subscriber/InsertWidget.js"></script><script type="text/javascript">if (WIDGETBOX) WIDGETBOX.renderWidget('2f41a594-c3d2-4984-9c01-363c10c8f62b');</script><noscript>Get the <a href="http://www.widgetbox.com/widget/squash-site-all-about-squash">Squash Site - all about Squash</a> widget and many other <a href="http://www.widgetbox.com/">great free widgets</a> at <a href="http://www.widgetbox.com">Widgetbox</a>! Not seeing a widget? (<a href="http://docs.widgetbox.com/using-widgets/installing-widgets/why-cant-i-see-my-widget/">More info</a>)</noscript>
+-->
 </span></div>
 <div class="divider"></div>
 <div class="bottom"><span class="text-normal">&copy; Nick Wales</div>
