@@ -9,21 +9,22 @@ require_once 'functions.php';
 $curPage = curPageName();
 
 if ($curPage == "rules.php"){
-        echo '<title>League Rules | TomJohn League</title>';
+        echo '<title>League Rules | Wimbledon Rackets and Fitness Squash League</title>';
 } else if ($curPage == "showleague.php") {
-        echo '<title>Leagues | TomJohn League</title>';
+        echo '<title>Leagues | Wimbledon Rackets and Fitness Squash League</title>';
 } else if ($curPage == "ranking.php") {
-        echo '<title>Rankings | TomJohn League</title>';
+        echo '<title>Rankings | Wimbledon Rackets and Fitness Squash League</title>';
 } else if ($curPage == "results.php") {
-        echo '<title>Results | TomJohn League</title>';
+        echo '<title>Results | Wimbledon Rackets and Fitness Squash League</title>';
 } else if ($curPage == "stats.php") {
-        echo '<title>Statistics | TomJohn League</title>';
+        echo '<title>Statistics | Wimbledon Rackets and Fitness Squash League</title>';
 } else if ($curPage == "playerinfo.php") {
-        echo '<title>Player Info | TomJohn League</title>';
+        echo '<title>Player Info | Wimbledon Rackets and Fitness Squash League</title>';
 } else {
-        echo '<title>TomJohn League</title>';
+        echo '<title>Wimbledon Rackets and Fitness Squash League</title>';
 }
 ?>
+
 
 
 <title>TomJohn League</title>
