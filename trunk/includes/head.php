@@ -8,21 +8,31 @@ require_once 'functions.php';
 
 $curPage = curPageName();
 
-if ($curPage == "rules.php"){
-        echo '<title>League Rules | Wimbledon Rackets and Fitness Squash League</title>';
-} else if ($curPage == "showleague.php") {
-        echo '<title>Leagues | Wimbledon Rackets and Fitness Squash League</title>';
-} else if ($curPage == "ranking.php") {
-        echo '<title>Rankings | Wimbledon Rackets and Fitness Squash League</title>';
-} else if ($curPage == "results.php") {
-        echo '<title>Results | Wimbledon Rackets and Fitness Squash League</title>';
-} else if ($curPage == "stats.php") {
-        echo '<title>Statistics | Wimbledon Rackets and Fitness Squash League</title>';
-} else if ($curPage == "playerinfo.php") {
-        echo '<title>Player Info | Wimbledon Rackets and Fitness Squash League</title>';
-} else {
-        echo '<title>Wimbledon Rackets and Fitness Squash League</title>';
+$domain = $_SERVER['HTTP_HOST'];
+
+if ($domain == "stage.tomjohnleague.co.uk" || $domain == "www.tomjohnleague.co.uk") {
+	$siteName = "TomJohn League";
+} else if ($domain == "squash.wimbledonclub.co.uk") {
+	$siteName = "Wimbledon Squash";
 }
+
+
+if ($curPage == "rules.php"){
+        echo "<title>League Rules | $siteName</title>";
+} else if ($curPage == "showleague.php") {
+        echo "<title>Leagues | $siteName</title>";
+} else if ($curPage == "ranking.php") {
+        echo "<title>Rankings | $siteName</title>";
+} else if ($curPage == "results.php") {
+        echo "<title>Results | $siteName</title>";
+} else if ($curPage == "stats.php") {
+        echo "<title>Statistics | $siteName</title>";
+} else if ($curPage == "playerinfo.php") {
+        echo "<title>Player Info | $siteName</title>";
+} else {
+        echo "<title>$siteName</title>";
+}
+
 ?>
 
 
@@ -95,9 +105,13 @@ echo "</table> <br><br>";
 ?>
 </div>
 
-<span class="logo-white">TomJohn </span><span class="logo-red"> League</span>
-
-
+<?php
+if ($siteName == "Wimbledon Squash") {
+	echo '<span class="logo-white">Wimbledon </span><span class="logo-red"> Squash</span>';
+} else if ($siteName == "TomJohn League") {
+	echo '<span class="logo-white">TomJohn</span><span class="logo-red"> League</span>';
+}
+?>
 	
 </div>
 <div class="text-area">
