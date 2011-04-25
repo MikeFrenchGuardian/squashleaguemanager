@@ -7,16 +7,6 @@ if (isset ($_GET["order"])) {
 	$ordering = "tjrank";
 }
 
-if (isset($_GET["page"])) {
-	$page = ($_GET["page"]);
-} else {
-	$page = 1;		
-}
-
-$rowsPerPage = 45;
-// counting the offset
-$offset = ($page - 1) * $rowsPerPage;
-$thisPageStart = $rowsPerPage * $page;
 	
 $query = "SELECT id,name,elo_score FROM player";
 $result = mysql_query($query);
@@ -140,20 +130,5 @@ for ($j = 0 ; $j < $rows ; ++$j)
 
 ?>
 </table>
-<?php 
-// setup paging
-
-$prev = $page -1;
-$next = $page +1;
-
-if ($rowsPerPage == $rows) {
-echo '<a href="ranking.php?page=' . $next . '">Next</a>';
-}
-if ($page != 1) {
-echo ' ';
-echo '<a href="ranking.php?page=' . $prev . '">Previous</a>';			
-}
-<br>
-?>
 <span class="text-normal">* Ranking points include results from Jan 2010 onwards, so are not representative of the other metrics.</span>
 <?php require_once 'includes/footer.php'; ?>
