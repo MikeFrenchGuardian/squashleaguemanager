@@ -47,6 +47,7 @@ if ($divCount < 5) {
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="results.php" class="text-normal">Results</a><br>
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="stats.php" class="text-normal">League Stats</a><br>
 	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="rules.php" class="text-normal">Rules</a><br>
+	<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp; <span class="text-normal"><a href="howto.php" class="text-normal">Instructions</a><br>
 
 
 <?php
