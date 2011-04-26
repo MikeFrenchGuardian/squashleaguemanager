@@ -19,17 +19,32 @@ $offset = ($page - 1) * $rowsPerPage;
 $thisPageStart = $rowsPerPage * $page;
 
 
+// grab sticky blog posts from the db
+$stickyblogquery = 'SELECT id, date,subject,synopsis,contents FROM blog WHERE sticky = true order by id desc LIMIT $offset, $rowsPerPage'; 
+$stickyblogresult = mysql_query($stickyblogquery);
+$stickyblogrows = mysql_num_rows($stickyblogresult);
+
+for ($j = 0 ; $j < $stickyblogrows ; ++$j) {
+	$stickyid = mysql_result($stickyblogresult,$j,'id');
+	$stickydate = mysql_result($stickyblogresult,$j,'date');
+	$stickyniceDate = prettyDate($date);
+	$stickysubject = mysql_result($stickyblogresult,$j,'subject');
+	$stickysynopsis = mysql_result($stickyblogresult,$j,'synopsis');
+	$stickycontents = mysql_result($stickyblogresult,$j,'contents');
+
+	echo '<span class="text-blog-header">' .$stickysubject . '</span><br><span class="text-blog-posted"> Posted on </span><span class="text-blog-date">' . $stickyniceDate . "</span><br>";
+	echo '<span class="text-blog"> ' .$stickysynopsis . '</span><br>';
+	if ($stickycontents != "NULL") {
+		echo '<span class="text-blog"><a href="blog.php?blogID=' . $stickyid . '">Read More</a></span><br><br>';		
+	}
+} 
+
 
 
 // grab 5 most recent blog posts from the db
 $blogquery = "SELECT id, date,subject,synopsis,contents FROM blog order by id desc LIMIT $offset, $rowsPerPage"; 
 $blogresult = mysql_query($blogquery);
 $blogrows = mysql_num_rows($blogresult);
-
-
-	
-
-
 
 for ($i = 0 ; $i < $blogrows ; ++$i) {
 	$id = mysql_result($blogresult,$i,'id');
