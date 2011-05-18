@@ -216,6 +216,8 @@ function getLeaguePoints($playerID,$seasonID) {
 			$winPoints = 4;
 		}	else if ($player1_score == 2 && $player2_score == 1) {
 			$winPoints = 5;
+		}   else if ($player1_score == 2 && $player2_score == 0) {
+            $winPoints = 5;
 		}	else if ($player1_score == 1 && $player2_score == 1) {
 			$winPoints = 3;
 		}	else if ($player1_score == 1 && $player2_score == 0) {
@@ -246,6 +248,8 @@ function getLeaguePoints($playerID,$seasonID) {
 			$lossPoints = 4;
 		}	else if ($player1_score == 2 && $player2_score == 1) {
 			$lossPoints = 2;
+        }   else if ($player1_score == 2 && $player2_score == 0) {
+            $lossPoints = 1;
 		}	else if ($player1_score == 1 && $player2_score == 1) {
 			$lossPoints = 3;
 		}	else if ($player1_score == 1 && $player2_score == 0) {
@@ -791,6 +795,13 @@ function curPageName() {
  return substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
 }
 
-
-
+function getCurrentDivNum($id) {
+	$divisionID = getCurrentPlayerDivID($id);
+	$query = "select number from division where id = $divisionID";
+//	$query = "select MAX(division.number) from division,playerdiv where playerdiv.divisionid = division.id and  playerdiv.playerid=25";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->{'number'};
+	return $name;
+}
 ?>
