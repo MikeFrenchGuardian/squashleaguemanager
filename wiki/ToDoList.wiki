@@ -2,6 +2,12 @@
 
 = To Do List =
 
+* Fix season setup to be different for each league
+
+* Change link on season setup to go to number of divisions rather than adding players.
+
+* Set blogs as sticky or not
+
 * Start players on 1000
 
 * Blog post headings should also be links
