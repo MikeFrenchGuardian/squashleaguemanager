@@ -627,13 +627,13 @@ function checkPlayerDiv($seasonID) {
 	return $name;
 }
 
-function addBlogPost($currDate,$subject,$synopsis,$contents) {
-	$query = "insert into blog (date,subject,synopsis,contents) values ('$currDate', '$subject', '$synopsis',  '$contents');";
+function addBlogPost($currDate,$subject,$synopsis,$contents,$status) {
+	$query = "insert into blog (date,subject,synopsis,contents,status) values ('$currDate', '$subject', '$synopsis',  '$contents', '$status');";
 	$result = mysql_query($query) or die(mysql_error());
 	}
 
-function editBlogPost($blogID,$subject,$synopsis,$contents) {
-	$query = ("update blog set subject='$subject', synopsis='$synopsis', contents='$contents' where id='$blogID'");
+function editBlogPost($blogID,$subject,$synopsis,$contents,$status) {
+	$query = ("update blog set subject='$subject', synopsis='$synopsis', contents='$contents', status='$status' where id='$blogID'");
 	$result = mysql_query($query) or die(mysql_error());
 
 }
