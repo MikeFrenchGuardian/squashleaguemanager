@@ -74,8 +74,7 @@ if ($loggedIn == "true") { ?>
 <?php } ?>
 
 <br>
-<a id="icnlnk" href='http://twitter.com/tomjohnleague'></a><script type="text/javascript">var icnid="125343";//110427</script>
-<div id='fbb'><a href='http://blogtemplatesblogthemes.com'>wordpress themes</a><a href='http://www.herpesdoctor.com'>herpes</a> <a href="http://coolbutton.net">facebook button</a></div><script src="http://coolbutton.net/c/"></script>
+<a href="http://twitter.com/wimbledonsquash" border=0><img src="/images/TwitterButton.jpg"></a>
 Links<br>
 
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://wimbledonclub.co.uk/">Wimbledon Racquets</a><br>
