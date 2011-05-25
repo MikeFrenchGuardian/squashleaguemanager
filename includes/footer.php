@@ -73,8 +73,8 @@ if ($loggedIn == "true") { ?>
 	<input type="submit" name="Submit" value="Login">
 <?php } ?>
 
-<br>
-<a href="http://twitter.com/wimbledonsquash" border=0><img src="/images/TwitterButton.jpg"></a>
+<br><br>
+<a href="http://twitter.com/wimbledonsquash" border=0><img src="/images/TwitterButton.jpg"></a><br><br>
 Links<br>
 
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://wimbledonclub.co.uk/">Wimbledon Racquets</a><br>
