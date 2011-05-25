@@ -20,7 +20,7 @@ $thisPageStart = $rowsPerPage * $page;
 
 
 // grab sticky blog posts from the db
-$stickyblogquery = 'SELECT id, date,subject,synopsis,contents FROM blog WHERE sticky = true'; 
+$stickyblogquery = 'SELECT id, date,subject,synopsis,contents FROM blog WHERE status = sticky'; 
 $stickyblogresult = mysql_query($stickyblogquery);
 $stickyblogrows = mysql_num_rows($stickyblogresult);
 
@@ -42,7 +42,7 @@ for ($j = 0 ; $j < $stickyblogrows ; ++$j) {
 
 
 // grab 5 most recent blog posts from the db
-$blogquery = "SELECT id, date,subject,synopsis,contents FROM blog WHERE sticky = false order by id desc LIMIT $offset, $rowsPerPage"; 
+$blogquery = "SELECT id, date,subject,synopsis,contents FROM blog WHERE status = online order by id desc LIMIT $offset, $rowsPerPage"; 
 $blogresult = mysql_query($blogquery);
 $blogrows = mysql_num_rows($blogresult);
 

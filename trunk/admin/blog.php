@@ -59,6 +59,9 @@ if (isset($_POST["posted"])) {
 Subject:&nbsp; <input type="text" name="subject" value="<?php echo $subject ?>" /><br />
 Introduction: <textarea name="synopsis" wrap="physical" rows="10" cols="30"><?php echo $synopsis ?> </textarea> <br />
 Contents: <textarea name="contents" wrap="physical" rows="10" cols="30"><?php echo $contents ?> </textarea> <br />
+<input type="radio" name="status" value="sticky" /> Sticky Post<br />
+<input type="radio" name="status" value="online" checked /> Regular Post<br />
+<input type="radio" name="status" value="offline" /> Disabled Post<br />
 <input type="hidden" name="blogID" value="<?php echo $blogID ?>">
 <input type="hidden" name="edited" value="yes">
 <input type="submit" value="Submit" />
@@ -73,8 +76,8 @@ Subject:&nbsp; <input type="text" name="subject" /><br />
 Introduction: <textarea name="synopsis" wrap="physical" rows="10" cols="30"> </textarea> <br />
 Contents: <textarea name="contents" wrap="physical" rows="10" cols="30"> </textarea> <br /><br />
 <input type="radio" name="status" value="sticky" /> Sticky Post<br />
-<input type="radio" name="status" value="regular" /> Regular Post<br />
-<input type="radio" name="status" value="hidden" /> Disabled Post<br />
+<input type="radio" name="status" value="online" checked /> Regular Post<br />
+<input type="radio" name="status" value="offline" /> Disabled Post<br />
 <input type="hidden" name="posted" value="yes">
 <input type="submit" value="Submit" />
 
