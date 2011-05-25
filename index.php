@@ -37,6 +37,7 @@ for ($j = 0 ; $j < $stickyblogrows ; ++$j) {
 	if ($stickycontents != "NULL") {
 		echo '<span class="text-blog"><a href="blog.php?blogID=' . $stickyid . '">Read More</a></span><br><br>';		
 	}
+	echo "<br>";
 } 
 
 
@@ -59,8 +60,9 @@ for ($i = 0 ; $i < $blogrows ; ++$i) {
 	if ($contents != "NULL") {
 		echo '<span class="text-blog"><a href="blog.php?blogID=' . $id . '">Read More</a></span><br>';		
 	}
+	echo "<br>";
 }
-echo "<br>";
+
 echo "</div>";
 
 // setup paging
