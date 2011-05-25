@@ -20,7 +20,7 @@ $thisPageStart = $rowsPerPage * $page;
 
 
 // grab sticky blog posts from the db
-$stickyblogquery = 'SELECT id, date,subject,synopsis,contents FROM blog WHERE status = sticky'; 
+$stickyblogquery = 'SELECT id,date,subject,synopsis,contents FROM blog WHERE status = "sticky"'; 
 $stickyblogresult = mysql_query($stickyblogquery);
 $stickyblogrows = mysql_num_rows($stickyblogresult);
 
@@ -42,7 +42,7 @@ for ($j = 0 ; $j < $stickyblogrows ; ++$j) {
 
 
 // grab 5 most recent blog posts from the db
-$blogquery = "SELECT id, date,subject,synopsis,contents FROM blog WHERE status = online order by id desc LIMIT $offset, $rowsPerPage"; 
+$blogquery = "SELECT id, date,subject,synopsis,contents FROM blog WHERE status = \"online\" order by id desc LIMIT $offset, $rowsPerPage"; 
 $blogresult = mysql_query($blogquery);
 $blogrows = mysql_num_rows($blogresult);
 
@@ -54,7 +54,7 @@ for ($i = 0 ; $i < $blogrows ; ++$i) {
 	$synopsis = mysql_result($blogresult,$i,'synopsis');
 	$contents = mysql_result($blogresult,$i,'contents');
 
-	echo '<span class="text-blog-header">' .$subject . '</span><br><span class="text-blog-posted"> Posted on </span><span class="text-blog-date">' . $niceDate . "</span><br>";
+	echo '<span class="text-blog-header">' . $subject . '</span><br><span class="text-blog-posted"> Posted on </span><span class="text-blog-date">' . $niceDate . "</span><br>";
 	echo '<span class="text-blog"> ' .$synopsis . '</span><br>';
 	if ($contents != "NULL") {
 		echo '<span class="text-blog"><a href="blog.php?blogID=' . $id . '">Read More</a></span><br><br>';		
