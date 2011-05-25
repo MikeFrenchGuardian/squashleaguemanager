@@ -5,9 +5,10 @@ if (isset($_POST["posted"])) {
 	$subject = $_POST["subject"];
 	$synopsis = $_POST["synopsis"];
 	$contents = $_POST["contents"];
+	$status = $_POST["status"];
 	$currDate = showCurrentDate();
 	echo '<span class="text-header">Add a post</span><br><br>';
-	addBlogPost($currDate,$subject,$synopsis,$contents);
+	addBlogPost($currDate,$subject,$synopsis,$contents,$status);
 	echo "Post added";
 	
 } else if (isset($_POST["edited"])) {
@@ -16,9 +17,10 @@ if (isset($_POST["posted"])) {
 	$subject = $_POST['subject'];
 	$synopsis = $_POST['synopsis'];
 	$contents = $_POST['contents'];
+	$status = $_POST["status"];
 	$currDate = showCurrentDate();
 	echo '<span class="text-header">Post Edited</span><br><br>';
-	editBlogPost($blogID,$subject,$synopsis,$contents);
+	editBlogPost($blogID,$subject,$synopsis,$contents,$status);
 	echo "Post edited";
 	
 } else if (isset($_GET["editlist"])) { ?>
@@ -69,7 +71,10 @@ Contents: <textarea name="contents" wrap="physical" rows="10" cols="30"><?php ec
 <form method="post" action="blog.php">	
 Subject:&nbsp; <input type="text" name="subject" /><br />
 Introduction: <textarea name="synopsis" wrap="physical" rows="10" cols="30"> </textarea> <br />
-Contents: <textarea name="contents" wrap="physical" rows="10" cols="30"> </textarea> <br />
+Contents: <textarea name="contents" wrap="physical" rows="10" cols="30"> </textarea> <br /><br />
+<input type="radio" name="status" value="sticky" /> Sticky Post<br />
+<input type="radio" name="status" value="regular" /> Regular Post<br />
+<input type="radio" name="status" value="hidden" /> Disabled Post<br />
 <input type="hidden" name="posted" value="yes">
 <input type="submit" value="Submit" />
 
