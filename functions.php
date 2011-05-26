@@ -290,6 +290,12 @@ function addResult($seasonID,$player1,$player2,$p1g1,$p1g2,$p1g3,$p1g4,$p1g5,$p2
 		$result = mysql_query($query);
 }
 
+// Add result to the result table
+function deleteResult($resultID) {
+		$query = "delete from results where id = $resultID";
+		$result = mysql_query($query) or die(mysql_error());
+}
+
 // Email results to both players and the results address.
 function emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore) {
 	$player1Name = getPlayerName($player1);

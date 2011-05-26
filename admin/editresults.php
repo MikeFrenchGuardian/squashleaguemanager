@@ -1,5 +1,34 @@
 <?php require_once '../includes/adminhead.php'; 
 
+if (isset($_GET["delete"])) {
+	
+	$result = ($_GET["result"]);
+	
+	// The page heading
+	echo '<span class="text-header">Confirm Deletion</span><br><br>';
+
+	echo 'Are you sure you want to delete this result?<br><br>';
+	
+	echo '<a href="/admin/editresults.php?deleted=yes&"';
+	
+	
+} else if (isset($_GET["deleted"])) {
+	
+	$result = ($_GET["result"]);
+	
+	deleteResult($result);
+
+	// The page heading
+	echo '<span class="text-header">Result Deleted</span><br><br>';
+	
+	echo "You've deleted that result... well done.";
+	
+} else if (isset($_GET["edit"])) {
+	
+
+
+} else {
+
  // Grab the season ID from the URL if available
 $seasonID = ($_GET["seasonID"]);
 
@@ -66,6 +95,7 @@ $rows = mysql_num_rows($result);
 //fill it with content
 
 	for ($j = 0 ; $j < $rows ; ++$j) {
+		$id = mysql_result($result,$j,'id');
 		$winner = mysql_result($result,$j,'player1');
 		$loser = mysql_result($result,$j,'player2');
 		$winnerName = getPlayerName($winner);
@@ -82,7 +112,7 @@ if ($p2g == "-1") {
 }
 echo 	'<td class="text-normal">' . $loserName . '</td>';
 echo	'<td class="text-normal">Edit Result';
-echo	'<td class="text-normal">Delete Result';
+echo	'<a href="/admin/editresults.php?delete=yes&result=' . $id . '" class="text-normal">Delete Result</a>';
 echo	'</tr>';
 }
 echo "</table><br>";
