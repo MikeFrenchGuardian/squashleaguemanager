@@ -9,7 +9,7 @@ if (isset($_GET["delete"])) {
 
 	echo 'Are you sure you want to delete this result?<br><br>';
 	
-	echo '<a href="/admin/editresults.php?deleted=yes&"';
+	echo '<a href="/admin/editresults.php?deleted=yes&result=' . $result . '">';
 	
 	
 } else if (isset($_GET["deleted"])) {
