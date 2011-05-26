@@ -33,7 +33,7 @@ for ($i = 0 ; $i < $toPlayRows ; ++$i)
 	echo 	'<tr>';
 	echo 	'<td>' . $toPlayName . '</td>';
 	if ($member == yes){
-		echo 	'<td><a class="text-normal" href="mailto:" . $toPlayName . ">' . $toPlayEmail . '</td>';	
+		echo 	'<td><a class="text-normal" href="mailto:' . $toPlayEmail . '">' . $toPlayEmail . '</td>';	
 	} else {
 			echo 	'<td><span class="text-normal">Requires login</span></td>';	
 	}
