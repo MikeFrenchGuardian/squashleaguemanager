@@ -129,6 +129,8 @@ if ($page != 1) {
 echo ' ';
 echo '<a href="editresults.php?seasonID=' . $seasonID . '&page=' . $prev . '">Previous</a>';			
 }
+
+}
 ?>		
 
 
