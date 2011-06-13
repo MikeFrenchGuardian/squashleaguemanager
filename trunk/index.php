@@ -1,7 +1,18 @@
-<?php require_once 'includes/head.php'; ?>
+<?php require_once 'includes/head.php'; 
 
-<span class="text-header"><?php echo daysLeft(); ?></span><br><br> 
+$seasonID = currentSeason();
 
+$endDate = prettyDate(getSeasonEnd($seasonID));
+
+?>
+
+<span class="text-header">The current season ends on <?php echo $endDate; ?></span><br><br> 
+<?php
+foreach($_SESSION as $key=>$value) 
+{ 
+print $key." = ".$val."<br>"; 
+}
+?>
 <div class="blog">
 <?php
 
