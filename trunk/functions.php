@@ -177,6 +177,16 @@ function getPlayerLeague($playerID,$seasonID) {
 	//return $query;
 }
 
+// change league number to the appropriate league name / number
+function getLeagueName($leagueNumber) {
+	if ($leagueNumber <= 5) {
+		$name = "TomJohn League " . $leagueNumber;
+	} else if ($leagueNumber <= 15 ) {
+		$name = "Gold League " . $leagueNumber - 5;
+	}
+}
+	
+
 // get player league
 function getMaxPlayerID() {
 	$query = "select MAX(id) from player";
