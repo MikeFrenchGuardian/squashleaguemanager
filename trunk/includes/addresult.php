@@ -65,10 +65,10 @@ if ($duplicate == "yes") {
 		
 			$message = "Result just in: $player1Name has beaten $player2Name by $p1score games to $p2score";
 		
-			$consumerKey    = '1XjVDsxhid6RGC2L87iOw';
-			$consumerSecret = '3D9GIbIEfiKqSMDzHTunAPJ0Cb3jGMpxTGJ5SBKXcZQ';
-			$oAuthToken     = '167934744-nQHj7SI2fmR9kKgp0xPgqxKThzo3b8E5Zm57LtXh';
-			$oAuthSecret    = 'w151Vhz4TQ5cMaCGEeJPZyeHfw13X4PgvIek4UXhzk';
+			$consumerKey    = 'MmLpCfZryJpziDQrP6v2fA';
+			$consumerSecret = 'r1JnVOv0fqpKWf85PYy7NqIeujLlso7Rz77dMBz0GJM';
+			$oAuthToken     = '304956678-t1zBhgd9WPsLt2iPziMtMJUky7N67At8sBJOLVtE';
+			$oAuthSecret    = 'S1Y9hkH9Sx9HOvXHzFDpceX1JyNZjKveaWmUl0QaMQ';
 
 			require_once($_SERVER['DOCUMENT_ROOT'].'/classes/twitter/twitteroauth.php'); 
 	
