@@ -180,10 +180,12 @@ function getPlayerLeague($playerID,$seasonID) {
 // change league number to the appropriate league name / number
 function getLeagueName($leagueNumber) {
 	if ($leagueNumber <= 5) {
-		$name = "TomJohn League " . $leagueNumber;
+		$name = "TJ League " . $leagueNumber;
 	} else if ($leagueNumber <= 15 ) {
-		$name = "Gold League " . $leagueNumber - 5;
+		$leagueNumber = $leagueNumber -5;
+		$name = "Gold League " . $leagueNumber;
 	}
+	return $name;
 }
 	
 
