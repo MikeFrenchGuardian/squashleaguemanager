@@ -60,10 +60,14 @@ if ($duplicate == "yes") {
 		updateElo($player2,$p2NewEloScore);
 		
 		$host = $_SERVER['HTTP_HOST'];
-		if ($host == "www.tomjohnleague.co.uk" || $host == "tomjohnleague.co.uk") { 		
+		if ($host == "www.tomjohnleague.co.uk" || $host == "tomjohnleague.co.uk" || $host == "squash.wimbledonclub.co.uk") { 
+			
+		$playerLeague = getPlayerLeague($playerID,$seasonID);
+		$playerLeagueName = getLeagueName($playerLeague);
+		
 		emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore);	
 		
-			$message = "Result just in: $player1Name has beaten $player2Name by $p1score games to $p2score";
+			$message = "Result just in from $playerLeagueName: $player1Name has beaten $player2Name by $p1score games to $p2score";
 		
 			$consumerKey    = 'MmLpCfZryJpziDQrP6v2fA';
 			$consumerSecret = 'r1JnVOv0fqpKWf85PYy7NqIeujLlso7Rz77dMBz0GJM';
