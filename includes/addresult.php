@@ -62,7 +62,7 @@ if ($duplicate == "yes") {
 		$host = $_SERVER['HTTP_HOST'];
 		if ($host == "www.tomjohnleague.co.uk" || $host == "tomjohnleague.co.uk" || $host == "squash.wimbledonclub.co.uk") { 
 			
-		$playerLeague = getPlayerLeague($playerID,$seasonID);
+		$playerLeague = getPlayerLeague($player1,$seasonID);
 		$playerLeagueName = getLeagueName($playerLeague);
 		
 		emailMatchResult($player1,$player2,$p1score,$p2score,$p1Elo,$p2Elo,$p1NewEloScore,$p2NewEloScore);	
