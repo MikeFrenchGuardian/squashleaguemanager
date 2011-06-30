@@ -83,7 +83,8 @@ Links<br>
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://www.surreysra.co.uk">Surrey SRA</a><br>
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://www.squashsite.co.uk">Squashsite</a><br>
 <img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://no-let.blogspot.com">no-let blog</a><br>
-<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://www.psasquashtv.com">PSA Squash TV</a><br><br>
+<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://www.psasquashtv.com">PSA Squash TV</a><br>
+<img src="https://s3-eu-west-1.amazonaws.com/tomjohn/blue_arrow.png" height="8px" width="8px">&nbsp;<a class="text-normal" href="http://www.scrusquash.com/">SCRU Squash</a><br><br>
 
 <a href="http://www.psasquashtv.com/page/canarywharfcompetition?WT.mc_id=aff2101"><img border=0 src="/images/canarywharf2010/120x600.jpg"></a>
 
