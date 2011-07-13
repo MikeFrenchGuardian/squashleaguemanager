@@ -51,6 +51,7 @@ for ($i = 0 ; $i < $toPlayRows ; ++$i)
 <table class="league">
 <tr>
 	<td class="hed">Season</td>
+	<td class="hed">Div</td>
 	<td class="hed">Winner</td>
 	<td class="hed">Score</td>
 	<td class="hed">Loser</td>
@@ -69,9 +70,12 @@ for ($j = 0 ; $j < $rows ; ++$j)
 	$loserName = getPlayerName($loser);
 	$p1g = mysql_result($result,$j,'player1_score');
 	$p2g = mysql_result($result,$j,'player2_score');
-		
+
+	$div = getDivNum($id,$season);		
+
 echo 	'<tr>';
 echo 	'<td class="text-normal">' . $season . '</td>';
+echo 	'<td class="text-normal">' . $div . '</td>';
 if ($winner == $id){
 	echo 	'<td class="text-normal-bold"><b>' . $winnerName . '</b></td>';
 } else {

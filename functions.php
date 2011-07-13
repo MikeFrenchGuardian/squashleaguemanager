@@ -822,4 +822,12 @@ function getCurrentDivNum($id) {
 	$name = $row->{'number'};
 	return $name;
 }
+
+function getDivNum($playerID, $season) {
+	$query = "select division.number from player,playerdiv,division where player.id = playerdiv.playerid and playerdiv.divisionid = division.id and player.id = $playerID and division.seasonid = $season";
+	$result = mysql_query($query);
+	$row = mysql_fetch_object($result);
+	$name = $row->{'number'};
+	return $name;
+}
 ?>
